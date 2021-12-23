@@ -6,10 +6,13 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background: black;
     color: white;
     font-size: 30px;
     font-family: 'Share Tech Mono', monospace;
+  }
+
+  body {
+    background: black;
   }
 
   h1 {

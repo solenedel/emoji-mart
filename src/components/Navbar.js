@@ -1,9 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ className }) => {
   return ( 
     <div className={className}>
-      Navbar
+     <h1 id="logo">⚡ Emoji Mart</h1>
+     <div className="links">
+       <Link to="/login">Login</Link>
+       <Link to="/login">Products</Link>
+       <Link to="/cart">My cart</Link>
+       <Link to="/favs">My favourites</Link>
+     </div>
     </div>
    );
 }
