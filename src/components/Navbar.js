@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = ({ className }) => {
   return ( 
     <div className={className}>
-     <h1 id="logo">⚡ Emoji Mart</h1>
+     <h1 id="logo">⚡ emoji mart</h1>
      <div className="links">
        <Link to="/login">Login</Link>
        <Link to="/login">Products</Link>

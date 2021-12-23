@@ -14,6 +14,7 @@ Back end: Node.js
 - add items to favourites
 - search product by name
 - day / night mode
+- change language feature
 
 **Pages:**
 - Login/sign up

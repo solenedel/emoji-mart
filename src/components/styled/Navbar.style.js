@@ -17,7 +17,19 @@ export const StyledNavbar = styled(Navbar)`
 
   .links {
     display: flex;
-    align-items: flex-end;
+    justify-content: space-between;
+    width: 60vw;
+    margin-left: 10vw;
+    
+    & a {
+      text-decoration: none;
+      font-size: 24px;
+
+      &:hover {
+        color: #C3FFDA;
+      }
+    }
+    
   }
 
 
