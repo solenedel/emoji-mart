@@ -1,7 +1,11 @@
+import { GlobalStyles } from "./components/styled/GlobalStyles.style";
+
 function App() {
   return (
     <div className="App">
-      Emoji mart
+      <GlobalStyles />
+      <h1>Emoji mart</h1>
+      <p>test</p>
     </div>
   );
 }
