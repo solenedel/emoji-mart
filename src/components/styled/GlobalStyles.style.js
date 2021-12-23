@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     background: black;
     color: white;
     font-size: 30px;
+    font-family: 'Share Tech Mono', monospace;
   }
 
   h1 {
@@ -16,7 +17,4 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 50px;
   }
 
-  h2, h3, h4, p {
-    font-family: 'Share Tech Mono', monospace;
-  }
 `;

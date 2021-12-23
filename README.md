@@ -13,6 +13,7 @@ Back end: Node.js
 - add, remove items from cart
 - add items to favourites
 - search product by name
+- day / night mode
 
 **Pages:**
 - Login/sign up
