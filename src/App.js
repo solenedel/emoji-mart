@@ -1,12 +1,19 @@
 import { GlobalStyles } from "./components/styled/GlobalStyles.style";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import HomePage from "./components/HomePage";
 
 function App() {
   return (
-    <div className="App">
-      <GlobalStyles />
-      <h1>Emoji mart</h1>
-      <p>test</p>
-    </div>
+    <Router>
+      <div className="App">
+        <GlobalStyles />
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route> 
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
