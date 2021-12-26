@@ -2,6 +2,7 @@ import { GlobalStyles } from "./components/styled/GlobalStyles.style";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import { StyledNavbar } from "./components/styled/Navbar.style";
+import { StyledProducts } from "./components/styled/Products.style";
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
         <Switch>
           <Route exact path="/">
             <HomePage />
+          </Route> 
+          <Route exact path="/products">
+            <StyledProducts />
           </Route> 
         </Switch>
       </div>

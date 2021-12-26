@@ -7,7 +7,7 @@ const Navbar = ({ className }) => {
      <h1 id="logo">emoji mart</h1>
      <div className="links">
        <Link to="/login">Login</Link>
-       <Link to="/login">Products</Link>
+       <Link to="/products">Products</Link>
        <Link to="/cart">My cart</Link>
        <Link to="/favs">My favourites</Link>
      </div>
