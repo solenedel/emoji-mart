@@ -7,6 +7,10 @@
 
 
 -- Drop any existing tables to start fresh
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS products CASCADE;
+DROP TABLE IF EXISTS favorites CASCADE;
+DROP TABLE IF EXISTS cart CASCADE;
 
 -- Users table
 CREATE TABLE users (
@@ -21,9 +25,10 @@ CREATE TABLE products (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL, 
   description TEXT NOT NULL,
-  price INTEGER NOT NULL DEFAULT 0, 
+  price DECIMAL(5,2), 
   sold_out BOOLEAN NOT NULL, 
-  image_path VARCHAR(255) NOT NULL
+  image_path VARCHAR(255) NOT NULL, 
+  category VARCHAR(255) NOT NULL 
 );
 
 -- Favorites table
