@@ -20,11 +20,17 @@ const PORT = 8081;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// setup cors options
+const corsOptions = {
+  origin: 'http://localhost:3000',
+};
+app.use(cors(corsOptions));
+
 
 // ---------------------------- ROUTES -------------------------------- //
 
 app.get('/login', (req, res) => {
-  console.log('on login page');
+  console.log('GET LOGIN PAGE SUCCESSFUL');
 })
 
 
