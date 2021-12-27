@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import { StyledNavbar } from "./components/styled/Navbar.style";
 import { StyledProducts } from "./components/styled/Products.style";
+import { StyledHomePage } from "./components/styled/HomePage.style";
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <StyledNavbar />
         <Switch>
           <Route exact path="/">
-            <HomePage />
+            <StyledHomePage />
           </Route> 
           <Route exact path="/products">
             <StyledProducts />
