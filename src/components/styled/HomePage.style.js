@@ -10,7 +10,7 @@ export const StyledHomePage = styled(HomePage)`
     margin-bottom: 50px;
     letter-spacing: 3px;
     font-weight: 100;
-    color: #EFFFB7;
+    color: #D7CCFC;
   }
 
   h4 {
