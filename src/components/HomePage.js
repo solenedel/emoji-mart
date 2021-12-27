@@ -3,14 +3,14 @@ import React from "react";
 const HomePage = ({ className }) => {
   return ( 
     <div className={className}>
-      <h2>Welcome to Emoji mart!</h2>
+      <h1>Welcome to emoji mart!</h1>
 
-      <section>
-      <h4>Current sales and discounts</h4>
+      <section className="sale">
+      <h4>Currently on sale</h4>
         
       </section>
 
-       <section>
+       <section className="featured">
         <h4>Featured products</h4>
       </section>
     </div>
