@@ -1,6 +1,7 @@
 // ---------------- Express server --------------------- //
 
 const express = require('express');
+const cors = require('cors');
 
 
 const dotenvPath = '../.env';  // specify path to .env file

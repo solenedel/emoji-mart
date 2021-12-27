@@ -6,6 +6,11 @@ Database: Postgres
 Front end: ReactJS, Bootstrap, SASS
 Back end: Node.js
 
+## Running the app
+
+Running in development mode: `npm run dev`
+This starts the node server and the react app concurrently.
+
 ## Main Features
 
 - login / create an account

@@ -8,6 +8,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "concurrently": "^6.5.1",
+    "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "nodemon": "^2.0.15",
     "pg": "^8.7.1",
