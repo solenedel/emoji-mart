@@ -20,6 +20,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
+// ---------------------------- ROUTES -------------------------------- //
+
+app.get('/login', (req, res) => {
+  console.log('on login page');
+})
+
 
 // -------------------------------------------------------------------- //
 
