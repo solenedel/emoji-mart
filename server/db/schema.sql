@@ -5,6 +5,9 @@
 -- for now, image path is served from the img folder- later change this?
 -- shipping cart table? or just in-cart boolean on favs table?
 
+-- should items have more than one category?
+-- ex. featured, sale, fruit
+
 
 -- Drop any existing tables to start fresh
 DROP TABLE IF EXISTS users CASCADE;
@@ -29,7 +32,8 @@ CREATE TABLE products (
   sold_out BOOLEAN NOT NULL, 
   image_path VARCHAR(255) NOT NULL, 
   category VARCHAR(255) NOT NULL, 
-  featured BOOLEAN NOT NULL DEFAULT false
+  featured BOOLEAN NOT NULL DEFAULT false, 
+  on_sale BOOLEAN NOT NULL DEFAULT false
 );
 
 -- Favorites table

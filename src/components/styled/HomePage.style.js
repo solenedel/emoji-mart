@@ -9,6 +9,8 @@ export const StyledHomePage = styled(HomePage)`
     font-size: 38px;
     margin-bottom: 50px;
     letter-spacing: 3px;
+    font-weight: 100;
+    color: #EFFFB7;
   }
 
   h4 {
@@ -26,11 +28,11 @@ export const StyledHomePage = styled(HomePage)`
   }
   
   .featured {
-      border: solid 3px #C3FFDA;
+      border: solid 3px #B7FFFD;
       border-radius: 4px;
 
     & h4 {
-      color: #C3FFDA;
+      color:#B7FFFD;
     }
   }
 
