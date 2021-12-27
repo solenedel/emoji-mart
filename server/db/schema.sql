@@ -28,7 +28,8 @@ CREATE TABLE products (
   price DECIMAL(5,2), 
   sold_out BOOLEAN NOT NULL, 
   image_path VARCHAR(255) NOT NULL, 
-  category VARCHAR(255) NOT NULL 
+  category VARCHAR(255) NOT NULL, 
+  featured BOOLEAN NOT NULL DEFAULT false
 );
 
 -- Favorites table

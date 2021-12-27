@@ -12,23 +12,23 @@ VALUES ('Luigi', 'luigi@mail.com', 'password2');
 
 -- seeds for Products table
 
-INSERT INTO products (name, description, price, sold_out, image_path, category)
-VALUES ('mango', 'a ripe mango.', 3.00, FALSE, '🥭', 'Fruits' );
+INSERT INTO products (name, description, price, sold_out, image_path, category, featured)
+VALUES ('mango', 'a ripe mango.', 3.00, FALSE, '🥭', 'Fruits', TRUE);
 
-INSERT INTO products (name, description, price, sold_out, image_path, category)
-VALUES ('kiwi', 'a nice kiwi.', 2.50, FALSE, '🥝', 'Fruits' );
+INSERT INTO products (name, description, price, sold_out, image_path, category, featured)
+VALUES ('kiwi', 'a nice kiwi.', 2.50, FALSE, '🥝', 'Fruits', FALSE);
 
-INSERT INTO products (name, description, price, sold_out, image_path, category)
-VALUES ('strawberries', 'local and organic.', 3.75, TRUE, '🍓', 'Fruits' );
+INSERT INTO products (name, description, price, sold_out, image_path, category, featured)
+VALUES ('strawberries', 'local and organic.', 3.75, TRUE, '🍓', 'Fruits', FALSE);
 
-INSERT INTO products (name, description, price, sold_out, image_path, category)
-VALUES ('sunflower', 'a very tall sunflower.', 2.99, FALSE, '🌻', 'Plants' );
+INSERT INTO products (name, description, price, sold_out, image_path, category, featured)
+VALUES ('sunflower', 'a very tall sunflower.', 2.99, FALSE, '🌻', 'Plants', FALSE);
 
-INSERT INTO products (name, description, price, sold_out, image_path, category)
-VALUES ('tulip', 'a tulip from Holland.', 4.75, TRUE, '🌷', 'Plants' );
+INSERT INTO products (name, description, price, sold_out, image_path, category, featured)
+VALUES ('tulip', 'a tulip from Holland.', 4.75, TRUE, '🌷', 'Plants', TRUE);
 
-INSERT INTO products (name, description, price, sold_out, image_path, category)
-VALUES ('cactus', 'a bit of a prick.', 2.50, FALSE, '🌵', 'Plants' );
+INSERT INTO products (name, description, price, sold_out, image_path, category, featured)
+VALUES ('cactus', 'a bit of a prick.', 2.50, FALSE, '🌵', 'Plants', FALSE);
 
 
 
