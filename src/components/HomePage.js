@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Product from "./Product";
 
 const HomePage = ({ className }) => {
   
@@ -7,7 +8,7 @@ const HomePage = ({ className }) => {
 
   // load products on sale on every page load
   useEffect(() => {
-    axios.get('/on-sale')
+    axios.get('/')
     .then((res) => {
       console.log('res.data: ', res.data);
       setSaleProducts(res.data);
@@ -25,7 +26,7 @@ const HomePage = ({ className }) => {
       <h4>Currently on sale</h4>
         <div className="mapped-sale-products">
         {saleProducts.map(saleProduct => {
-        
+          <Product saleProduct={saleProduct} saleProducts={saleProducts}/>
         })}</div>
       </section>
 

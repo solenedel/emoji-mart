@@ -32,7 +32,7 @@ app.use(cors(corsOptions));
 // ------------------------ Home page routes -------------------------- //
 
 // get all products on sale
-app.get('/on-sale', (req, res) => {
+app.get('/', (req, res) => {
   const queryText = `SELECT * FROM products WHERE on_sale = $1;`
   const values = [TRUE];
   db.query(queryText, values)
