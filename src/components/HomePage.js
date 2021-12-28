@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Product from "./Product";
 
+const baseURL = `http://localhost:8081`;
+
 const HomePage = ({ className }) => {
   
   
@@ -9,9 +11,9 @@ const HomePage = ({ className }) => {
 
   // load products on sale on every page load
   useEffect(() => {
-    axios.get('/')
+    axios.get(`${baseURL}/`)
     .then((res) => {
-      console.log('res: ', res);
+      console.log('AXIOS GET SALE PRODUCTS: ', res.data);
       // setSaleProducts(res);
     })
     .catch((err) => {
