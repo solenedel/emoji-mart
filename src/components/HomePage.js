@@ -10,6 +10,10 @@ const HomePage = ({ className }) => {
     axios.get('/on-sale')
     .then((res) => {
       console.log('res.data: ', res.data);
+      setSaleProducts(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
     })
   }, []);
 
@@ -19,7 +23,10 @@ const HomePage = ({ className }) => {
 
       <section className="sale">
       <h4>Currently on sale</h4>
+        <div className="mapped-sale-products">
+        {saleProducts.map(saleProduct => {
         
+        })}</div>
       </section>
 
        <section className="featured">

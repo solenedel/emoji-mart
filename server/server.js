@@ -29,7 +29,22 @@ app.use(cors(corsOptions));
 
 // ---------------------------- ROUTES -------------------------------- //
 
+// ------------------------ Home page routes -------------------------- //
 
+// get all products on sale
+app.get('/on-sale', (req, res) => {
+  const queryText = `SELECT * FROM products WHERE on_sale = $1;`
+  const values = [TRUE];
+  db.query(queryText, values)
+  .then((results) => {
+    console.log('results.rows', results.rows);
+    res.json(results.rows);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.json([]);
+  });
+});
 
 // -------------------------------------------------------------------- //
 
