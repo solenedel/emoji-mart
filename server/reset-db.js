@@ -1,4 +1,4 @@
-// TO RESET THE DATABASE: npm run db:reset from the root directory
+// TO RESET THE DATABASE: npm run reset-db from the root directory
 
 const path = require('path');
 
@@ -32,4 +32,3 @@ db.query(sql)
     console.error(chalk.red(`Database reset: failed due to error: ${err}`));
     process.exit(1);
   });
-  
