@@ -4,8 +4,11 @@ const Product = ({ saleProducts, saleProduct }) => {
 
   return ( 
   <div className="sale-product">
-  {console.log('sale product in product ', saleProduct)}
-    <h4>{saleProduct.name}</h4>
+    <h5>{saleProduct.name}</h5>
+    <div className="product-img">{saleProduct.image_path}</div>
+    <div>${saleProduct.price}</div>
+    <div className="description">{saleProduct.description}</div>
+    
   </div> 
   );
 
