@@ -32,7 +32,6 @@ CREATE TABLE products (
   sold_out BOOLEAN NOT NULL, 
   image_path VARCHAR(255) NOT NULL, 
   category VARCHAR(255) NOT NULL, 
-  featured BOOLEAN NOT NULL DEFAULT false, 
   on_sale BOOLEAN NOT NULL DEFAULT false
 );
 

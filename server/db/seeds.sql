@@ -12,23 +12,23 @@ VALUES ('Luigi', 'luigi@mail.com', 'password2');
 
 -- seeds for Products table
 
-INSERT INTO products (name, description, price, sold_out, image_path, category, featured, on_sale)
-VALUES ('mango', 'a ripe mango.', 3.00, FALSE, '🥭', 'Fruits', TRUE, TRUE);
+INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
+VALUES ('mango', 'a ripe mango.', 3.00, FALSE, '🥭', 'Fruits', TRUE);
 
-INSERT INTO products (name, description, price, sold_out, image_path, category, featured, on_sale)
-VALUES ('kiwi', 'a nice kiwi.', 2.50, FALSE, '🥝', 'Fruits', FALSE, TRUE);
+INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
+VALUES ('kiwi', 'a nice kiwi.', 2.50, FALSE, '🥝', 'Fruits', TRUE);
 
-INSERT INTO products (name, description, price, sold_out, image_path, category, featured, on_sale)
-VALUES ('strawberries', 'local and organic.', 3.75, TRUE, '🍓', 'Fruits', FALSE, FALSE);
+INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
+VALUES ('strawberries', 'local and organic.', 3.75, TRUE, '🍓', 'Fruits', FALSE);
 
-INSERT INTO products (name, description, price, sold_out, image_path, category, featured, on_sale)
-VALUES ('sunflower', 'a very tall sunflower.', 2.99, FALSE, '🌻', 'Plants', FALSE, FALSE);
+INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
+VALUES ('sunflower', 'a very tall sunflower.', 2.99, FALSE, '🌻', 'Plants', FALSE);
 
-INSERT INTO products (name, description, price, sold_out, image_path, category, featured, on_sale)
-VALUES ('tulip', 'a tulip from Holland.', 4.75, TRUE, '🌷', 'Plants', TRUE, TRUE);
+INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
+VALUES ('tulip', 'a tulip from Holland.', 4.75, TRUE, '🌷', 'Plants', TRUE);
 
-INSERT INTO products (name, description, price, sold_out, image_path, category, featured, on_sale)
-VALUES ('cactus', 'a bit of a prick.', 2.50, FALSE, '🌵', 'Plants', FALSE, TRUE);
+INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
+VALUES ('cactus', 'a bit of a prick.', 2.50, FALSE, '🌵', 'Plants', TRUE);
 
 
 
