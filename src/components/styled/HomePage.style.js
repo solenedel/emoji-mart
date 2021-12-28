@@ -4,13 +4,13 @@ import HomePage from "../HomePage";
 export const StyledHomePage = styled(HomePage)`
   margin: 50px 5% 0 5%;
   
-  h1 {
+  p {
     text-align: center;
-    font-size: 38px;
+    font-size: 27px;
     margin-bottom: 50px;
-    letter-spacing: 3px;
-    font-weight: 100;
+    font-weight: 300;
     color: #D7CCFC;
+    font-family: 'Lato', sans-serif; 
   }
 
   h4 {
@@ -38,9 +38,9 @@ export const StyledHomePage = styled(HomePage)`
 
     div.sale-product {
       margin-bottom: 20px;
-      
+
       & h5 {
-        font-size: 28px;
+        font-size: 25px;
         font-family: 'Lato', sans-serif;
       }
 

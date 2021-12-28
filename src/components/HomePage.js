@@ -23,8 +23,7 @@ const HomePage = ({ className }) => {
 
   return ( 
     <div className={className}>
-      <h1>Welcome to emoji mart!</h1>
-
+        <p>Fresh emojis delivered to you!</p>
       <section className="sale">
       <h4>Currently on sale</h4>
         <div className="mapped-sale-products">
