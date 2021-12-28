@@ -33,9 +33,9 @@ app.use(cors(corsOptions));
 
 // get all products on sale
 app.get('/', (req, res) => {
-  const queryText = `SELECT * FROM products WHERE on_sale = $1;`
-  const values = [TRUE];
-  db.query(queryText, values)
+  const queryText = `SELECT * FROM products WHERE on_sale = TRUE;`
+  // const values = [TRUE];
+  db.query(queryText)
   .then((results) => {
     console.log('results.rows', results.rows);
     res.json(results.rows);

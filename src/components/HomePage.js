@@ -4,6 +4,7 @@ import Product from "./Product";
 
 const HomePage = ({ className }) => {
   
+  /*
   const [saleProducts, setSaleProducts] = useState([]);
 
   // load products on sale on every page load
@@ -16,7 +17,7 @@ const HomePage = ({ className }) => {
     .catch((err) => {
       console.log(err);
     })
-  }, []);
+  }, []); */
 
   return ( 
     <div className={className}>
@@ -24,10 +25,10 @@ const HomePage = ({ className }) => {
 
       <section className="sale">
       <h4>Currently on sale</h4>
-        <div className="mapped-sale-products">
+        {/* <div className="mapped-sale-products">
         {saleProducts.map(saleProduct => {
           <Product saleProduct={saleProduct} saleProducts={saleProducts}/>
-        })}</div>
+        })}</div> */}
       </section>
 
        <section className="featured">
