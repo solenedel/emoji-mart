@@ -21,6 +21,7 @@ export const StyledHomePage = styled(HomePage)`
     border: solid 3px #FFC3E8;
     border-radius: 4px;
     margin-bottom: 80px;
+    height: 300px;
 
     & h4 {
       color: #FFC3E8;
