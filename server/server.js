@@ -4,7 +4,19 @@ const express = require('express');
 const cors = require('cors');
 
 
-const dotenvPath = '../.env';  // specify path to .env file
+let dotenvPath = '';  // specify path to .env file
+
+let ORIGIN_URL = '';
+if (process.env.NODE_ENV === 'production') {
+  console.log('running in production!');
+  ORIGIN_URL = '*';
+  dotenvPath = '../.env';
+} else {
+  console.log('running in development!');
+  ORIGIN_URL = '*';
+  dotenvPath = '../.env';
+}
+
 require('dotenv').config({ path: dotenvPath }); 
 
 // Postgres database connection set up
@@ -22,7 +34,7 @@ app.use(express.json());
 
 // setup cors options
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: ORIGIN_URL,
 };
 app.use(cors(corsOptions));
 

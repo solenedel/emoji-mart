@@ -4,20 +4,20 @@ import Product from "./Product";
 
 const HomePage = ({ className }) => {
   
-  /*
+  
   const [saleProducts, setSaleProducts] = useState([]);
 
   // load products on sale on every page load
   useEffect(() => {
     axios.get('/')
     .then((res) => {
-      console.log('res.data: ', res.data);
-      setSaleProducts(res.data);
+      console.log('res: ', res);
+      // setSaleProducts(res);
     })
     .catch((err) => {
       console.log(err);
     })
-  }, []); */
+  }, []); 
 
   return ( 
     <div className={className}>
