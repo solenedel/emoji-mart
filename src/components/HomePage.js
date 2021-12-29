@@ -10,12 +10,24 @@ const HomePage = ({ className }) => {
   const [saleProducts, setSaleProducts] = useState([]);
   const [featuredProduct, setFeaturedProduct] = useState([]);
 
-  // load products on sale on every page load
+  // load products on sale
   useEffect(() => {
     axios.get(baseURL + '/')
     .then((res) => {
       console.log('AXIOS GET - SALE PRODUCTS: ', res.data);
       setSaleProducts(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }, []); 
+
+    // load featured product
+  useEffect(() => {
+    axios.get(baseURL + '/featured')
+    .then((res) => {
+      console.log('AXIOS GET - FEATURED PRODUCT: ', res.data);
+      setFeaturedProduct(res.data);
     })
     .catch((err) => {
       console.log(err);
@@ -28,7 +40,7 @@ const HomePage = ({ className }) => {
          <p>Search bar here?</p>
       <section className="sale">
       <h4>Currently on sale</h4>
-        <div className="mapped-sale-products">
+        <div className="mapped-products">
           {saleProducts.map(saleProduct => {
             return <Product key={saleProduct.id} saleProduct={saleProduct} saleProducts={saleProducts} />
           })}
@@ -37,7 +49,11 @@ const HomePage = ({ className }) => {
 
        <section className="featured">
         <h4>Featured products</h4>
-        <Product featuredProduct={featuredProduct} />
+        <div className="mapped-products">
+         {featuredProduct.map(featuredProduct => {
+            return <Product key={featuredProduct.id} saleProduct={featuredProduct} />
+          })}
+        </div>
       </section>
     </div>
    );

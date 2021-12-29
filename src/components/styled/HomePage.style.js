@@ -31,14 +31,14 @@ export const StyledHomePage = styled(HomePage)`
       margin-bottom: 40px;
     }  
 
-    div.mapped-sale-products {
+    div.mapped-products {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
       padding: 0 3% 0 3%;
     }
 
-    div.sale-product {
+    div.product {
       margin-bottom: 20px;
 
       & h5 {
