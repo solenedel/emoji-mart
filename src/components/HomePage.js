@@ -8,6 +8,7 @@ const baseURL = `http://localhost:8081`;
 const HomePage = ({ className }) => {
   
   const [saleProducts, setSaleProducts] = useState([]);
+  const [featuredProduct, setFeaturedProduct] = useState([]);
 
   // load products on sale on every page load
   useEffect(() => {
@@ -29,13 +30,14 @@ const HomePage = ({ className }) => {
       <h4>Currently on sale</h4>
         <div className="mapped-sale-products">
           {saleProducts.map(saleProduct => {
-            return <Product key={saleProduct.id} saleProduct={saleProduct} saleProducts={saleProducts}/>
+            return <Product key={saleProduct.id} saleProduct={saleProduct} saleProducts={saleProducts} />
           })}
         </div>
       </section>
 
        <section className="featured">
         <h4>Featured products</h4>
+        <Product featuredProduct={featuredProduct} />
       </section>
     </div>
    );

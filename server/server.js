@@ -58,6 +58,25 @@ app.get('/', (req, res) => {
   });
 });
 
+// get a random product from products (featured)
+app.get('/', (req, res) => {
+  const queryText = `SELECT * FROM products 
+                     ORDER BY random()
+                     LIMIT 1;`
+  // const values = [TRUE];
+  db.query(queryText)
+  .then((results) => {
+    console.log('RANDOM ROW: ', results.rows);
+    res.json(results.rows);
+  })
+  .catch((err) => {
+    console.log(err);
+    res.json([]);
+  });
+});
+
+
+
 // -------------------------------------------------------------------- //
 
 app.listen(PORT, () => {

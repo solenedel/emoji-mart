@@ -15,6 +15,8 @@ export const StyledHomePage = styled(HomePage)`
 
   h4 {
     font-weight: 300;
+    height: 50px;
+    padding: 7px 0 7px 20px;
   }
 
   .sale {
@@ -52,18 +54,22 @@ export const StyledHomePage = styled(HomePage)`
 
       & .product-img {
         font-size: 50px;
+        padding: 10px;
       }
       
       /* border: solid red 3px; */
     }
+
   }
   
   .featured {
       border: solid 3px #B7FFFD;
       border-radius: 4px;
+      height: 300px;
 
     & h4 {
-      color:#B7FFFD;
+      color: black;
+      background: #B7FFFD;
     }
   }
 
