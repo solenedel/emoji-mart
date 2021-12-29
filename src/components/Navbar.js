@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = ({ className }) => {
+
   return ( 
     <div className={className}>
      <h1 id="logo">emoji mart</h1>
@@ -13,6 +14,7 @@ const Navbar = ({ className }) => {
      </div>
     </div>
    );
+
 }
  
 export default Navbar;
