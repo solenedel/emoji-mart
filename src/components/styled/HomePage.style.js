@@ -56,8 +56,7 @@ export const StyledHomePage = styled(HomePage)`
         font-size: 50px;
         padding: 10px;
       }
-      
-      /* border: solid red 3px; */
+    
     }
 
   }

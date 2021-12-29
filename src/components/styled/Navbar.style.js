@@ -18,10 +18,10 @@ export const StyledNavbar = styled(Navbar)`
 
   .links {
     display: flex;
-    /* justify-content: flex-start; */
     justify-content: space-between;
     width: 60vw;
     margin-left: 9vw;
+    align-items: baseline;
     
     & a {
       text-decoration: none;

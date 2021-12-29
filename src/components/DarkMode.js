@@ -1,6 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 
 const DarkMode = ({ className }) => {
+
+  const [buttonIcon, setButtonIcon] = useState('switch theme 🌙');
 
   let clickedClass = "clicked"; // class for the button when it's clicked
   const body = document.body;
@@ -24,12 +26,14 @@ const DarkMode = ({ className }) => {
       body.classList.replace(darkTheme, lightTheme);
       e.target.classList.remove(clickedClass);
       localStorage.setItem("theme", "light");
+      setButtonIcon('switch theme 🌙');
       theme = lightTheme;
     } else {
       // set dark theme
       body.classList.replace(lightTheme, darkTheme);
       e.target.classList.add(clickedClass);
-       localStorage.setItem("theme", "dark");
+      localStorage.setItem("theme", "dark");
+      setButtonIcon('switch theme ☀️');
       theme = darkTheme;
     }
   }
@@ -39,7 +43,7 @@ const DarkMode = ({ className }) => {
     <button
       className={theme === "dark" ? clickedClass : ""}
       id="dark-mode"
-      onClick={(e) => switchTheme(e)}>dark mode</button>
+      onClick={(e) => switchTheme(e)}>{buttonIcon}</button>
     </div>
    );
 }

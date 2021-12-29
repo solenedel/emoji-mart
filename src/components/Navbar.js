@@ -8,12 +8,12 @@ const Navbar = ({ className }) => {
   return ( 
     <div className={className}>
      <h1 id="logo">emoji mart</h1>
-     <StyledDarkMode />
      <div className="links">
        <Link to="/login">Login</Link>
        <Link to="/products">Products</Link>
        <Link to="/cart">My cart</Link>
        <Link to="/favs">My favourites</Link>
+       <StyledDarkMode className="theme-toggle" />
      </div>
     </div>
    );
