@@ -7,7 +7,7 @@ const Product = ({ saleProducts, saleProduct, featuredProduct }) => {
     <h5>{saleProduct.name} </h5>
     <div className="product-img">{saleProduct.image_path}</div>
     <div>${saleProduct.price}</div>
-    <div className="description">{saleProduct.description}</div>
+    <button id="view">view</button>
   </div> 
   );
 

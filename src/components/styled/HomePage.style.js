@@ -72,6 +72,15 @@ export const StyledHomePage = styled(HomePage)`
     }
   }
 
+  & button#view {
+        margin: 15px 0 15px 0;
+        padding: 5px;
+        font-size: 22px;
+        border: none;
+        background: #1FDEAD;
+        border-radius: 5px;
+        color: black;
+      }
 
  
 `;
