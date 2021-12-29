@@ -48,7 +48,7 @@ const HomePage = ({ className }) => {
       </section>
 
        <section className="featured">
-        <h4>Featured products</h4>
+        <h4>Featured product</h4>
         <div className="mapped-products">
          {featuredProduct.map(featuredProduct => {
             return <Product key={featuredProduct.id} saleProduct={featuredProduct} />
