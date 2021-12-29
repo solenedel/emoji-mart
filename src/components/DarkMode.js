@@ -18,6 +18,22 @@ const DarkMode = ({ className }) => {
     body.classList.add(lightTheme); // default to light theme
   }
 
+  const switchTheme = (e) => {
+    if (theme === darkTheme) {
+      // set light theme
+      body.classList.replace(darkTheme, lightTheme);
+      e.target.classList.remove(clickedClass);
+      localStorage.setItem("theme", "light");
+      theme = lightTheme;
+    } else {
+      // set dark theme
+      body.classList.replace(lightTheme, darkTheme);
+      e.target.classList.add(clickedClass);
+       localStorage.setItem("theme", "dark");
+      theme = darkTheme;
+    }
+  }
+
   return ( 
     <div className={className}>
     <button
