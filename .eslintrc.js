@@ -4,21 +4,22 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: [
-    'airbnb',
-    'prettier'
-  ],
+  extends: ["airbnb", "prettier"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 13,
-    sourceType: 'module',
+    sourceType: "module",
   },
-  plugins: [
-    'prettier',
-  ],
+  plugins: ["prettier"],
   rules: {
-    'prettier/prettier': 'error',
+    "prettier/prettier": "error",
+    "react/prop-types": "off",
+    "react/jsx-filename-extension": "off",
+    "import/prefer-default-export": "off",
+    "no-unused-vars": "warn",
+    "prefer-template": "off",
+    "react/function-component-definition": "off",
   },
 };

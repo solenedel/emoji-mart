@@ -3,7 +3,6 @@ import Navbar from "../Navbar";
 import { colors } from "./css-variables";
 
 export const StyledNavbar = styled(Navbar)`
-
   background: ${colors.navbarBkgd};
   height: 110px;
   display: flex;
@@ -30,24 +29,20 @@ export const StyledNavbar = styled(Navbar)`
     width: 60vw;
     margin-left: 9vw;
     align-items: baseline;
-    
+
     & a {
       text-decoration: none;
       font-size: 20px;
 
       &:hover {
-        color: #C3FFDA;
+        color: #c3ffda;
       }
-    } 
-  }
-
-
-   @media screen and (max-width: 630px) {
-
-    div.links {  
-      display: none;
     }
   }
 
-
+  @media screen and (max-width: 630px) {
+    div.links {
+      display: none;
+    }
+  }
 `;

@@ -9,8 +9,8 @@ export const StyledHomePage = styled(HomePage)`
     font-size: 27px;
     margin-bottom: 50px;
     font-weight: 300;
-    color: #D7CCFC;
-    font-family: 'Lato', sans-serif; 
+    color: #d7ccfc;
+    font-family: "Lato", sans-serif;
   }
 
   h4 {
@@ -20,16 +20,16 @@ export const StyledHomePage = styled(HomePage)`
   }
 
   .sale {
-    border: solid 3px #FFC3E8;
+    border: solid 3px #ffc3e8;
     border-radius: 4px;
     margin-bottom: 80px;
     height: fit-content;
 
     & h4 {
       color: black;
-      background: #FFC3E8;
+      background: #ffc3e8;
       margin-bottom: 40px;
-    }  
+    }
 
     div.mapped-products {
       display: flex;
@@ -43,12 +43,12 @@ export const StyledHomePage = styled(HomePage)`
 
       & h5 {
         font-size: 25px;
-        font-family: 'Lato', sans-serif;
+        font-family: "Lato", sans-serif;
       }
 
       & div {
-        font-size:23px;
-        font-family: 'Lato', sans-serif;
+        font-size: 23px;
+        font-family: "Lato", sans-serif;
         font-weight: 400;
       }
 
@@ -56,31 +56,27 @@ export const StyledHomePage = styled(HomePage)`
         font-size: 50px;
         padding: 10px;
       }
-    
     }
-
   }
-  
+
   .featured {
-      border: solid 3px #B7FFFD;
-      border-radius: 4px;
-      height: 300px;
+    border: solid 3px #b7fffd;
+    border-radius: 4px;
+    height: 300px;
 
     & h4 {
       color: black;
-      background: #B7FFFD;
+      background: #b7fffd;
     }
   }
 
   & button#view {
-        margin: 15px 0 15px 0;
-        padding: 5px;
-        font-size: 22px;
-        border: none;
-        background: #1FDEAD;
-        border-radius: 5px;
-        color: black;
-      }
-
- 
+    margin: 15px 0 15px 0;
+    padding: 5px;
+    font-size: 22px;
+    border: none;
+    background: #1fdead;
+    border-radius: 5px;
+    color: black;
+  }
 `;
