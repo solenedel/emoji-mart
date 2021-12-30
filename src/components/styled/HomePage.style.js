@@ -3,7 +3,7 @@ import HomePage from "../HomePage";
 
 export const StyledHomePage = styled(HomePage)`
   margin: 50px 5% 0 5%;
-  
+
   p {
     text-align: center;
     font-size: 27px;

@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
 
+
   * {
     box-sizing: border-box;
     margin: 0;
@@ -9,10 +10,6 @@ export const GlobalStyles = createGlobalStyle`
     color: white;
     font-size: 30px;
     font-family: 'Share Tech Mono', monospace;
-  }
-
-  body {
-    background: black;
   }
 
   h1 {

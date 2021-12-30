@@ -4,6 +4,8 @@ import DarkMode from "../DarkMode";
 
 export const StyledDarkMode = styled(DarkMode)`
 
+  
+
   button#dark-mode {
      background: none;
      border: none;
