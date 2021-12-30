@@ -2,12 +2,10 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
 
-
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: white;
     font-size: 30px;
     font-family: 'Share Tech Mono', monospace;
   }
@@ -17,6 +15,7 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     transition: all 0.25s linear;
   }
+
 
   h1 {
     font-family: 'Jua', sans-serif;

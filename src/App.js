@@ -11,18 +11,19 @@ import { StyledHomePage } from "./components/styled/HomePage.style";
 function App() {
 
 const [theme, setTheme] = useState('light');
-const [toggleButtonIcon, setToggleButtonIcon] = useState('theme 🌙');
+const [toggleButtonIcon, setToggleButtonIcon] = useState('switch theme 🌙');
 
 // toggle between light and dark themes
 const toggleTheme = () => {
   if (theme === 'light') {
     setTheme('dark');
-    setToggleButtonIcon('theme ☀️');
+    setToggleButtonIcon('switch theme ☀️');
   } else {
     setTheme('light');
-    setToggleButtonIcon('theme 🌙');
+    setToggleButtonIcon('switch theme 🌙');
   }
 }
+
 
   return (
       <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>

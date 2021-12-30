@@ -1,10 +1,25 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { StyledDarkMode } from "./styled/DarkMode.style";
 
 
 const Navbar = ({ className, theme, setTheme, toggleTheme, toggleButtonIcon }) => {
 
+
+  const setThemeBtnStyle = () => {
+    if (theme === 'light') {
+      return {
+        background: 'black',
+        color: 'white',
+      }
+    } else {
+      return {
+        background: '#AB94FA',
+        color: 'black',
+        border: 'solid black 2px',
+        borderRadius: '5px',
+      }
+    }
+  }
 
   return ( 
     <div className={className}>
@@ -14,7 +29,7 @@ const Navbar = ({ className, theme, setTheme, toggleTheme, toggleButtonIcon }) =
        <Link to="/products">Products</Link>
        <Link to="/cart">My cart</Link>
        <Link to="/favs">My favourites</Link>
-       <button onClick={toggleTheme}>{toggleButtonIcon}</button>
+       <button id="theme-toggle-btn" style={setThemeBtnStyle()} onClick={toggleTheme}>{toggleButtonIcon}</button>
      </div>
     </div>
    );

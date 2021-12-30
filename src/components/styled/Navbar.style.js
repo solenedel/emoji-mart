@@ -10,6 +10,14 @@ export const StyledNavbar = styled(Navbar)`
   align-items: baseline;
   padding: 10px 20px 10px 30px;
 
+  #theme-toggle-btn {
+    font-size: 24px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background: none;
+  }
+
   h1#logo {
     font-size: 30px;
     margin-top: 20px;

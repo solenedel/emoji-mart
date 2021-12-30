@@ -45,6 +45,7 @@ Resetting the database: `npm run reset-db`
 - testing (Mocha & chai on testing branch)
 
 
-### Resources/links
+### Resources/links/tutorials used
 
 https://emoji-api.com/
+[dark mode tutorial](https://css-tricks.com/a-dark-mode-toggle-with-react-and-themeprovider/)
