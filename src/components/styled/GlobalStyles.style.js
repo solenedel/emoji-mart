@@ -12,6 +12,12 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Share Tech Mono', monospace;
   }
 
+  body {
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
+    transition: all 0.25s linear;
+  }
+
   h1 {
     font-family: 'Jua', sans-serif;
     font-size: 50px;

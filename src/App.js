@@ -1,7 +1,8 @@
 import {useState} from "react";
 import { GlobalStyles } from "./components/styled/GlobalStyles.style";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import HomePage from "./components/HomePage";
+import { ThemeProvider } from 'styled-components';
+import { lightTheme, darkTheme } from './components/styled/theme';
 import { StyledNavbar } from "./components/styled/Navbar.style";
 import { StyledProducts } from "./components/styled/Products.style";
 import { StyledHomePage } from "./components/styled/HomePage.style";
@@ -9,13 +10,15 @@ import { StyledHomePage } from "./components/styled/HomePage.style";
 
 function App() {
 
-  // const [theme, setTheme] = useState('light');
+
 
   return (
+     <ThemeProvider theme={lightTheme}>
       <Router>
         <div className="App">
           <GlobalStyles />
           <StyledNavbar />
+          <button>Toggle theme</button>
           <Switch>
             <Route exact path="/">
               <StyledHomePage />
@@ -26,6 +29,7 @@ function App() {
           </Switch>
         </div>
       </Router>
+     </ThemeProvider>
   );
 }
 
