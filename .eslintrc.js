@@ -21,5 +21,7 @@ module.exports = {
     "no-unused-vars": "warn",
     "prefer-template": "off",
     "react/function-component-definition": "off",
+    "arrow-body-style": "off",
+    "no-shadow": "warn",
   },
 };
