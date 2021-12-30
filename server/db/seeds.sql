@@ -30,6 +30,20 @@ VALUES ('tulip', 'a tulip from Holland.', 4.75, TRUE, '🌷', 'Plants', TRUE);
 INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
 VALUES ('cactus', 'a bit of a prick.', 2.50, FALSE, '🌵', 'Plants', TRUE);
 
+INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
+VALUES ('cactus', 'a bit of a prick.', 2.50, FALSE, '🌵', 'Plants', TRUE);
+
+INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
+VALUES ('tropical punch', 'a mysterious drink.', 3.55, FALSE, '🍹', 'Drinks', TRUE);
+
+INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
+VALUES ('cocktail', 'shaken or stirred.', 5.99, FALSE, '🍸', 'Drinks', TRUE);
+
+INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
+VALUES ('curry rice', 'Japanese curry with rice.', 7.25, TRUE, '🍛', 'Food', TRUE);
+
+INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
+VALUES ('croissant', 'Freshly baked.', 3.75, TRUE, '🥐', 'Food', FALSE);
 
 
 -- seeds for Favorites table
