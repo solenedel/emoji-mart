@@ -58,7 +58,11 @@ const HomePage = ({ className }) => {
         <div className="mapped-products">
           {featuredProduct.map((featuredProduct) => {
             return (
-              <Product key={featuredProduct.id} saleProduct={featuredProduct} />
+              <div className="featured-product" key={featuredProduct.id}>
+                <h3>{featuredProduct.name}</h3>
+                <div className="featured-img">{featuredProduct.image_path}</div>
+                <p>${featuredProduct.price}</p>
+              </div>
             );
           })}
         </div>

@@ -17,13 +17,15 @@ Resetting the database: `npm run reset-db`
 
 ## TO DO
 
-- set up linter (prettier & airBNB)
 - modularise sale products and featured product into the same product component
+- hamburger menu
 - set up mocha and chai tests
+
 
 ## NOTES
 
 - featured product component should look different from the sale products
+
 
 ## Main Features (MVP)
 
@@ -31,6 +33,7 @@ Resetting the database: `npm run reset-db`
 - login / create an account
 - add, remove items from cart
 - add, femove items from favourites
+
 
 ## Extra features (stretch)
 

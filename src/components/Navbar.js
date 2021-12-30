@@ -14,14 +14,13 @@ const Navbar = ({
         background: "black",
         color: "#FEFFC3",
       };
-    } else {
-      return {
-        background: "#AB94FA",
-        color: "black",
-        border: "solid black 2px",
-        borderRadius: "5px",
-      };
     }
+    return {
+      background: "#AB94FA",
+      color: "black",
+      border: "solid black 2px",
+      borderRadius: "5px",
+    };
   };
 
   return (
@@ -33,6 +32,7 @@ const Navbar = ({
         <Link to="/cart">My cart</Link>
         <Link to="/favs">My favourites</Link>
         <button
+          type="button"
           id="theme-toggle-btn"
           style={setThemeBtnStyle()}
           onClick={toggleTheme}

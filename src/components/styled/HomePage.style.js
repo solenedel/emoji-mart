@@ -9,7 +9,7 @@ export const StyledHomePage = styled(HomePage)`
     font-size: 27px;
     margin-bottom: 50px;
     font-weight: 300;
-    color: #d7ccfc;
+    color: white;
     font-family: "Lato", sans-serif;
   }
 
