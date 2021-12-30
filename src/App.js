@@ -11,13 +11,16 @@ import { StyledHomePage } from "./components/styled/HomePage.style";
 function App() {
 
 const [theme, setTheme] = useState('light');
+const [toggleButtonIcon, setToggleButtonIcon] = useState('theme 🌙');
 
 // toggle between light and dark themes
 const toggleTheme = () => {
   if (theme === 'light') {
     setTheme('dark');
+    setToggleButtonIcon('theme ☀️');
   } else {
     setTheme('light');
+    setToggleButtonIcon('theme 🌙');
   }
 }
 
@@ -26,7 +29,13 @@ const toggleTheme = () => {
       <Router>
         <div className="App">
           <GlobalStyles />
-          <StyledNavbar theme={theme} setTheme={setTheme} toggleTheme={toggleTheme} />
+          <StyledNavbar 
+            theme={theme} 
+            setTheme={setTheme} 
+            toggleTheme={toggleTheme}
+            toggleButtonIcon={toggleButtonIcon}
+            setToggleButtonIcon={setToggleButtonIcon} 
+          />
           <Switch>
             <Route exact path="/">
               <StyledHomePage />
