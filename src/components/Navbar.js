@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { StyledDarkMode } from "./styled/DarkMode.style";
 
 
-const Navbar = ({ className }) => {
+const Navbar = ({ className, theme, setTheme, toggleTheme }) => {
 
   return ( 
     <div className={className}>
@@ -13,7 +13,7 @@ const Navbar = ({ className }) => {
        <Link to="/products">Products</Link>
        <Link to="/cart">My cart</Link>
        <Link to="/favs">My favourites</Link>
-       <StyledDarkMode className="theme-toggle" />
+       <button onClick={toggleTheme}>toggle theme</button>
      </div>
     </div>
    );

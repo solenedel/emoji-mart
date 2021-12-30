@@ -12,12 +12,10 @@ function App() {
 
 const [theme, setTheme] = useState('light');
 
-// The function that toggles between themes
+// toggle between light and dark themes
 const toggleTheme = () => {
-  // if the theme is not light, then set it to dark
   if (theme === 'light') {
     setTheme('dark');
-  // otherwise, it should be light
   } else {
     setTheme('light');
   }
@@ -28,8 +26,7 @@ const toggleTheme = () => {
       <Router>
         <div className="App">
           <GlobalStyles />
-          <StyledNavbar />
-          <button onClick={toggleTheme} >Toggle theme</button>
+          <StyledNavbar theme={theme} setTheme={setTheme} toggleTheme={toggleTheme} />
           <Switch>
             <Route exact path="/">
               <StyledHomePage />
