@@ -1,10 +1,10 @@
 # Emoji mart 🔥
 
-This is a mock e-commerce app (no payment features).
+A mock online shop. Browse items by category, price or name. Add/remove items to your favorites or your shopping cart. 
 
-Database: Postgres
-Front end: ReactJS, Bootstrap, SASS
-Back end: Node.js
+- Database: Postgres
+- Front end: ReactJS, Bootstrap, SASS
+- Back end: Node.js
 
 ## Running the app
 
@@ -22,28 +22,18 @@ Resetting the database: `npm run reset-db`
 ## NOTES 
 - featured product component should look different from the sale products
 
-## Main Features
+## Main Features (MVP)
+- browse items: filter by category, price, search by name
 - login / create an account
-- browse items: filter by category, price
 - add, remove items from cart
-- add items to favourites
-- search product by name
-- day / night mode
-- change language feature
-
-**Pages:**
-- Login/sign up
-- Home Page (has products & filtering options)
-- Navbar with dropdown menu for categories
-- My cart page
-- My favourites page
+- add, femove items from favourites
 
 
 ## Extra features (stretch)
-
 - admin login & add/edit/delete items from database
 - testing (Mocha & chai on testing branch)
-
+- change language feature
+- fake checkout/payment feature
 
 ### Resources/links/tutorials used
 
