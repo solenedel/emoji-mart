@@ -10,15 +10,26 @@ import { StyledHomePage } from "./components/styled/HomePage.style";
 
 function App() {
 
+const [theme, setTheme] = useState('light');
 
+// The function that toggles between themes
+const toggleTheme = () => {
+  // if the theme is not light, then set it to dark
+  if (theme === 'light') {
+    setTheme('dark');
+  // otherwise, it should be light
+  } else {
+    setTheme('light');
+  }
+}
 
   return (
-     <ThemeProvider theme={lightTheme}>
+      <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <Router>
         <div className="App">
           <GlobalStyles />
           <StyledNavbar />
-          <button>Toggle theme</button>
+          <button onClick={toggleTheme} >Toggle theme</button>
           <Switch>
             <Route exact path="/">
               <StyledHomePage />
