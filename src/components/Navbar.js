@@ -9,7 +9,7 @@ const Navbar = ({ className, theme, setTheme, toggleTheme, toggleButtonIcon }) =
     if (theme === 'light') {
       return {
         background: 'black',
-        color: 'white',
+        color: '#FEFFC3',
       }
     } else {
       return {

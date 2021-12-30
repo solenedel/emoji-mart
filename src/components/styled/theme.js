@@ -1,16 +1,10 @@
 
 export const lightTheme = {
-  body: 'white',
+  body: '#F5F5F5',
   text: 'black',
-  // toggleBtnBkgd: 'black',
-  // toggleBtnText: 'white',
-  // toggleBtnBorder: 'black',
 }
 
 export const darkTheme = {
   body: 'black',
-  text: 'white',
-  // // toggleBtnBkgd: 'white',
-  // toggleBtnText: 'black',
-  // toggleBtnBorder: 'black'
+  text: '#F5F5F5',
 }
