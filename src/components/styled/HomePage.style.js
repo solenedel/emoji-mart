@@ -68,6 +68,20 @@ export const StyledHomePage = styled(HomePage)`
       color: black;
       background: #b7fffd;
     }
+
+    & div.featured-product {
+      display: flex;
+      flex-direction: column;
+
+      /* border: solid red 4px; */
+      & h3 {
+        font-size: 40px;
+      }
+
+      & .featured-img {
+        font-size: 130px;
+      }
+    }
   }
 
   & button#view {

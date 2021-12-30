@@ -61,7 +61,7 @@ const HomePage = ({ className }) => {
               <div className="featured-product" key={featuredProduct.id}>
                 <h3>{featuredProduct.name}</h3>
                 <div className="featured-img">{featuredProduct.image_path}</div>
-                <p>${featuredProduct.price}</p>
+                <div>${featuredProduct.price}</div>
               </div>
             );
           })}
