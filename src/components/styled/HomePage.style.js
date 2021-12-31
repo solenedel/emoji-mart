@@ -62,7 +62,7 @@ export const StyledHomePage = styled(HomePage)`
   .featured {
     border: solid 3px #b7fffd;
     border-radius: 4px;
-    height: 300px;
+    height: fit-content;
 
     & h4 {
       color: black;

@@ -39,7 +39,10 @@ const HomePage = ({ className }) => {
     <div className={className}>
       {/* <p>Fresh emojis delivered to you!</p> */}
       <section className="sale">
-        <h4>Currently on sale</h4>
+        <h4>
+          <i className="fas fa-exclamation-circle" />
+          &nbsp;Currently on sale
+        </h4>
         <div className="mapped-products">
           {saleProducts.map((saleProduct) => {
             return (
@@ -54,7 +57,10 @@ const HomePage = ({ className }) => {
       </section>
 
       <section className="featured">
-        <h4>Featured product</h4>
+        <h4>
+          <i className="fas fa-star" />
+          &nbsp;Featured product
+        </h4>
         <div className="mapped-products">
           {featuredProduct.map((featuredProduct) => {
             return (
