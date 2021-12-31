@@ -71,9 +71,13 @@ export const StyledHomePage = styled(HomePage)`
 
     & div.featured-product {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+      margin-top: 30px;
 
       /* border: solid red 4px; */
+
       & h3 {
         font-size: 40px;
       }
@@ -81,6 +85,15 @@ export const StyledHomePage = styled(HomePage)`
       & .featured-img {
         font-size: 130px;
       }
+
+      & div.price-name {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    & button#view {
+      font-size: 38px;
     }
   }
 

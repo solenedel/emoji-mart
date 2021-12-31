@@ -59,9 +59,15 @@ const HomePage = ({ className }) => {
           {featuredProduct.map((featuredProduct) => {
             return (
               <div className="featured-product" key={featuredProduct.id}>
-                <h3>{featuredProduct.name}</h3>
                 <div className="featured-img">{featuredProduct.image_path}</div>
-                <div>${featuredProduct.price}</div>
+                <div className="price-name">
+                  <h3>{featuredProduct.name}</h3>
+                  <div>${featuredProduct.price}</div>
+                  <div>{featuredProduct.description}</div>
+                </div>
+                <button type="button" id="view">
+                  view
+                </button>
               </div>
             );
           })}
