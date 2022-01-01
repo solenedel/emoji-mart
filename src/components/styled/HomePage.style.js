@@ -105,5 +105,11 @@ export const StyledHomePage = styled(HomePage)`
     background: #1fdead;
     border-radius: 5px;
     color: black;
+    transition: background 0.3s;
+
+    :hover {
+      background: #ffa1b9;
+      transition: background 0.3s;
+    }
   }
 `;

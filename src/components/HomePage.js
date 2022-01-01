@@ -71,7 +71,7 @@ const HomePage = ({ className }) => {
                   <div>${featuredProduct.price}</div>
                   <div>{featuredProduct.description}</div>
                 </div>
-                <button type="button" id="view">
+                <button type="button" id="view" className="view-btn">
                   view
                 </button>
               </div>

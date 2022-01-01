@@ -22,4 +22,8 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 50px;
   }
 
+  button:hover, a:hover {
+    cursor: pointer;
+  }
+
 `;
