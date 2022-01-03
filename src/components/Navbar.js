@@ -26,7 +26,8 @@ const Navbar = ({
   return (
     <div className={className}>
       <h1 id="logo">emoji mart</h1>
-      <div className="links">
+      <i className="fas fa-bars" />
+      {/* <div className="links">
         <Link to="/login">Login</Link>
         <Link to="/products">Products</Link>
         <Link to="/cart">My cart</Link>
@@ -39,7 +40,7 @@ const Navbar = ({
         >
           {toggleButtonIcon}
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

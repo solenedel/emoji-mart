@@ -8,6 +8,14 @@ export const StyledNavbar = styled(Navbar)`
   display: flex;
   align-items: baseline;
   padding: 10px 20px 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  i.fa-bars {
+    color: black;
+    font-size: 40px;
+  }
 
   #theme-toggle-btn {
     font-size: 24px;
