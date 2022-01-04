@@ -39,7 +39,12 @@ export const StyledHomePage = styled(HomePage)`
     }
 
     div.product {
+      display: flex;
+      flex-direction: column;
+      /* justify-content: center; */
+      align-items: center;
       margin-bottom: 20px;
+      /* border: solid red 3px; */
 
       & h5 {
         font-size: 22px;

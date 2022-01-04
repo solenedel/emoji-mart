@@ -31,7 +31,7 @@ Resetting the database: `npm run reset-db`
 - set up mocha and chai tests
 - set up bootstrap
 - react fragments
-
+- use css grid for products display
 
 ## NOTES
 
