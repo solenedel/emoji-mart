@@ -9,12 +9,13 @@ export const StyledNavbar = styled(Navbar)`
   align-items: baseline;
   padding: 10px 20px 10px 30px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 
   button {
     background: none;
     border: none;
+    margin: 0 10% 0 70%;
 
     & i.fa-bars {
       color: black;

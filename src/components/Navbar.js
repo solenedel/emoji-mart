@@ -25,7 +25,7 @@ const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
   return (
     <nav className={className}>
       <h1 id="logo">emoji mart</h1>
-      {width < 750 ? (
+      {width < 850 ? (
         <>
           <button type="button" onClick={() => setShowMenu(!showMenu)}>
             <i className="fas fa-bars" />
