@@ -5,12 +5,26 @@ export const StyledDesktopMenu = styled(DesktopMenu)`
   // desktop navbar bug
   /* border: solid rgba(0, 0, 0, 0) 1px; */
 
-  .links {
-    margin-bottom: 40px;
-    width: 80vw;
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
+  @media screen and (min-width: 950px) {
+    .desktop-links {
+      margin-left: 10vw;
+      width: 70vw;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      & a {
+        text-decoration: none;
+        color: white;
+        margin-top: 20px;
+        font-size: 22px;
+
+        &:hover {
+          color: #c3ffda;
+        }
+      }
+    }
   }
 
   @media screen and (max-width: 1000px) {

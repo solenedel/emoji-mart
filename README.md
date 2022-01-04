@@ -25,6 +25,7 @@ Resetting the database: `npm run reset-db`
 ## BUGS
 - newly added seeds not being returned in node or axios requests
 - reset-db script not working
+- STYLING: desktop navbar is rendered incorrectly & keeps breaking after appearing to be fixed
 
 ## TO DO
 

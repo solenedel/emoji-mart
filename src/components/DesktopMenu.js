@@ -10,7 +10,7 @@ const DesktopMenu = ({
 }) => {
   return (
     <div id="desktop-menu" className={className}>
-      <div className="links">
+      <div className="desktop-links">
         <Link to="/login">Login</Link>
         <Link to="/products">Products</Link>
         <Link to="/cart">My cart</Link>

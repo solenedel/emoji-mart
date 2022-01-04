@@ -92,4 +92,5 @@ export const StyledNavbar = styled(Navbar)`
     z-index: 20;
     } 
   }
+
 `;
