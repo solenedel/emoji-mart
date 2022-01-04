@@ -31,9 +31,6 @@ INSERT INTO products (name, description, price, sold_out, image_path, category, 
 VALUES ('cactus', 'a bit of a prick.', 2.50, FALSE, '🌵', 'Plants', TRUE);
 
 INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
-VALUES ('cactus', 'a bit of a prick.', 2.50, FALSE, '🌵', 'Plants', TRUE);
-
-INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
 VALUES ('tropical punch', 'a mysterious drink.', 3.55, FALSE, '🍹', 'Drinks', TRUE);
 
 INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)

@@ -43,7 +43,10 @@ app.use(cors(corsOptions));
 
 // get all products on sale
 app.get("/", (req, res) => {
-  const queryText = `SELECT * FROM products WHERE on_sale = TRUE;`;
+  const queryText = `SELECT * FROM products 
+                     WHERE on_sale = TRUE
+                     ORDER BY random()
+                     LIMIT 6;`;
   // const values = [TRUE];
   db.query(queryText)
     .then((results) => {

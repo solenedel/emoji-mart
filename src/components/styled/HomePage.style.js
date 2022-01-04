@@ -42,14 +42,15 @@ export const StyledHomePage = styled(HomePage)`
       margin-bottom: 20px;
 
       & h5 {
-        font-size: 25px;
+        font-size: 22px;
+        font-weight: 300;
         font-family: "Lato", sans-serif;
       }
 
-      & div {
+      & div.price {
         font-size: 23px;
         font-family: "Lato", sans-serif;
-        font-weight: 400;
+        font-weight: 300;
       }
 
       & .product-img {
@@ -93,7 +94,7 @@ export const StyledHomePage = styled(HomePage)`
     }
 
     & button#view {
-      font-size: 38px;
+      font-size: 35px;
     }
   }
 
