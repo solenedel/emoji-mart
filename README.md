@@ -25,12 +25,10 @@ Resetting the database: `npm run reset-db`
 ## BUGS
 - newly added seeds not being returned in node or axios requests
 - reset-db script not working
-- STYLING: desktop navbar is rendered incorrectly & keeps breaking after appearing to be fixed
 
 ## TO DO
-
+- 1. fix bug: seeds not being updated
 - modularise sale products and featured product into the same product component
-- hamburger menu
 - set up mocha and chai tests
 
 
