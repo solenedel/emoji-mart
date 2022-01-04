@@ -12,9 +12,14 @@ export const StyledNavbar = styled(Navbar)`
   justify-content: space-between;
   align-items: center;
 
-  i.fa-bars {
-    color: black;
-    font-size: 40px;
+  button {
+    background: none;
+    border: none;
+
+    & i.fa-bars {
+      color: black;
+      font-size: 40px;
+    }
   }
 
   #theme-toggle-btn {
