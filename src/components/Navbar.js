@@ -4,7 +4,7 @@ import useWindowSize from "../hooks/useWindowSize";
 import MobileMenu from "./MobileMenu";
 
 const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
-  // const [height, width] = useWindowSize();
+  const [height, width] = useWindowSize();
   const [showMenu, setShowMenu] = useState(false);
 
   const setThemeBtnStyle = () => {
@@ -44,16 +44,20 @@ const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
   return (
     <nav className={className}>
       <h1 id="logo">emoji mart</h1>
-      <button type="button" onClick={() => setShowMenu(!showMenu)}>
-        <i className="fas fa-bars" />
-      </button>
-      <MobileMenu
-        showMenu={showMenu}
-        setShowMenu={setShowMenu}
-        setThemeBtnStyle={setThemeBtnStyle}
-        toggleTheme={toggleTheme}
-        toggleButtonIcon={toggleButtonIcon}
-      />
+      {width < 750 && (
+        <>
+          <button type="button" onClick={() => setShowMenu(!showMenu)}>
+            <i className="fas fa-bars" />
+          </button>
+          <MobileMenu
+            showMenu={showMenu}
+            setShowMenu={setShowMenu}
+            setThemeBtnStyle={setThemeBtnStyle}
+            toggleTheme={toggleTheme}
+            toggleButtonIcon={toggleButtonIcon}
+          />
+        </>
+      )}
     </nav>
   );
 };
