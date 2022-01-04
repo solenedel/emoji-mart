@@ -10,7 +10,6 @@ require("dotenv").config({ path: dotenvPath });
 
 // other dependencies
 const fs = require("fs");
-const chalk = require("chalk");
 const { Pool } = require("pg");
 const dbParams = require("./db/dbParams");
 
@@ -25,10 +24,10 @@ db.query(sql)
     return db.query(sql);
   })
   .then(() => {
-    console.log(chalk.green("Database reset: success!"));
+    console.log("Database reset: success!");
     process.exit(0);
   })
   .catch((err) => {
-    console.error(chalk.red(`Database reset: failed due to error: ${err}`));
+    console.error(`Database reset: failed due to error: ${err}`);
     process.exit(1);
   });
