@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ThemeToggleButton from "./ThemeToggleButton";
 
 const DesktopMenu = ({ toggleTheme, setThemeBtnStyle, toggleButtonIcon }) => {
   return (
@@ -9,14 +10,11 @@ const DesktopMenu = ({ toggleTheme, setThemeBtnStyle, toggleButtonIcon }) => {
         <Link to="/products">Products</Link>
         <Link to="/cart">My cart</Link>
         <Link to="/favs">My favourites</Link>
-        <button
-          type="button"
-          id="theme-toggle-btn"
-          style={setThemeBtnStyle()}
-          onClick={toggleTheme}
-        >
-          {toggleButtonIcon}
-        </button>
+        <ThemeToggleButton
+          toggleTheme={toggleTheme}
+          setThemeBtnStyle={setThemeBtnStyle}
+          toggleButtonIcon={toggleButtonIcon}
+        />
       </div>
     </div>
   );
