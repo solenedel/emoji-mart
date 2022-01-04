@@ -14,7 +14,7 @@ const DesktopMenu = ({
         <Link to="/login">Login</Link>
         <Link to="/products">Products</Link>
         <Link to="/cart">My cart</Link>
-        <Link to="/favs">My favourites</Link>
+        <Link to="/favs">My favorites</Link>
         <ThemeToggleButton
           toggleTheme={toggleTheme}
           setThemeBtnStyle={setThemeBtnStyle}
