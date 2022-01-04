@@ -25,7 +25,7 @@ const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
   return (
     <nav className={className}>
       <h1 id="logo">emoji mart</h1>
-      {width < 950 ? (
+      {width <= 950 && (
         <>
           <button
             type="button"
@@ -42,7 +42,8 @@ const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
             toggleButtonIcon={toggleButtonIcon}
           />
         </>
-      ) : (
+      )}
+      {width >= 951 && (
         <StyledDesktopMenu
           setThemeBtnStyle={setThemeBtnStyle}
           toggleTheme={toggleTheme}
