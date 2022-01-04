@@ -2,9 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ThemeToggleButton from "./ThemeToggleButton";
 
-const DesktopMenu = ({ toggleTheme, setThemeBtnStyle, toggleButtonIcon }) => {
+const DesktopMenu = ({
+  toggleTheme,
+  setThemeBtnStyle,
+  toggleButtonIcon,
+  className,
+}) => {
   return (
-    <div id="desktop-menu">
+    <div id="desktop-menu" className={className}>
       <div className="links">
         <Link to="/login">Login</Link>
         <Link to="/products">Products</Link>
