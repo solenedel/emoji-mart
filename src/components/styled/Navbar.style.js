@@ -19,7 +19,6 @@ export const StyledNavbar = styled(Navbar)`
     & i.fa-bars {
       color: white;
       font-size: 40px;
-      z-index: 10;
     }
   }
 
@@ -38,19 +37,26 @@ export const StyledNavbar = styled(Navbar)`
   }
 
   .links {
+    padding: 40px 0 0 40px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    width: 60vw;
-    margin-left: 9vw;
-    align-items: baseline;
+    /* width: 60vw; */
+    /* margin-left: 9vw; */
+    align-items: flex-start;
 
     & a {
       text-decoration: none;
-      font-size: 20px;
+      margin-top: 15px;
+      font-size: 24px;
 
       &:hover {
         color: #c3ffda;
       }
+    }
+
+    & #theme-toggle-btn {
+      margin-top: 20px;
     }
   }
 
