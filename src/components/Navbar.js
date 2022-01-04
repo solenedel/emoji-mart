@@ -25,9 +25,13 @@ const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
   return (
     <nav className={className}>
       <h1 id="logo">emoji mart</h1>
-      {width < 850 ? (
+      {width < 950 ? (
         <>
-          <button type="button" onClick={() => setShowMenu(!showMenu)}>
+          <button
+            type="button"
+            id="hamburger-btn"
+            onClick={() => setShowMenu(!showMenu)}
+          >
             <i className="fas fa-bars" />
           </button>
           <MobileMenu

@@ -12,7 +12,7 @@ export const StyledNavbar = styled(Navbar)`
   justify-content: flex-start;
   align-items: center;
 
-  button {
+  button#hamburger-btn {
     background: none;
     border: none;
     margin: 0 10% 0 70%;
@@ -48,6 +48,8 @@ export const StyledNavbar = styled(Navbar)`
        align-self: flex-end;
        padding-right: 50px;
        color: white;
+       background: none;
+       border: none;
 
        i {
          font-size: 40px;
