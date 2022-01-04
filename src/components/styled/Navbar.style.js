@@ -47,7 +47,8 @@ export const StyledNavbar = styled(Navbar)`
 
     & a {
       text-decoration: none;
-      margin-top: 15px;
+      color: white;
+      margin-top: 20px;
       font-size: 24px;
 
       &:hover {
@@ -67,6 +68,7 @@ export const StyledNavbar = styled(Navbar)`
     background: black;
     height: 100vh;
     width: 80vw;
+    z-index: 20;
   }
 
   #menu-mask {
@@ -76,11 +78,17 @@ export const StyledNavbar = styled(Navbar)`
     background: rgba(0, 0, 0, 0.7);
     height: 100vh;
     width: 20vw;
+    z-index: 20;
+
+    /* & i.fa-times {
+      position: fixed;
+      /* right: 10px; */
+    } 
   }
 
   @media screen and (max-width: 630px) {
-    div.links {
+    /* div.links {
       display: none;
-    }
+    } */
   }
 `;

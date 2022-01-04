@@ -38,11 +38,16 @@ const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
     </div>
   );
 
-  const menuMask = <div id="menu-mask" />;
+  const menuMask = (
+    // eslint-disable-next-line
+    <div id="menu-mask" onClick={() => setShowMenu(!showMenu)}>
+      {/* <i className="fas fa-times" /> */}
+    </div>
+  );
 
   return (
     <nav className={className}>
-      <h1 id="logo">emoji mart</h1>
+      {!showMenu && <h1 id="logo">emoji mart</h1>}
       <button type="button" onClick={() => setShowMenu(!showMenu)}>
         <i className="fas fa-bars" />
       </button>
