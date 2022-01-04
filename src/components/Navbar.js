@@ -1,16 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = ({
-  className,
-  theme,
-  setTheme,
-  toggleTheme,
-  toggleButtonIcon,
-}) => {
+const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
   const [showMenu, setShowMenu] = useState(false);
-
-  const menu = <div id="mobile-menu">the menu</div>;
 
   const setThemeBtnStyle = () => {
     if (theme === "light") {
@@ -27,15 +19,9 @@ const Navbar = ({
     };
   };
 
-  return (
-    <nav className={className}>
-      <h1 id="logo">emoji mart</h1>
-      <button type="button" onClick={() => setShowMenu(!showMenu)}>
-        <i className="fas fa-bars" />
-      </button>
-      {showMenu && menu}
-
-      {/* <div className="links">
+  const menu = (
+    <div id="mobile-menu">
+      <div className="links">
         <Link to="/login">Login</Link>
         <Link to="/products">Products</Link>
         <Link to="/cart">My cart</Link>
@@ -48,7 +34,20 @@ const Navbar = ({
         >
           {toggleButtonIcon}
         </button>
-      </div> */}
+      </div>
+    </div>
+  );
+
+  const menuMask = <div id="menu-mask" />;
+
+  return (
+    <nav className={className}>
+      <h1 id="logo">emoji mart</h1>
+      <button type="button" onClick={() => setShowMenu(!showMenu)}>
+        <i className="fas fa-bars" />
+      </button>
+      {showMenu && menu}
+      {showMenu && menuMask}
     </nav>
   );
 };

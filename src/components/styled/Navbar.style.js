@@ -17,8 +17,9 @@ export const StyledNavbar = styled(Navbar)`
     border: none;
 
     & i.fa-bars {
-      color: black;
+      color: white;
       font-size: 40px;
+      z-index: 10;
     }
   }
 
@@ -60,6 +61,15 @@ export const StyledNavbar = styled(Navbar)`
     background: black;
     height: 100vh;
     width: 80vw;
+  }
+
+  #menu-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    width: 20vw;
   }
 
   @media screen and (max-width: 630px) {
