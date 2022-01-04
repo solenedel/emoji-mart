@@ -10,6 +10,8 @@ const Navbar = ({
 }) => {
   const [showMenu, setShowMenu] = useState(false);
 
+  const menu = <div id="mobile-menu">the menu</div>;
+
   const setThemeBtnStyle = () => {
     if (theme === "light") {
       return {
@@ -26,11 +28,12 @@ const Navbar = ({
   };
 
   return (
-    <div className={className}>
+    <nav className={className}>
       <h1 id="logo">emoji mart</h1>
       <button type="button" onClick={() => setShowMenu(!showMenu)}>
         <i className="fas fa-bars" />
       </button>
+      {showMenu && menu}
 
       {/* <div className="links">
         <Link to="/login">Login</Link>
@@ -46,7 +49,7 @@ const Navbar = ({
           {toggleButtonIcon}
         </button>
       </div> */}
-    </div>
+    </nav>
   );
 };
 

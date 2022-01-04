@@ -53,6 +53,15 @@ export const StyledNavbar = styled(Navbar)`
     }
   }
 
+  #mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: black;
+    height: 100vh;
+    width: 80vw;
+  }
+
   @media screen and (max-width: 630px) {
     div.links {
       display: none;
