@@ -22,6 +22,14 @@ const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
   const menu = (
     <div id="mobile-menu">
       <div className="links">
+        <button
+          type="button"
+          id="quit-menu"
+          onClick={() => setShowMenu(!showMenu)}
+        >
+          <i className="fas fa-times" />
+        </button>
+
         <Link to="/login">Login</Link>
         <Link to="/products">Products</Link>
         <Link to="/cart">My cart</Link>
@@ -41,7 +49,6 @@ const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
   const menuMask = (
     // eslint-disable-next-line
     <div id="menu-mask" onClick={() => setShowMenu(!showMenu)}>
-      {/* <i className="fas fa-times" /> */}
     </div>
   );
 

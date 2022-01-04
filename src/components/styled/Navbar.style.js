@@ -17,7 +17,7 @@ export const StyledNavbar = styled(Navbar)`
     border: none;
 
     & i.fa-bars {
-      color: white;
+      color: black;
       font-size: 40px;
     }
   }
@@ -41,9 +41,17 @@ export const StyledNavbar = styled(Navbar)`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* width: 60vw; */
-    /* margin-left: 9vw; */
     align-items: flex-start;
+
+     & button#quit-menu {
+       align-self: flex-end;
+       padding-right: 50px;
+       color: white;
+
+       i {
+         font-size: 40px;
+       }
+     }
 
     & a {
       text-decoration: none;
