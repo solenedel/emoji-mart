@@ -87,16 +87,6 @@ export const StyledNavbar = styled(Navbar)`
     height: 100vh;
     width: 20vw;
     z-index: 20;
-
-    /* & i.fa-times {
-      position: fixed;
-      /* right: 10px; */
     } 
-  }
-
-  @media screen and (max-width: 630px) {
-    /* div.links {
-      display: none;
-    } */
   }
 `;

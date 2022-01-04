@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import useWindowSize from "../hooks/useWindowSize";
 import MobileMenu from "./MobileMenu";
+import { StyledDesktopMenu } from "./styled/MobileMenu.style";
 
 const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
   const [height, width] = useWindowSize();
@@ -39,7 +39,11 @@ const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
           />
         </>
       ) : (
-        <div>desktop menu</div>
+        <StyledDesktopMenu
+          setThemeBtnStyle={setThemeBtnStyle}
+          toggleTheme={toggleTheme}
+          toggleButtonIcon={toggleButtonIcon}
+        />
       )}
     </nav>
   );
