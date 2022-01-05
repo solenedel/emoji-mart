@@ -30,39 +30,6 @@ export const StyledHomePage = styled(HomePage)`
       background: #ffc3e8;
       margin-bottom: 40px;
     }
-
-    div.mapped-products {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      padding: 0 3% 0 3%;
-    }
-
-    div#product {
-      display: flex;
-      flex-direction: column;
-      /* justify-content: center; */
-      align-items: center;
-      margin-bottom: 20px;
-      /* border: solid red 3px; */
-
-      & h5 {
-        font-size: 22px;
-        font-weight: 300;
-        font-family: "", sans-serif;
-      }
-
-      & div.price {
-        font-size: 23px;
-        font-family: "Lato", sans-serif;
-        font-weight: 300;
-      }
-
-      & .product-img {
-        font-size: 50px;
-        padding: 10px;
-      }
-    }
   }
 
   .featured {
@@ -82,8 +49,6 @@ export const StyledHomePage = styled(HomePage)`
       justify-content: space-around;
       margin-top: 30px;
 
-      /* border: solid red 4px; */
-
       & h3 {
         font-size: 40px;
       }
@@ -100,22 +65,6 @@ export const StyledHomePage = styled(HomePage)`
 
     & button#view {
       font-size: 35px;
-    }
-  }
-
-  & button#view {
-    margin: 15px 0 15px 0;
-    padding: 5px;
-    font-size: 22px;
-    border: none;
-    background: #1fdead;
-    border-radius: 5px;
-    color: black;
-    transition: background 0.3s;
-
-    :hover {
-      background: #ffa1b9;
-      transition: background 0.3s;
     }
   }
 `;

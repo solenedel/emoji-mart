@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import Product from "./Product";
+import { StyledProduct } from "./styled/Product.style";
 
 // URL to prepend for axios requests
 const baseURL = `http://localhost:8081`;
@@ -37,7 +37,6 @@ const HomePage = ({ className }) => {
 
   return (
     <div className={className}>
-      {/* <p>Fresh emojis delivered to you!</p> */}
       <section className="sale">
         <h4>
           <i className="fas fa-exclamation-circle" />
@@ -46,7 +45,7 @@ const HomePage = ({ className }) => {
         <div className="mapped-products">
           {saleProducts.map((saleProduct) => {
             return (
-              <Product
+              <StyledProduct
                 key={saleProduct.id}
                 saleProduct={saleProduct}
                 saleProducts={saleProducts}
