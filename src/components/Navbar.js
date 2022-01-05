@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import useWindowSize from "../hooks/useWindowSize";
 import MobileMenu from "./MobileMenu";
 import { StyledDesktopMenu } from "./styled/DesktopMenu.style";
@@ -24,7 +25,10 @@ const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
 
   return (
     <nav className={className}>
-      <h1 id="logo">emoji mart</h1>
+      <Link to="/">
+        <h1 id="logo">emoji mart</h1>
+      </Link>
+
       {width <= 950 && (
         <>
           <button

@@ -10,6 +10,10 @@ export const GlobalStyles = createGlobalStyle`
     font-family: 'Share Tech Mono', monospace;
   }
 
+  a, a:hover, a:visited {
+    text-decoration: none;
+  }
+
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
