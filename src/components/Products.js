@@ -8,6 +8,7 @@ const baseURL = `http://localhost:8081`;
 const Products = ({ className }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   const handleSearchInputChange = (e) => {
     console.log("e.target.value", e.target.value);
@@ -19,12 +20,21 @@ const Products = ({ className }) => {
     console.log("submitted search query: ", searchQuery);
   };
 
+  const setPlantsCategory = () => {
+    setSelectedCategory("Plants");
+  };
+
+  const setFruitsCategory = () => {
+    setSelectedCategory("Fruits");
+  };
+
   // get products from categories
-  const getPlantCategory = () => {
+  const getCategory = () => {
+    console.log("selectedCategory", selectedCategory);
     axios
-      .get(baseURL + "/products/category/plants")
+      .get(baseURL + `/products/category/${selectedCategory}`)
       .then((res) => {
-        console.log("AXIOS GET - CATEGORY PLANTS: ", res.data);
+        console.log(`AXIOS GET - CATEGORY ${selectedCategory}: `, res.data);
         setSearchResults(res.data);
       })
       .catch((err) => {
@@ -53,7 +63,14 @@ const Products = ({ className }) => {
       <section id="browse-category">
         <h3>Browse by category</h3>
         <div className="category-buttons">
-          <button type="button" className="plants" onClick={getPlantCategory}>
+          <button
+            type="button"
+            className="plants"
+            onClick={() => {
+              setPlantsCategory();
+              getCategory();
+            }}
+          >
             <i className="fas fa-seedling" />
             &nbsp;Plants
           </button>
