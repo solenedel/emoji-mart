@@ -77,12 +77,14 @@ app.get("/featured", (req, res) => {
 
 // ------------------------ Products page routes -------------------------- //
 
-app.get("/products/category/plants", (req, res) => {
+app.get(`/products/category/:category`, (req, res) => {
   const queryText = `SELECT * FROM products
-                     WHERE category = 'Plants'
+                     WHERE category = $1
                      ORDER BY random();`;
 
-  db.query(queryText)
+  const values = ["plants"];
+
+  db.query(queryText, values)
     .then((results) => {
       console.log("CATEGORY: PLANTS ", results.rows);
       res.json(results.rows);

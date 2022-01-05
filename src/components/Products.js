@@ -21,11 +21,11 @@ const Products = ({ className }) => {
   };
 
   const setPlantsCategory = () => {
-    setSelectedCategory("Plants");
+    setSelectedCategory("plants");
   };
 
   const setFruitsCategory = () => {
-    setSelectedCategory("Fruits");
+    setSelectedCategory("fruits");
   };
 
   // get products from categories

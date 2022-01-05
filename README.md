@@ -32,6 +32,7 @@ Resetting the database: `npm run reset-db`
 - set up bootstrap
 - react fragments
 - use css grid for products display
+- add reviews table to schema
 
 ## NOTES
 
@@ -45,6 +46,7 @@ Resetting the database: `npm run reset-db`
 - login / create an account
 - add, remove items from cart
 - add, femove items from favourites
+- logged in users can cadd/edit/delete reviews (comments) on products
 
 
 ## Extra features (stretch)
