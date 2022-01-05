@@ -23,5 +23,6 @@ module.exports = {
     "react/function-component-definition": "off",
     "arrow-body-style": "off",
     "no-shadow": "warn",
+    "jsx-a11y/label-has-for": "off",
   },
 };

@@ -49,7 +49,7 @@ export const StyledHomePage = styled(HomePage)`
       & h5 {
         font-size: 22px;
         font-weight: 300;
-        font-family: "Lato", sans-serif;
+        font-family: "", sans-serif;
       }
 
       & div.price {
