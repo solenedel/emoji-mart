@@ -32,30 +32,20 @@ const Products = ({ className }) => {
   useEffect(() => {
     console.log("selectedCategory", selectedCategory);
 
-    axios
-      .get(baseURL + `/products/category/${selectedCategory}`)
-      .then((res) => {
-        console.log(`AXIOS GET - CATEGORY ${selectedCategory}: `, res.data);
-        setSearchResults(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // NOTE: make this more modular later by creating a custom category button component
+    // the below if statement is a temporary workaround but should be removed later
+    if (selectedCategory !== "") {
+      axios
+        .get(baseURL + `/products/category/${selectedCategory}`)
+        .then((res) => {
+          console.log(`AXIOS GET - CATEGORY ${selectedCategory}: `, res.data);
+          setSearchResults(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }, [selectedCategory]);
-
-  // const getCategory = () => {
-  //   console.log("selectedCategory", selectedCategory);
-
-  //   axios
-  //     .get(baseURL + `/products/category/${selectedCategory}`)
-  //     .then((res) => {
-  //       console.log(`AXIOS GET - CATEGORY ${selectedCategory}: `, res.data);
-  //       setSearchResults(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
 
   return (
     <div className={className}>
