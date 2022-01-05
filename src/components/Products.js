@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Product from "./Product";
 
 // URL to prepend for axios requests
@@ -29,8 +29,9 @@ const Products = ({ className }) => {
   };
 
   // get products from categories
-  const getCategory = () => {
+  useEffect(() => {
     console.log("selectedCategory", selectedCategory);
+
     axios
       .get(baseURL + `/products/category/${selectedCategory}`)
       .then((res) => {
@@ -40,7 +41,21 @@ const Products = ({ className }) => {
       .catch((err) => {
         console.log(err);
       });
-  };
+  }, [selectedCategory]);
+
+  // const getCategory = () => {
+  //   console.log("selectedCategory", selectedCategory);
+
+  //   axios
+  //     .get(baseURL + `/products/category/${selectedCategory}`)
+  //     .then((res) => {
+  //       console.log(`AXIOS GET - CATEGORY ${selectedCategory}: `, res.data);
+  //       setSearchResults(res.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   return (
     <div className={className}>
@@ -68,13 +83,18 @@ const Products = ({ className }) => {
             className="plants"
             onClick={() => {
               setPlantsCategory();
-              getCategory();
             }}
           >
             <i className="fas fa-seedling" />
             &nbsp;Plants
           </button>
-          <button type="button" className="fruits">
+          <button
+            type="button"
+            className="fruits"
+            onClick={() => {
+              setFruitsCategory();
+            }}
+          >
             <i className="fas fa-apple-alt" />
             &nbsp;Fruits
           </button>

@@ -82,11 +82,13 @@ app.get(`/products/category/:category`, (req, res) => {
                      WHERE category = $1
                      ORDER BY random();`;
 
-  const values = ["plants"];
+  // console.log("req.params.category", req.params.category);
+
+  const values = [req.params.category];
 
   db.query(queryText, values)
     .then((results) => {
-      console.log("CATEGORY: PLANTS ", results.rows);
+      // console.log("CATEGORY: PLANTS ", results.rows);
       res.json(results.rows);
     })
     .catch((err) => {
