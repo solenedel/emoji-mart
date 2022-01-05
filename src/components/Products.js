@@ -1,7 +1,13 @@
+import axios from "axios";
 import React, { useState } from "react";
+import Product from "./Product";
+
+// URL to prepend for axios requests
+const baseURL = `http://localhost:8081`;
 
 const Products = ({ className }) => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
   const handleSearchInputChange = (e) => {
     console.log("e.target.value", e.target.value);
@@ -12,6 +18,17 @@ const Products = ({ className }) => {
     e.preventDefault();
     console.log("submitted search query: ", searchQuery);
   };
+
+  // get products from categories
+  axios
+    .get(baseURL + "products/category/plants")
+    .then((res) => {
+      console.log("AXIOS GET - CATEGORY PLANTS: ", res.data);
+      setSearchResults(res.data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 
   return (
     <div className={className}>
@@ -50,6 +67,17 @@ const Products = ({ className }) => {
             <i className="fas fa-glass-martini-alt" />
             &nbsp;Drinks
           </button>
+        </div>
+        <div className="results">
+          {searchResults.map((searchResult) => {
+            return (
+              <Product
+                key={searchResult.id}
+                searchResult={searchResult}
+                searchResults={searchResults}
+              />
+            );
+          })}
         </div>
       </section>
     </div>
