@@ -38,7 +38,7 @@ export const StyledHomePage = styled(HomePage)`
       padding: 0 3% 0 3%;
     }
 
-    div.product {
+    div#product {
       display: flex;
       flex-direction: column;
       /* justify-content: center; */

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Product from "./Product";
+import { StyledProduct } from "./styled/Product.style";
 
 // URL to prepend for axios requests
 const baseURL = `http://localhost:8081`;
@@ -97,10 +98,10 @@ const Products = ({ className }) => {
             &nbsp;Drinks
           </button>
         </div>
-        <div className="results">
+        <div className="product-results">
           {searchResults.map((searchResult) => {
             return (
-              <Product
+              <StyledProduct
                 key={searchResult.id}
                 saleProduct={searchResult}
                 searchResults={searchResults}

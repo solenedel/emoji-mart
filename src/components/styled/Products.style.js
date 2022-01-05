@@ -74,4 +74,9 @@ export const StyledProducts = styled(Products)`
       }
     }
   }
+
+  /* div.product-results {
+    border: solid red 3px;
+    display: flex;
+  } */
 `;

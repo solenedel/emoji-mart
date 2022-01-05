@@ -1,8 +1,8 @@
 import React from "react";
 
-const Product = ({ saleProduct }) => {
+const Product = ({ saleProduct, className }) => {
   return (
-    <div className="product">
+    <div className={className} id="product">
       <h5>{saleProduct.name}</h5>
       <div className="product-img">{saleProduct.image_path}</div>
       <div className="price">${saleProduct.price}</div>
