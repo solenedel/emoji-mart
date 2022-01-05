@@ -50,6 +50,10 @@ export const StyledProducts = styled(Products)`
       width: 80vw;
       display: flex;
       justify-content: space-around;
+
+      & button {
+        padding: 5px;
+      }
     }
   }
 `;
