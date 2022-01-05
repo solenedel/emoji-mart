@@ -20,15 +20,17 @@ const Products = ({ className }) => {
   };
 
   // get products from categories
-  axios
-    .get(baseURL + "products/category/plants")
-    .then((res) => {
-      console.log("AXIOS GET - CATEGORY PLANTS: ", res.data);
-      setSearchResults(res.data);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  const getPlantCategory = () => {
+    axios
+      .get(baseURL + "/products/category/plants")
+      .then((res) => {
+        console.log("AXIOS GET - CATEGORY PLANTS: ", res.data);
+        setSearchResults(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className={className}>
@@ -51,7 +53,7 @@ const Products = ({ className }) => {
       <section id="browse-category">
         <h3>Browse by category</h3>
         <div className="category-buttons">
-          <button type="button" className="plants">
+          <button type="button" className="plants" onClick={getPlantCategory}>
             <i className="fas fa-seedling" />
             &nbsp;Plants
           </button>
@@ -73,7 +75,7 @@ const Products = ({ className }) => {
             return (
               <Product
                 key={searchResult.id}
-                searchResult={searchResult}
+                saleProduct={searchResult}
                 searchResults={searchResults}
               />
             );
