@@ -75,6 +75,21 @@ app.get("/featured", (req, res) => {
     });
 });
 
+// ------------------------ Products page routes -------------------------- //
+
+app.get("/products/category/plants", (req, res) => {
+  const queryText = `SELECT * FROM products
+                     WHERE category = 'plants'
+                     ORDER BY random();`;
+
+  db.query(queryText).then((results) => {
+    console.log("CATEGORY: PLANTS ", results.rows);
+    res.json(results.rows);
+  })
+  .catch((err) => {
+      console.log(err);
+      res.json([]);
+    });
 // -------------------------------------------------------------------- //
 
 app.listen(PORT, () => {

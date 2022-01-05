@@ -32,12 +32,12 @@ export const StyledProducts = styled(Products)`
     background: pink;
     border: none;
     border-radius: 4px;
-    height: 38px;
+    height: 40px;
     margin: 0 0 0 15px;
   }
 
   section#browse-category {
-    margin-top: 50px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
