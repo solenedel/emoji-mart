@@ -8,10 +8,15 @@ const Products = ({ className }) => {
     setSearchQuery(e.target.value);
   };
 
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    console.log("submitted search query: ", searchQuery);
+  };
+
   return (
     <div className={className}>
       Browse products
-      <form action="submit">
+      <form action="submit" onSubmit={handleSearchSubmit}>
         <label htmlFor="search-product">
           <input
             type="text"
@@ -20,7 +25,9 @@ const Products = ({ className }) => {
             placeholder="Search for a product..."
             onChange={handleSearchInputChange}
           />
-          <button type="button">enter</button>
+          <button type="button" onClick={handleSearchSubmit}>
+            enter
+          </button>
         </label>
         {/* Search query: {searchQuery} */}
       </form>
