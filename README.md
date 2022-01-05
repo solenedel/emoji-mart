@@ -28,6 +28,7 @@ Resetting the database: `npm run reset-db`
 
 ## TO DO
 - modularise sale products and featured product into the same product component
+- modularise Category button into one component & pass category name as props
 - set up mocha and chai tests
 - set up bootstrap
 - react fragments
@@ -55,6 +56,8 @@ Resetting the database: `npm run reset-db`
 - testing (Mocha & chai on testing branch)
 - change language feature
 - fake checkout/payment feature (stripe)
+- price randomiser function?
+- profile page with user details (username, email, products ordered, comments)
 
 ### Resources/links/tutorials used
 
