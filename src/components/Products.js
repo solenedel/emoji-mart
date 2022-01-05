@@ -15,7 +15,7 @@ const Products = ({ className }) => {
 
   return (
     <div className={className}>
-      Browse products
+      <h3>Browse products</h3>
       <form action="submit" onSubmit={handleSearchSubmit}>
         <label htmlFor="search-product">
           <input
@@ -26,11 +26,20 @@ const Products = ({ className }) => {
             onChange={handleSearchInputChange}
           />
           <button type="button" onClick={handleSearchSubmit}>
-            enter
+            search
           </button>
         </label>
         {/* Search query: {searchQuery} */}
       </form>
+      <section id="browse-category">
+        <h3>Browse by category</h3>
+        <div className="category-buttons">
+          <button type="button">Plants</button>
+          <button type="button">Fruits</button>
+          <button type="button">Food</button>
+          <button type="button">Drinks</button>
+        </div>
+      </section>
     </div>
   );
 };

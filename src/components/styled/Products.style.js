@@ -35,4 +35,21 @@ export const StyledProducts = styled(Products)`
     height: 38px;
     margin: 0 0 0 15px;
   }
+
+  section#browse-category {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & h3 {
+      margin-bottom: 50px;
+    }
+
+    div.category-buttons {
+      width: 80vw;
+      display: flex;
+      justify-content: space-around;
+    }
+  }
 `;
