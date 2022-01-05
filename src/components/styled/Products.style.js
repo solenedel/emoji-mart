@@ -53,6 +53,24 @@ export const StyledProducts = styled(Products)`
 
       & button {
         padding: 5px;
+        transition: all 0.4s;
+
+        &:hover {
+          transform: scale(1.2, 1.2);
+          transition: all 0.4s;
+        }
+      }
+
+      button.plants {
+        background-color: #d5feb7;
+      }
+
+      button.food {
+        background-color: #fee6b7;
+      }
+
+      button.drinks {
+        background-color: #b7e9fe;
       }
     }
   }
