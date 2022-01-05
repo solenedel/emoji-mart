@@ -40,7 +40,7 @@ const HomePage = ({ className }) => {
       <section className="sale">
         <h4>
           <i className="fas fa-exclamation-circle" />
-          &nbsp;Currently on sale
+          &nbsp;On sale
         </h4>
         <div className="mapped-products">
           {saleProducts.map((saleProduct) => {
@@ -58,7 +58,7 @@ const HomePage = ({ className }) => {
       <section className="featured">
         <h4>
           <i className="fas fa-star" />
-          &nbsp;Featured product
+          &nbsp;Featured
         </h4>
         <div className="mapped-products">
           {featuredProduct.map((featuredProduct) => {
