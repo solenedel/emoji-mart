@@ -75,10 +75,11 @@ export const StyledProducts = styled(Products)`
     }
   }
 
-  /* div.product-results {
-    border: solid red 3px;
+  div.product-results {
+    margin: 80px 0 0 12%;
     display: flex;
-
-    
-  } */
+    justify-content: space-around;
+    align-self: flex-start;
+    width: 75vw;
+  }
 `;

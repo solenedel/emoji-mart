@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import Product from "./Product";
 import { StyledProduct } from "./styled/Product.style";
 
 // URL to prepend for axios requests
@@ -27,6 +26,14 @@ const Products = ({ className }) => {
 
   const setFruitsCategory = () => {
     setSelectedCategory("fruits");
+  };
+
+  const setFoodCategory = () => {
+    setSelectedCategory("food");
+  };
+
+  const setDrinksCategory = () => {
+    setSelectedCategory("drinks");
   };
 
   // get products from categories
@@ -89,27 +96,39 @@ const Products = ({ className }) => {
             <i className="fas fa-apple-alt" />
             &nbsp;Fruits
           </button>
-          <button type="button" className="food">
+          <button
+            type="button"
+            className="food"
+            onClick={() => {
+              setFoodCategory();
+            }}
+          >
             <i className="fas fa-utensils" />
             &nbsp;Food
           </button>
-          <button type="button" className="drinks">
+          <button
+            type="button"
+            className="drinks"
+            onClick={() => {
+              setDrinksCategory();
+            }}
+          >
             <i className="fas fa-glass-martini-alt" />
             &nbsp;Drinks
           </button>
         </div>
-        <div className="product-results">
-          {searchResults.map((searchResult) => {
-            return (
-              <StyledProduct
-                key={searchResult.id}
-                saleProduct={searchResult}
-                searchResults={searchResults}
-              />
-            );
-          })}
-        </div>
       </section>
+      <div className="product-results">
+        {searchResults.map((searchResult) => {
+          return (
+            <StyledProduct
+              key={searchResult.id}
+              saleProduct={searchResult}
+              searchResults={searchResults}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
