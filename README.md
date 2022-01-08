@@ -34,6 +34,7 @@ Resetting the database: `npm run reset-db`
 - react fragments
 - use css grid for products display
 - add reviews table to schema
+- selected category button styled differently
 
 ## NOTES
 
