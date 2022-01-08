@@ -24,6 +24,8 @@ Resetting the database: `npm run reset-db`
 
 ## BUGS
 
+- (not really a bug) if dark theme is selected and page is refreshed, screen flashes white before loading dark mode again
+
 
 
 ## TO DO
@@ -38,8 +40,8 @@ Resetting the database: `npm run reset-db`
 
 ## NOTES
 
-- featured product component should look different from the sale products
-- if dark theme is selected and page is refreshed, screen flashes white before loading dark mode again
+- search query should return products that: have similar name to the query, or are in the same catrgory (ie. is the query is "fruits", return all products from the fruits category)
+
 
 
 ## Main Features (MVP)

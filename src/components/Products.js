@@ -13,12 +13,11 @@ const Products = ({ className }) => {
 
   const handleSearchInputChange = (e) => {
     console.log("e.target.value", e.target.value);
-    setSearchQuery(e.target.value);
+    setSearchQuery(e.target.value.toLowerCase());
   };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    console.log("submitted search query: ", searchQuery);
 
     if (searchQuery !== "") {
       axios

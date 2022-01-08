@@ -77,18 +77,16 @@ app.get("/featured", (req, res) => {
 
 // ------------------------ Products page routes -------------------------- //
 
+// show products from a certain category
 app.get(`/products/category/:category`, (req, res) => {
   const queryText = `SELECT * FROM products
                      WHERE category = $1
                      ORDER BY random();`;
 
-  // console.log("req.params.category", req.params.category);
-
   const values = [req.params.category];
 
   db.query(queryText, values)
     .then((results) => {
-      // console.log("CATEGORY: PLANTS ", results.rows);
       res.json(results.rows);
     })
     .catch((err) => {
@@ -96,6 +94,25 @@ app.get(`/products/category/:category`, (req, res) => {
       res.json([]);
     });
 });
+
+// show products from a search query
+app.get(`/products/search/:searchQuery`, (req, res) => {
+  const queryText = `SELECT * FROM products
+                     WHERE name = $1
+                     OR category = $1;`;
+
+  const values = [req.params.searchQuery];
+
+  db.query(queryText, values)
+    .then((results) => {
+      res.json(results.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json([]);
+    });
+});
+
 // -------------------------------------------------------------------- //
 
 app.listen(PORT, () => {
