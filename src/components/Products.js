@@ -4,7 +4,7 @@ import Searchbar from "./Searchbar";
 import { StyledProduct } from "./styled/Product.style";
 
 // URL to prepend for axios requests
-const baseURL = `http://localhost:8081`;
+const baseURL = `http://localhost:8081`; // change this for production build?
 
 const Products = ({ className }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -19,6 +19,18 @@ const Products = ({ className }) => {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     console.log("submitted search query: ", searchQuery);
+
+    if (searchQuery !== "") {
+      axios
+        .get(baseURL + `/products/search/${searchQuery}`)
+        .then((res) => {
+          console.log(`SEARCHING FOR QUERY: ${searchQuery}: `, res.data);
+          setSearchResults(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   };
 
   const setPlantsCategory = () => {
@@ -39,8 +51,6 @@ const Products = ({ className }) => {
 
   // get products from categories
   useEffect(() => {
-    console.log("selectedCategory", selectedCategory);
-
     // NOTE: make this more modular later by creating a custom category button component
     // the below if statement is a temporary workaround but should be removed later
     if (selectedCategory !== "") {
