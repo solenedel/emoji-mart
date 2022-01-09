@@ -66,5 +66,8 @@ Resetting the database: `npm run reset-db`
 
 [dark mode tutorial](https://css-tricks.com/a-dark-mode-toggle-with-react-and-themeprovider/)
 [linting setup guide](https://dev.to/saurabhggc/add-eslint-prettier-and-airbnb-to-your-project-3mo8)
+[search query](https://www.youtube.com/watch?v=LkoSe0ba7SE&ab_channel=TheStoicProgrammers)
+
+
 **NOTE** make sure to quit and restart VScode after setting up the linting
 https://emoji-api.com/

@@ -96,7 +96,6 @@ app.get(`/products/category/:category`, (req, res) => {
 });
 
 // show products from a search query
-// NOTE: only finds exact matches at the moment- need to fix
 app.get(`/products/search/:searchQuery`, (req, res) => {
   const queryText = `SELECT * FROM products
                      WHERE name LIKE $1
