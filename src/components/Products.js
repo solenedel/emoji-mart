@@ -28,7 +28,11 @@ const Products = ({ className }) => {
         .then((res) => {
           console.log(`SEARCHING FOR QUERY: ${searchQuery}: `, res.data);
           setSearchResults(res.data);
-          setIsLoading(false);
+
+          // display the loader for a minimum amount of time using setTimeout
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 750);
         })
         .catch((err) => {
           console.log(err);
@@ -73,19 +77,18 @@ const Products = ({ className }) => {
   return (
     <div className={className}>
       <h3>Browse products</h3>
+      <Searchbar
+        handleSearchInputChange={handleSearchInputChange}
+        handleSearchSubmit={handleSearchSubmit}
+      />
       {isLoading && (
         <ThreeDots
-          height="100"
+          height="200"
           width="100"
           color="#AB94FA"
           arialLabel="loading"
         />
       )}
-
-      <Searchbar
-        handleSearchInputChange={handleSearchInputChange}
-        handleSearchSubmit={handleSearchSubmit}
-      />
       <section id="browse-category">
         <h3>Browse by category</h3>
         <div className="category-buttons">
@@ -132,15 +135,16 @@ const Products = ({ className }) => {
         </div>
       </section>
       <div className="product-results">
-        {searchResults.map((searchResult) => {
-          return (
-            <StyledProduct
-              key={searchResult.id}
-              saleProduct={searchResult}
-              searchResults={searchResults}
-            />
-          );
-        })}
+        {!isLoading &&
+          searchResults.map((searchResult) => {
+            return (
+              <StyledProduct
+                key={searchResult.id}
+                saleProduct={searchResult}
+                searchResults={searchResults}
+              />
+            );
+          })}
       </div>
     </div>
   );
