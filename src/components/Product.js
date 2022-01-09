@@ -8,7 +8,7 @@ const Product = ({ saleProduct, className }) => {
         <h5>{saleProduct.name}</h5>
         <div className="product-img">{saleProduct.image_path}</div>
         <div className="price">${saleProduct.price}</div>
-        <ViewButton productId={saleProduct.id} />
+        <ViewButton productName={saleProduct.name} />
       </div>
     </div>
   );

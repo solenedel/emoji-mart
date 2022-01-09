@@ -71,7 +71,7 @@ const HomePage = ({ className }) => {
                   <div>${featuredProduct.price}</div>
                   <div>{featuredProduct.description}</div>
                 </div>
-                <ViewButton productId={featuredProduct.id} />
+                <ViewButton productName={featuredProduct.name} />
               </div>
             );
           })}
