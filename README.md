@@ -9,9 +9,9 @@ Categories include:
 - drink
 
 **tools / frameworks**
-- Database: Postgres
-- Front end: ReactJS, Bootstrap, SASS
+- Front end: ReactJS
 - Back end: Node.js
+- Database: Postgres
 
 ## Running the app
 
@@ -29,18 +29,17 @@ Resetting the database: `npm run reset-db`
 
 
 ## TO DO
-- finish search feature- match queries with pattern matching (not just exact matches)
+- routes for a specific product (each product has its own page)
 - modularise Category button into one component & pass category name as props
 - set up mocha and chai tests
 - set up bootstrap
 - react fragments
 - use css grid for products display
 - add reviews table to schema
-- selected category button styled differently
+- fade-in and fade-out when products appear and disappear
+- selected category button styled differently when selected/clicked
 
 ## NOTES
-
-- search query should return products that: have similar name to the query, or are in the same catrgory (ie. is the query is "fruits", return all products from the fruits category)
 
 
 
@@ -50,7 +49,7 @@ Resetting the database: `npm run reset-db`
 - login / create an account
 - add, remove items from cart
 - add, femove items from favourites
-- logged in users can cadd/edit/delete reviews (comments) on products
+- logged in users can add/edit/delete reviews (comments) on products
 
 
 ## Extra features (stretch)
