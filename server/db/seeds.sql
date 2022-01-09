@@ -1,4 +1,8 @@
--- Seeds for postgres database
+-- SEEDS FOR POSTGRES DATABASE
+-- NOTES
+-- use all lowercase for product names and category names.
+
+
 
 -- seeds for users table
 

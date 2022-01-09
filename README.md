@@ -29,7 +29,7 @@ Resetting the database: `npm run reset-db`
 
 
 ## TO DO
-- modularise sale products and featured product into the same product component
+- finish search feature- match queries with pattern matching (not just exact matches)
 - modularise Category button into one component & pass category name as props
 - set up mocha and chai tests
 - set up bootstrap
