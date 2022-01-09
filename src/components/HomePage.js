@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { StyledProduct } from "./styled/Product.style";
+import ViewButton from "./ViewButton";
 
 // URL to prepend for axios requests
 const baseURL = `http://localhost:8081`;
@@ -70,9 +71,7 @@ const HomePage = ({ className }) => {
                   <div>${featuredProduct.price}</div>
                   <div>{featuredProduct.description}</div>
                 </div>
-                <button type="button" id="view" className="view-btn">
-                  view
-                </button>
+                <ViewButton productId={featuredProduct.id} />
               </div>
             );
           })}

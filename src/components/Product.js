@@ -1,4 +1,5 @@
 import React from "react";
+import ViewButton from "./ViewButton";
 
 const Product = ({ saleProduct, className }) => {
   return (
@@ -7,9 +8,7 @@ const Product = ({ saleProduct, className }) => {
         <h5>{saleProduct.name}</h5>
         <div className="product-img">{saleProduct.image_path}</div>
         <div className="price">${saleProduct.price}</div>
-        <button type="button" id="view">
-          view
-        </button>
+        <ViewButton productId={saleProduct.id} />
       </div>
     </div>
   );

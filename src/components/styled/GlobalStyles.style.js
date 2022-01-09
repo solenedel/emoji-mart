@@ -44,8 +44,11 @@ export const GlobalStyles = createGlobalStyle`
     border: none;
     background: #1fdead;
     border-radius: 5px;
-    color: black;
     transition: background 0.3s;
+
+    & a {
+       color: black;
+    }
 
     :hover {
       background: #ffa1b9;
