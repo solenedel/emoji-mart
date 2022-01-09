@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { ThreeDots } from "react-loader-spinner";
 import Searchbar from "./Searchbar";
 import { StyledProduct } from "./styled/Product.style";
 
@@ -10,6 +11,7 @@ const Products = ({ className }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSearchInputChange = (e) => {
     console.log("e.target.value", e.target.value);
@@ -18,6 +20,7 @@ const Products = ({ className }) => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     if (searchQuery !== "") {
       axios
@@ -25,9 +28,11 @@ const Products = ({ className }) => {
         .then((res) => {
           console.log(`SEARCHING FOR QUERY: ${searchQuery}: `, res.data);
           setSearchResults(res.data);
+          setIsLoading(false);
         })
         .catch((err) => {
           console.log(err);
+          setIsLoading(false);
         });
     }
   };
@@ -68,6 +73,15 @@ const Products = ({ className }) => {
   return (
     <div className={className}>
       <h3>Browse products</h3>
+      {isLoading && (
+        <ThreeDots
+          height="100"
+          width="100"
+          color="#AB94FA"
+          arialLabel="loading"
+        />
+      )}
+
       <Searchbar
         handleSearchInputChange={handleSearchInputChange}
         handleSearchSubmit={handleSearchSubmit}
