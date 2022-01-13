@@ -15,7 +15,7 @@ const HomePage = ({ className }) => {
     axios
       .get(baseURL + "/")
       .then((res) => {
-        console.log("AXIOS GET - SALE PRODUCTS: ", res.data);
+        // console.log("AXIOS GET - SALE PRODUCTS: ", res.data);
         setSaleProducts(res.data);
       })
       .catch((err) => {
@@ -28,7 +28,7 @@ const HomePage = ({ className }) => {
     axios
       .get(baseURL + "/featured")
       .then((res) => {
-        console.log("AXIOS GET - FEATURED PRODUCT: ", res.data);
+        // console.log("AXIOS GET - FEATURED PRODUCT: ", res.data);
         setFeaturedProduct(res.data);
       })
       .catch((err) => {

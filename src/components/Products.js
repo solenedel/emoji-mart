@@ -26,7 +26,7 @@ const Products = ({ className }) => {
       axios
         .get(baseURL + `/products/search/${searchQuery}`)
         .then((res) => {
-          console.log(`SEARCHING FOR QUERY: ${searchQuery}: `, res.data);
+          // console.log(`SEARCHING FOR QUERY: ${searchQuery}: `, res.data);
           setSearchResults(res.data);
 
           // display the loader for a minimum amount of time using setTimeout
@@ -65,7 +65,7 @@ const Products = ({ className }) => {
       axios
         .get(baseURL + `/products/category/${selectedCategory}`)
         .then((res) => {
-          console.log(`AXIOS GET - CATEGORY ${selectedCategory}: `, res.data);
+          // console.log(`AXIOS GET - CATEGORY ${selectedCategory}: `, res.data);
           setSearchResults(res.data);
         })
         .catch((err) => {

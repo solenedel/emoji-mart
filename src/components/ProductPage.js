@@ -20,7 +20,7 @@ const ProductPage = ({ className }) => {
       axios
         .get(baseURL + `/products/view/${viewedProduct}`)
         .then((res) => {
-          console.log("AXIOS GET - SINGLE PRODUCT: ", res.data);
+          // console.log("AXIOS GET - SINGLE PRODUCT: ", res.data);
           setCurrentProductDetails(res.data[0]);
         })
         .catch((err) => {
