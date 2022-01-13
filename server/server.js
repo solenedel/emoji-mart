@@ -93,7 +93,7 @@ app.get(`/products/view/:name`, (req, res) => {
     });
 });
 
-// ------------------------ Products page routes -------------------------- //
+// ------------------------ Browse products page routes -------------------------- //
 
 // show products from a certain category
 app.get(`/products/category/:category`, (req, res) => {
@@ -130,6 +130,27 @@ app.get(`/products/search/:searchQuery`, (req, res) => {
       res.json([]);
     });
 });
+
+// ------------------------ Single product page routes -------------------------- //
+
+// add a product to the cart
+/*
+app.post(`/add-to-cart/:username`, (req, res) => {
+  const queryText = `INSERT INTO cart
+                     WHERE user_id = $1
+                     VALUES (user_id, product_id, quantity) ;`;
+
+  const values = [req.params.username, ];
+
+  db.query(queryText, values)
+    .then((results) => {
+      res.json(results.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json([]);
+    });
+}); */
 
 // -------------------------------------------------------------------- //
 

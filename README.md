@@ -39,7 +39,8 @@ Resetting the database: `npm run reset-db`
 - selected category button styled differently when selected/clicked
 
 ## NOTES
-
+- product quantities in cart?
+- use put or post request?
 
 
 ## Main Features (MVP)
