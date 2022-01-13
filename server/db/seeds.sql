@@ -12,6 +12,8 @@ VALUES ('Mario', 'mario@mail.com', 'password1');
 INSERT INTO users (username, email, password)
 VALUES ('Luigi', 'luigi@mail.com', 'password2');
 
+INSERT INTO users (username, email, password)
+VALUES ('Demo', 'demo@mail.com', 'none');
 
 
 -- seeds for Products table

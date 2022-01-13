@@ -30,6 +30,11 @@ export const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
 
+  button {
+    border: none;
+    border-radius: 5px;
+  }
+
      div.mapped-products {
       display: flex;
       flex-wrap: wrap;

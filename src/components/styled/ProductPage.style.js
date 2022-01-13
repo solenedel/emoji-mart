@@ -28,5 +28,24 @@ export const StyledProductPage = styled(ProductPage)`
   div.buttons {
     display: flex;
     flex-direction: column;
+
+    & button {
+      padding: 5px;
+      margin-bottom: 25px;
+      text-align: left;
+      width: fit-content;
+    }
+
+    & i {
+      margin-right: 10px;
+    }
+
+    & #add-to-fav-btn {
+      background: #ffabc2;
+    }
+
+    & #add-to-cart-btn {
+      background: #abcfff;
+    }
   }
 `;

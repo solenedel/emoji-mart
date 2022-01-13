@@ -39,11 +39,11 @@ const ProductPage = ({ className }) => {
         )}
       </div>
       <div className="buttons">
-        <button type="button">
+        <button type="button" id="add-to-fav-btn">
           <i className="fas fa-shopping-cart" />
           Add to cart
         </button>
-        <button type="button">
+        <button type="button" id="add-to-cart-btn">
           <i className="fas fa-heart" />
           Add to favorites
         </button>
