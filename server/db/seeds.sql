@@ -2,7 +2,8 @@
 -- NOTES
 -- use all lowercase for product names and category names.
 
--- cart id should be same as user id? user can only have one cart
+-- cart id should be same as user id? user can only have one cart 
+-- NO this causes error when running the seeds (cart id must be unique)
 
 
 
@@ -83,7 +84,7 @@ INSERT INTO cart (id, user_id, product_id, quantity)
 VALUES (3, 3, 4, 5);
 
 INSERT INTO cart (id, user_id, product_id, quantity)
-VALUES (3, 3, 1, 1);
+VALUES (4, 3, 1, 1);
 
 INSERT INTO cart (id, user_id, product_id, quantity)
-VALUES (3, 3, 7, 1);
+VALUES (5, 3, 7, 1);
