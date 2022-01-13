@@ -69,15 +69,10 @@ function App() {
               setToggleButtonIcon={setToggleButtonIcon}
             />
             <Switch>
-              <Route exact path="/">
-                <StyledHomePage />
-              </Route>
-              <Route exact path="/products">
-                <StyledProducts />
-              </Route>
-              <Route path="/products/view/">
-                <StyledProductPage />
-              </Route>
+              <Route exact path="/" component={StyledHomePage} />
+              <Route exact path="/login" component={StyledLoginPage} />
+              <Route exact path="/products" component={StyledProducts} />
+              <Route path="/products/view/" component={StyledProductPage} />
             </Switch>
           </div>
         </Router>
