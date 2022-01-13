@@ -13,15 +13,17 @@ const CartPage = () => {
 
   // get products in user's cart, if any
   useEffect(() => {
-    axios
-      .get(baseURL + `/cart/${user.username}`)
-      .then((res) => {
-        console.log("MY CART: ", res.data);
-        setCartProducts(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (user.isAuthenticated) {
+      axios
+        .get(baseURL + `/cart/${user.username}`)
+        .then((res) => {
+          console.log("MY CART: ", res.data);
+          setCartProducts(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }, []);
 
   return user.isAuthenticated ? (
