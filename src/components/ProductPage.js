@@ -7,7 +7,11 @@ const baseURL = `http://localhost:8081`;
 
 const ProductPage = ({ className }) => {
   const { viewedProductContext } = useAppContext();
+  const { userContext } = useAppContext();
+
   const [viewedProduct] = viewedProductContext;
+  const [user, setUser] = userContext;
+
   const [currentProductDetails, setCurrentProductDetails] = useState({});
 
   // axios request to get data on the specific product
@@ -25,6 +29,24 @@ const ProductPage = ({ className }) => {
     }
   }, []);
 
+  // add product to cart (only if user is authenticated)
+  const addToCartHandler = () => {
+    if (user.isAuthenticated === true) {
+      console.log("user is authenticated: ", user.isAuthenticated);
+    } else {
+      console.log("user is not authenticated. please log in.");
+    }
+  };
+
+  // add product to favourites (only if user is authenticated)
+  const addToFavsHandler = () => {
+    if (user.isAuthenticated === true) {
+      console.log("user is authenticated: ", user.isAuthenticated);
+    } else {
+      console.log("user is not authenticated. please log in.");
+    }
+  };
+
   return (
     <section className={className}>
       <div id="product-image">{currentProductDetails.image_path}</div>
@@ -39,11 +61,11 @@ const ProductPage = ({ className }) => {
         )}
       </div>
       <div className="buttons">
-        <button type="button" id="add-to-fav-btn">
+        <button type="button" id="add-to-fav-btn" onClick={addToCartHandler}>
           <i className="fas fa-shopping-cart" />
           Add to cart
         </button>
-        <button type="button" id="add-to-cart-btn">
+        <button type="button" id="add-to-cart-btn" onClick={addToFavsHandler}>
           <i className="fas fa-heart" />
           Add to favorites
         </button>
