@@ -11,6 +11,7 @@ import { StyledProductPage } from "./components/styled/ProductPage.style";
 import { StyledLoginPage } from "./components/styled/LoginPage.style";
 
 const LOCAL_STORAGE_KEY_THEME = "emojimart-theme";
+const LOCAL_STORAGE_KEY_USER = "emojimart-user";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -49,6 +50,22 @@ function App() {
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY_THEME, JSON.stringify(theme));
   }, [theme]);
+
+  // persist demo logged in user
+  useEffect(() => {
+    const storageUser = JSON.parse(
+      localStorage.getItem(LOCAL_STORAGE_KEY_USER)
+    );
+
+    if (user !== "") {
+      setUser(storageUser);
+    }
+  }, []);
+
+  // save user to local storage
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY_USER, JSON.stringify(user));
+  }, [user]);
 
   return (
     <AppContext.Provider

@@ -10,7 +10,7 @@ const LoginPage = ({ className }) => {
       username: "Demo User 💎",
       isAuthenticated: true,
     });
-    console.log("🔐 DEMO USER LOGGED IN");
+    console.log("🔐 DEMO USER LOGGED IN.");
   };
 
   return (
@@ -19,6 +19,7 @@ const LoginPage = ({ className }) => {
       <button type="button" id="demo-login-btn" onClick={demoLoginHandler}>
         Log in as demo user
       </button>
+      <div>currently logged in as: {user.username}</div>
     </section>
   );
 };
