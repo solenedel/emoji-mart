@@ -51,7 +51,7 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY_THEME, JSON.stringify(theme));
   }, [theme]);
 
-  // persist demo logged in user
+  // persist current logged in user on page reload
   useEffect(() => {
     const storageUser = JSON.parse(
       localStorage.getItem(LOCAL_STORAGE_KEY_USER)
@@ -62,7 +62,7 @@ function App() {
     }
   }, []);
 
-  // save user to local storage
+  // save current user to local storage
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY_USER, JSON.stringify(user));
   }, [user]);

@@ -13,13 +13,26 @@ const LoginPage = ({ className }) => {
     console.log("🔐 DEMO USER LOGGED IN.");
   };
 
+  const demoLogoutHandler = () => {
+    setUser({
+      username: "",
+      isAuthenticated: false,
+    });
+    console.log("🔐 DEMO USER LOGGED OUT.");
+  };
+
   return (
     <section className={className}>
       <h2>Login</h2>
       <button type="button" id="demo-login-btn" onClick={demoLoginHandler}>
         Log in as demo user
       </button>
-      <div>currently logged in as: {user.username}</div>
+      <div id="current-user-status">
+        You are currently logged in as: {user.username}
+      </div>
+      <button type="button" id="demo-logout-btn" onClick={demoLogoutHandler}>
+        Demo user log out
+      </button>
     </section>
   );
 };

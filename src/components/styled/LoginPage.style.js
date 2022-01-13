@@ -19,4 +19,22 @@ export const StyledLoginPage = styled(LoginPage)`
       background: #78f282;
     }
   }
+
+  & button#demo-logout-btn {
+    margin-top: 40px;
+    width: 320px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    background: #ff9cb7;
+
+    &:hover {
+      background: #f883a3;
+    }
+  }
+
+  div#current-user-status {
+    margin-top: 30px;
+    font-family: "Lato", sans-serif;
+  }
 `;
