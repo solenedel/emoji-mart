@@ -55,7 +55,7 @@ function App() {
       // eslint-disable-next-line
       value={{
         viewedProductContext: [viewedProduct, setViewedProduct],
-        userContect: [user, setUser],
+        userContext: [user, setUser],
       }}
     >
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
