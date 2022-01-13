@@ -7,7 +7,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-size: 30px;
-    font-family: "Lato", sans-serif;
+    font-family: 'Share Tech Mono', monospace;
   }
 
   a, a:hover, a:visited {

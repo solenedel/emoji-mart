@@ -30,8 +30,13 @@ const ProductPage = ({ className }) => {
       <div id="product-image">{currentProductDetails.image_path}</div>
       <div className="product-details">
         <h1 id="product-name">{currentProductDetails.name}</h1>
-        <div>${currentProductDetails.price}</div>
+        <div>Price: ${currentProductDetails.price}</div>
         <div>{currentProductDetails.description}</div>
+        {currentProductDetails.on_sale ? (
+          <div id="sale-status">This product is currently on sale!</div>
+        ) : (
+          <div id="sale-status">This product is not on sale at the moment.</div>
+        )}
       </div>
     </section>
   );

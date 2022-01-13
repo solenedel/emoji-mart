@@ -6,6 +6,10 @@ export const StyledProductPage = styled(ProductPage)`
   display: flex;
   justify-content: center;
 
+  & div {
+    font-family: "Lato", sans-serif;
+  }
+
   div#product-image {
     font-size: 120px;
     margin: 20px;
@@ -14,6 +18,10 @@ export const StyledProductPage = styled(ProductPage)`
   h1#product-name {
     font-size: 45px;
     margin: 20px;
-    font-family: "Jua", sans-serif;
+    font-family: "Share Tech Mono", monospace;
+  }
+
+  div#sale-status {
+    color: #ff8888;
   }
 `;
