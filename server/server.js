@@ -131,6 +131,25 @@ app.get(`/products/search/:searchQuery`, (req, res) => {
     });
 });
 
+// ------------------------ Cart page routes -------------------------- //
+
+// get all products in a user's cart
+app.get(`/cart/:username`, (req, res) => {
+  const queryText = `SELECT * FROM cart
+                     WHERE user_id = $1;`;
+
+  const values = [req.params.username];
+
+  db.query(queryText, values)
+    .then((results) => {
+      res.json(results.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json([]);
+    });
+});
+
 // ------------------------ Single product page routes -------------------------- //
 
 // add a product to the cart
