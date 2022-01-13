@@ -7,12 +7,16 @@ import { StyledProducts } from "./components/styled/Products.style";
 import { StyledHomePage } from "./components/styled/HomePage.style";
 import { GlobalStyles } from "./components/styled/GlobalStyles.style";
 import ProductPage from "./components/ProductPage";
+import { AppContext } from "./context/context";
 
 const LOCAL_STORAGE_KEY_THEME = "emojimart-theme";
 
 function App() {
   const [theme, setTheme] = useState("light");
   const [toggleButtonIcon, setToggleButtonIcon] = useState("switch theme 🌙");
+
+  // states used in app context
+  const [viewedProduct, setViewedProduct] = useState("");
 
   // toggle between light and dark themes
   const toggleTheme = () => {
@@ -42,31 +46,38 @@ function App() {
   }, [theme]);
 
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-      <Router>
-        <div className="App">
-          <GlobalStyles />
-          <StyledNavbar
-            theme={theme}
-            setTheme={setTheme}
-            toggleTheme={toggleTheme}
-            toggleButtonIcon={toggleButtonIcon}
-            setToggleButtonIcon={setToggleButtonIcon}
-          />
-          <Switch>
-            <Route exact path="/">
-              <StyledHomePage />
-            </Route>
-            <Route exact path="/products">
-              <StyledProducts />
-            </Route>
-            <Route path="/products/view/">
-              <ProductPage />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    </ThemeProvider>
+    <AppContext.Provider
+      // eslint-disable-next-line
+      value={{
+        viewedProductContext: [viewedProduct, setViewedProduct],
+      }}
+    >
+      <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+        <Router>
+          <div className="App">
+            <GlobalStyles />
+            <StyledNavbar
+              theme={theme}
+              setTheme={setTheme}
+              toggleTheme={toggleTheme}
+              toggleButtonIcon={toggleButtonIcon}
+              setToggleButtonIcon={setToggleButtonIcon}
+            />
+            <Switch>
+              <Route exact path="/">
+                <StyledHomePage />
+              </Route>
+              <Route exact path="/products">
+                <StyledProducts />
+              </Route>
+              <Route path="/products/view/">
+                <ProductPage />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </ThemeProvider>
+    </AppContext.Provider>
   );
 }
 
