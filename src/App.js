@@ -17,6 +17,10 @@ function App() {
 
   // states used in app context
   const [viewedProduct, setViewedProduct] = useState("");
+  const [user, setUser] = useState({
+    username: "",
+    isAuthenticated: false,
+  });
 
   // toggle between light and dark themes
   const toggleTheme = () => {
@@ -50,6 +54,7 @@ function App() {
       // eslint-disable-next-line
       value={{
         viewedProductContext: [viewedProduct, setViewedProduct],
+        userContect: [user, setUser],
       }}
     >
       <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
