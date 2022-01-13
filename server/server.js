@@ -75,6 +75,24 @@ app.get("/featured", (req, res) => {
     });
 });
 
+// view the page for a specific product
+app.get(`/products/view/:name`, (req, res) => {
+  const queryText = `SELECT * FROM products
+                     WHERE name LIKE $1;`;
+  // NOTE: WORKS WITH LIKE OPERATOR BUT NOT = ??
+
+  const values = [`%${req.params.name}%`];
+
+  db.query(queryText, values)
+    .then((results) => {
+      res.json(results.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json([]);
+    });
+});
+
 // ------------------------ Products page routes -------------------------- //
 
 // show products from a certain category

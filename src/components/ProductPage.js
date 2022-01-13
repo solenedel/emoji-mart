@@ -11,14 +11,16 @@ const ProductPage = () => {
 
   // axios request to get data on the specific product
   useEffect(() => {
-    axios
-      .get(baseURL + `/products/view/${viewedProduct}`)
-      .then((res) => {
-        console.log("AXIOS GET - SINGLE PRODUCT: ", res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (viewedProduct !== "") {
+      axios
+        .get(baseURL + `/products/view/${viewedProduct}`)
+        .then((res) => {
+          console.log("AXIOS GET - SINGLE PRODUCT: ", res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }, []);
 
   return (
