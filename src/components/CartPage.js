@@ -1,14 +1,30 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect } from "react";
 import { useAppContext } from "../context/context";
+
+// URL to prepend for axios requests
+const baseURL = `http://localhost:8081`;
 
 const CartPage = () => {
   const { userContext } = useAppContext();
   const [user, setUser] = userContext;
 
+  // get products in user's cart, if any
+  useEffect(() => {
+    axios
+      .get(baseURL + `/cart/${user.username}`)
+      .then((res) => {
+        console.log("MY CART: ", res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return user.isAuthenticated ? (
-    <div>My cart page: {user.username}</div>
+    <div>{user.username}&apos;s cart</div>
   ) : (
-    <div>please log in.</div>
+    <div>You must be logged in to view your cart.</div>
   );
 };
 
