@@ -12,8 +12,10 @@ VALUES ('Mario', 'mario@mail.com', 'password1');
 INSERT INTO users (username, email, password)
 VALUES ('Luigi', 'luigi@mail.com', 'password2');
 
+-- NOTE: Demo user has id of 3
+
 INSERT INTO users (username, email, password)
-VALUES ('Demo', 'demo@mail.com', 'none');
+VALUES ('Demo User 💎', 'demo@mail.com', 'none');
 
 
 -- seeds for Products table
@@ -74,7 +76,8 @@ INSERT INTO cart (id, user_id, product_id, quantity)
 VALUES (2, 1, 2, 2);
 
 INSERT INTO cart (id, user_id, product_id, quantity)
-VALUES (3, 2, 4, 5);
-
-INSERT INTO cart (id, user_id, product_id, quantity)
 VALUES (4, 2, 1, 1);
+
+-- id 3 = Demo user
+INSERT INTO cart (id, user_id, product_id, quantity)
+VALUES (3, 2, 4, 5);
