@@ -9,6 +9,7 @@ import { GlobalStyles } from "./components/styled/GlobalStyles.style";
 import { AppContext } from "./context/context";
 import { StyledProductPage } from "./components/styled/ProductPage.style";
 import { StyledLoginPage } from "./components/styled/LoginPage.style";
+import CartPage from "./components/CartPage";
 
 const LOCAL_STORAGE_KEY_THEME = "emojimart-theme";
 const LOCAL_STORAGE_KEY_USER = "emojimart-user";
@@ -90,6 +91,7 @@ function App() {
               <Route exact path="/" component={StyledHomePage} />
               <Route exact path="/login" component={StyledLoginPage} />
               <Route exact path="/products" component={StyledProducts} />
+              <Route exact path="/cart" component={CartPage} />
               <Route path="/products/view/" component={StyledProductPage} />
             </Switch>
           </div>
