@@ -26,10 +26,12 @@ const ProductPage = () => {
   }, []);
 
   return (
-    <div>
-      <div>viewing: {currentProductDetails.name}</div>
-      <div>viewing: {currentProductDetails.id}</div>
-    </div>
+    <section className="view-product-page">
+      <div>{currentProductDetails.name}</div>
+      <div>{currentProductDetails.image_path}</div>
+      <div>${currentProductDetails.price}</div>
+      <div>{currentProductDetails.description}</div>
+    </section>
   );
 };
 
