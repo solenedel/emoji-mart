@@ -2,6 +2,8 @@
 -- NOTES
 -- use all lowercase for product names and category names.
 
+-- cart id should be same as user id? user can only have one cart
+
 
 
 -- seeds for users table
@@ -75,9 +77,13 @@ VALUES (1, 1, 3, 1);
 INSERT INTO cart (id, user_id, product_id, quantity)
 VALUES (2, 1, 2, 2);
 
-INSERT INTO cart (id, user_id, product_id, quantity)
-VALUES (4, 2, 1, 1);
 
 -- id 3 = Demo user
 INSERT INTO cart (id, user_id, product_id, quantity)
-VALUES (3, 2, 4, 5);
+VALUES (3, 3, 4, 5);
+
+INSERT INTO cart (id, user_id, product_id, quantity)
+VALUES (3, 3, 1, 1);
+
+INSERT INTO cart (id, user_id, product_id, quantity)
+VALUES (3, 3, 7, 1);
