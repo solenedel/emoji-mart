@@ -5,7 +5,7 @@ import { useAppContext } from "../context/context";
 // URL to prepend for axios requests
 const baseURL = `http://localhost:8081`;
 
-const ProductPage = () => {
+const ProductPage = ({ className }) => {
   const { viewedProductContext } = useAppContext();
   const [viewedProduct] = viewedProductContext;
   const [currentProductDetails, setCurrentProductDetails] = useState({});
@@ -26,11 +26,13 @@ const ProductPage = () => {
   }, []);
 
   return (
-    <section className="view-product-page">
-      <div>{currentProductDetails.name}</div>
-      <div>{currentProductDetails.image_path}</div>
-      <div>${currentProductDetails.price}</div>
-      <div>{currentProductDetails.description}</div>
+    <section className={className}>
+      <div id="product-image">{currentProductDetails.image_path}</div>
+      <div className="product-details">
+        <h1 id="product-name">{currentProductDetails.name}</h1>
+        <div>${currentProductDetails.price}</div>
+        <div>{currentProductDetails.description}</div>
+      </div>
     </section>
   );
 };

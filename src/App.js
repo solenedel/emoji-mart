@@ -6,8 +6,8 @@ import { StyledNavbar } from "./components/styled/Navbar.style";
 import { StyledProducts } from "./components/styled/Products.style";
 import { StyledHomePage } from "./components/styled/HomePage.style";
 import { GlobalStyles } from "./components/styled/GlobalStyles.style";
-import ProductPage from "./components/ProductPage";
 import { AppContext } from "./context/context";
+import { StyledProductPage } from "./components/styled/ProductPage.style";
 
 const LOCAL_STORAGE_KEY_THEME = "emojimart-theme";
 
@@ -71,7 +71,7 @@ function App() {
                 <StyledProducts />
               </Route>
               <Route path="/products/view/">
-                <ProductPage />
+                <StyledProductPage />
               </Route>
             </Switch>
           </div>
