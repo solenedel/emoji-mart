@@ -35,8 +35,18 @@ const ProductPage = ({ className }) => {
         {currentProductDetails.on_sale ? (
           <div id="sale-status">This product is currently on sale!</div>
         ) : (
-          <div id="sale-status">This product is not on sale at the moment.</div>
+          <div id="sale-status">This product is not on sale right now.</div>
         )}
+      </div>
+      <div className="buttons">
+        <button type="button">
+          <i className="fas fa-shopping-cart" />
+          Add to cart
+        </button>
+        <button type="button">
+          <i className="fas fa-heart" />
+          Add to favorites
+        </button>
       </div>
     </section>
   );

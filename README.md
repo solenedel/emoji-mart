@@ -29,7 +29,6 @@ Resetting the database: `npm run reset-db`
 
 
 ## TO DO
-- routes for a specific product (each product has its own page)
 - modularise Category button into one component & pass category name as props
 - set up mocha and chai tests
 - set up bootstrap
@@ -60,6 +59,7 @@ Resetting the database: `npm run reset-db`
 - fake checkout/payment feature (stripe)
 - price randomiser function?
 - profile page with user details (username, email, products ordered, comments)
+- "products similar to this" or "recently viewed"
 
 ### Resources/links/tutorials used
 

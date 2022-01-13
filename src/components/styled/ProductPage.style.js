@@ -24,4 +24,9 @@ export const StyledProductPage = styled(ProductPage)`
   div#sale-status {
     color: #ff8888;
   }
+
+  div.buttons {
+    display: flex;
+    flex-direction: column;
+  }
 `;
