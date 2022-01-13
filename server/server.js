@@ -79,7 +79,7 @@ app.get("/featured", (req, res) => {
 app.get(`/products/view/:name`, (req, res) => {
   const queryText = `SELECT * FROM products
                      WHERE name LIKE $1;`;
-  // NOTE: WORKS WITH LIKE OPERATOR BUT NOT = ??
+  // NOTE: WORKS WITH LIKE OPERATOR BUT NOT = ?? (returns empty array)
 
   const values = [`%${req.params.name}%`];
 
