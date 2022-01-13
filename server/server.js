@@ -135,7 +135,9 @@ app.get(`/products/search/:searchQuery`, (req, res) => {
 
 // get all products in a user's cart
 app.get(`/cart/:username`, (req, res) => {
-  const queryText = `SELECT * FROM cart
+  const queryText = `SELECT (product_id, name, image_path) FROM cart
+                     JOIN users on users.id = user_id
+                     JOIN products on products.id = product_id
                      WHERE user_id = $1;`;
 
   const values = [req.params.username];
