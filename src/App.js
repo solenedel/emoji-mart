@@ -8,6 +8,7 @@ import { StyledHomePage } from "./components/styled/HomePage.style";
 import { GlobalStyles } from "./components/styled/GlobalStyles.style";
 import { AppContext } from "./context/context";
 import { StyledProductPage } from "./components/styled/ProductPage.style";
+import { StyledLoginPage } from "./components/styled/LoginPage.style";
 
 const LOCAL_STORAGE_KEY_THEME = "emojimart-theme";
 
