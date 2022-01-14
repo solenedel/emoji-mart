@@ -9,6 +9,7 @@ const LoginPage = ({ className }) => {
     setUser({
       username: "Demo User 💎",
       isAuthenticated: true,
+      id: 3,
     });
     console.log("🔐 DEMO USER LOGGED IN.");
   };

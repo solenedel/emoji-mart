@@ -13,9 +13,10 @@ const CartPage = () => {
 
   // get products in user's cart, if any
   useEffect(() => {
+    console.log("USER", user);
     if (user.isAuthenticated) {
       axios
-        .get(baseURL + `/cart/${user.username}`)
+        .get(baseURL + `/cart/${user.id}`)
         .then((res) => {
           console.log("MY CART: ", res.data);
           setCartProducts(res.data);
