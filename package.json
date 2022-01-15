@@ -8,6 +8,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.24.0",
+    "bcrypt": "^5.0.1",
     "concurrently": "^6.5.1",
     "cookie-session": "^2.0.0",
     "cors": "^2.8.5",
