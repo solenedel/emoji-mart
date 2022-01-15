@@ -23,6 +23,7 @@ function App() {
   const [user, setUser] = useState({
     username: "",
     isAuthenticated: false,
+    id: null,
   });
 
   // toggle between light and dark themes
