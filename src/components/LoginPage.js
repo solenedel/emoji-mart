@@ -8,6 +8,7 @@ const LoginPage = ({ className }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // login form submission handler
   const handleLogin = (e) => {
     e.preventDefault();
     setEmail(email);
@@ -15,6 +16,10 @@ const LoginPage = ({ className }) => {
 
     console.log(`user ${user} logged in`);
     console.log(`email: ${email} password: ${password}`);
+
+    // clear form fields
+    setEmail("");
+    setPassword("");
   };
 
   return (

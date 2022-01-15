@@ -3,6 +3,7 @@
 const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
+const bcrypt = require("bcrypt");
 
 let dotenvPath = ""; // specify path to .env file
 
@@ -54,6 +55,36 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 // ---------------------------- ROUTES -------------------------------- //
+
+// ------------------------ Login page routes -------------------------- //
+
+app.post("/login", (req, res) => {
+  const { email, password } = req.body;
+  const queryText =
+    "SELECT password, id, username FROM users WHERE email = $1;";
+  const values = [email];
+
+  db.query(queryText, values)
+    .then((data) => {
+      if (data.rows.length > 0) {
+        if (bcrypt.compareSync(password, data.rows[0].password)) {
+          req.session.user = data.rows[0].id;
+          res.json({ auth: true, username: data.rows[0].username });
+        } else {
+          console.log(`invalid password ${password}`);
+          throw new Error("invalid password");
+        }
+      } else {
+        console.log(`No user with email ${email} was found!`);
+        throw new Error(`no user with email ${email} was found`);
+      }
+    })
+    .catch((err) => {
+      req.session = null;
+      res.json({ auth: false });
+      console.log(err);
+    });
+});
 
 // ------------------------ Home page routes -------------------------- //
 

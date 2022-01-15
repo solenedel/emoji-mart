@@ -29,6 +29,7 @@ Resetting the database: `npm run reset-db`
 
 
 ## TO DO
+- set up express routing for different pages
 - modularise Category button into one component & pass category name as props
 - set up mocha and chai tests
 - set up bootstrap
