@@ -10,15 +10,15 @@
 -- seeds for users table
 
 INSERT INTO users (username, email, password)
-VALUES ('Mario', 'mario@mail.com', 'password1');
+VALUES ('Mario', 'mario@mail.com', '$2b$10$2piIfr/J0tw9BheIAy6/uO0GroOwR89N2iI/10zhXlsx8SjIMgH.C');
 
 INSERT INTO users (username, email, password)
-VALUES ('Luigi', 'luigi@mail.com', 'password2');
+VALUES ('Luigi', 'luigi@mail.com', '$2b$10$qtX7eWeNslp2v5M6cn5C.u/vsEtU1.c.h2vMhqK17UpPudru920fm');
 
 -- NOTE: Demo user has id of 3
 
 INSERT INTO users (username, email, password)
-VALUES ('Demo User 💎', 'demo@mail.com', 'none');
+VALUES ('💎Demo', 'demo@mail.com', '$2b$10$snkNZnKWED/p.TNbf8ryE.fGVEKn12LoIIBT0ppZ6aCwsQ7YNf616');
 
 
 -- seeds for Products table
