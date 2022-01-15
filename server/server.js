@@ -2,6 +2,7 @@
 
 const express = require("express");
 const cors = require("cors");
+const cookieSession = require("cookie-session");
 
 let dotenvPath = ""; // specify path to .env file
 
@@ -30,6 +31,21 @@ const app = express();
 const PORT = 8081;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// create keys for cookies
+const key1 = process.env.COOKIE_KEY_1;
+const key2 = process.env.COOKIE_KEY_2;
+const key3 = process.env.COOKIE_KEY_3;
+
+// set up cookies and user sessions
+app.use(
+  cookieSession({
+    name: "session",
+    keys: [key1, key2, key3],
+    // cookie expires after 24 hours
+    maxAge: 24 * 60 * 60 * 1000,
+  })
+);
 
 // setup cors options
 const corsOptions = {
