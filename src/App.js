@@ -20,11 +20,7 @@ function App() {
 
   // states used in app context
   const [viewedProduct, setViewedProduct] = useState("");
-  const [user, setUser] = useState({
-    username: "",
-    isAuthenticated: false,
-    id: null,
-  });
+  const [user, setUser] = useState({});
 
   // toggle between light and dark themes
   const toggleTheme = () => {
@@ -52,22 +48,6 @@ function App() {
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY_THEME, JSON.stringify(theme));
   }, [theme]);
-
-  // persist current logged in user on page reload
-  useEffect(() => {
-    const storageUser = JSON.parse(
-      localStorage.getItem(LOCAL_STORAGE_KEY_USER)
-    );
-
-    if (user !== "") {
-      setUser(storageUser);
-    }
-  }, []);
-
-  // save current user to local storage
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY_USER, JSON.stringify(user));
-  }, [user]);
 
   return (
     <AppContext.Provider
