@@ -7,34 +7,37 @@ export const StyledLoginPage = styled(LoginPage)`
   align-items: center;
   margin: 60px 0 0 0;
 
-  & button#demo-login-btn {
+  div#current-user-status {
+    margin-top: 30px;
+    font-family: "Lato", sans-serif;
+  }
+
+  form#login-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+
+    & i {
+      margin-right: 15px;
+    }
+
+    & span {
+      margin-bottom: 25px;
+    }
+  }
+
+  & button#login-btn {
     margin-top: 40px;
-    width: 320px;
+    margin-left: 10px;
+    width: 130px;
     height: 45px;
     border: none;
     border-radius: 5px;
     background: #a8ffaf;
+    align-self: center;
 
     &:hover {
       background: #78f282;
     }
-  }
-
-  & button#demo-logout-btn {
-    margin-top: 40px;
-    width: 320px;
-    height: 45px;
-    border: none;
-    border-radius: 5px;
-    background: #ff9cb7;
-
-    &:hover {
-      background: #f883a3;
-    }
-  }
-
-  div#current-user-status {
-    margin-top: 30px;
-    font-family: "Lato", sans-serif;
   }
 `;
