@@ -67,6 +67,7 @@ app.post("/login", (req, res) => {
   db.query(queryText, values)
     .then((data) => {
       if (data.rows.length > 0) {
+        console.log("DATA.ROWS[0]", data.rows[0]);
         if (bcrypt.compareSync(password, data.rows[0].password)) {
           req.session.user = data.rows[0].id;
           res.json({ auth: true, username: data.rows[0].username });

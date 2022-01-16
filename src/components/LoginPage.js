@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { useAppContext } from "../context/context";
 
 const LoginPage = ({ className }) => {
@@ -11,15 +12,23 @@ const LoginPage = ({ className }) => {
   // login form submission handler
   const handleLogin = (e) => {
     e.preventDefault();
-    setEmail(email);
-    setPassword(password);
+    // setEmail(email);
+    // setPassword(password);
 
-    console.log(`user ${user} logged in`);
-    console.log(`email: ${email} password: ${password}`);
+    axios.post("/login", { email, password }).then((res) => {
+      console.log("RES.DATA", res.data);
+      setUser((prev) => ({
+        ...prev,
+        auth: res.data.auth,
+        username: res.data.username,
+      }));
 
-    // clear form fields
-    setEmail("");
-    setPassword("");
+      // console.log("AXIOS LOGIN REQUEST user: ", user);
+
+      // clear form fields
+      setEmail("");
+      setPassword("");
+    });
   };
 
   return (
