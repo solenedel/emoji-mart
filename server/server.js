@@ -58,6 +58,7 @@ app.use(cors(corsOptions));
 
 // ------------------------ Login page routes -------------------------- //
 
+// login user authentication & set cookies
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
   const queryText =
@@ -69,7 +70,9 @@ app.post("/login", (req, res) => {
       if (data.rows.length > 0) {
         console.log("DATA.ROWS[0]", data.rows[0]);
         if (bcrypt.compareSync(password, data.rows[0].password)) {
+          // set a cookie in server and send to client side
           req.session.user = data.rows[0].id;
+          console.log("session", req.session);
           res.json({ auth: true, username: data.rows[0].username });
         } else {
           console.log(`invalid password ${password}`);

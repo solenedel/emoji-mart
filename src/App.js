@@ -49,6 +49,10 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY_THEME, JSON.stringify(theme));
   }, [theme]);
 
+  // useEffect(() => {
+
+  // , []);
+
   return (
     <AppContext.Provider
       // eslint-disable-next-line
