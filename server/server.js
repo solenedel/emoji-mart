@@ -184,6 +184,26 @@ app.get(`/products/search/:searchQuery`, (req, res) => {
 
 // ------------------------ Cart page routes -------------------------- //
 
+// get products from a logged in user's cart
+app.get(`/cart/:username`, (req, res) => {
+  const queryText = `SELECT cart.* FROM cart
+                     JOIN products ON product_id = products.id
+                     JOIN users ON users_id = users.id
+                     WHERE user_id = $1
+                     WHERE username = $2;`;
+
+  const values = [req.session.user, req.session.username];
+
+  db.query(queryText, values)
+    .then((results) => {
+      res.json(results.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json([]);
+    });
+});
+
 // ------------------------ Single product page routes -------------------------- //
 
 // add a product to the cart

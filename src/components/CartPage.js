@@ -14,7 +14,8 @@ const CartPage = () => {
   // get products in user's cart, if any
   useEffect(() => {
     console.log("USER", user);
-    if (user.isAuthenticated) {
+    // replace line below to use session cookies
+    if (user.auth === true) {
       axios
         .get(baseURL + `/cart/${user.id}`)
         .then((res) => {
@@ -27,7 +28,7 @@ const CartPage = () => {
     }
   }, []);
 
-  return user.isAuthenticated ? (
+  return user.auth ? (
     <section className="user-cart">
       <h2>{user.username}&apos;s cart</h2>
       <div className="cart-products">
