@@ -8,7 +8,19 @@ const router = express.Router();
 module.exports = (db) => {
   // get login page
   router.get("/", (req, res) => {
-    console.log("logged in");
+    if (!req.session || !req.session.user) {
+      res.json({ auth: false });
+    } else {
+      const text = "SELECT username FROM users WHERE id = $1";
+      const values = [req.session.user];
+      db.query(text, values)
+        .then((data) => {
+          res.json({ auth: true, username: data.rows[0].username });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   });
 
   // login user authentication & set cookies
