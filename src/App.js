@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./components/styled/theme";
@@ -13,6 +14,9 @@ import CartPage from "./components/CartPage";
 
 const LOCAL_STORAGE_KEY_THEME = "emojimart-theme";
 const LOCAL_STORAGE_KEY_USER = "emojimart-user";
+
+// URL to prepend for axios requests
+const baseURL = `http://localhost:8081`;
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -32,6 +36,17 @@ function App() {
       setToggleButtonIcon("switch theme 🌙");
     }
   };
+
+  // // set user on login
+  // useEffect(() => {
+  //   axios.get(baseURL + "/login").then((res) => {
+  //     setUser((prev) => ({
+  //       ...prev,
+  //       auth: res.data.auth,
+  //       username: res.data.username,
+  //     }));
+  //   });
+  // }, []);
 
   // persist dark/light theme on page reload
   useEffect(() => {

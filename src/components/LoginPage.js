@@ -16,6 +16,7 @@ const LoginPage = ({ className }) => {
   const handleLogin = (e) => {
     e.preventDefault();
 
+    //  axios.post(baseURL + "/login",
     axios.post("/login", { email, password }).then((res) => {
       console.log("RES.DATA", res.data);
       setUser((prev) => ({
@@ -31,6 +32,17 @@ const LoginPage = ({ className }) => {
       setPassword("");
     });
   };
+
+  // set user on login
+  useEffect(() => {
+    axios.get(baseURL + "/login").then((res) => {
+      setUser((prev) => ({
+        ...prev,
+        auth: res.data.auth,
+        username: res.data.username,
+      }));
+    });
+  }, []);
 
   return (
     <section className={className}>

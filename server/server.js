@@ -58,6 +58,11 @@ app.use(cors(corsOptions));
 
 // ------------------------ Login page routes -------------------------- //
 
+// get login page
+app.get("/login", (req, res) => {
+  console.log("logged in");
+});
+
 // login user authentication & set cookies
 app.post("/login", (req, res) => {
   const { email, password } = req.body;
