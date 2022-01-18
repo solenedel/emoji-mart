@@ -186,13 +186,11 @@ app.get(`/products/search/:searchQuery`, (req, res) => {
 
 // get products from a logged in user's cart
 app.get(`/cart/:username`, (req, res) => {
-  const queryText = `SELECT cart.* FROM cart
-                     JOIN products ON product_id = products.id
+  const queryText = `SELECT * FROM cart
                      JOIN users ON users_id = users.id
-                     WHERE user_id = $1
-                     WHERE username = $2;`;
+                     WHERE username = $1;`;
 
-  const values = [req.session.user, req.session.username];
+  const values = [req.session.user.username];
 
   db.query(queryText, values)
     .then((results) => {
