@@ -68,7 +68,7 @@ app.post("/login", (req, res) => {
   db.query(queryText, values)
     .then((data) => {
       if (data.rows.length > 0) {
-        console.log("DATA.ROWS[0]", data.rows[0]);
+        // console.log("DATA.ROWS[0]", data.rows[0]);
         if (bcrypt.compareSync(password, data.rows[0].password)) {
           // set a cookie in server and send to client side
           req.session.user = data.rows[0].id;
@@ -186,20 +186,25 @@ app.get(`/products/search/:searchQuery`, (req, res) => {
 
 // get products from a logged in user's cart
 app.get(`/cart/:username`, (req, res) => {
-  const queryText = `SELECT * FROM cart
-                     JOIN users ON users_id = users.id
-                     WHERE username = $1;`;
+  if (req.session || req.session.user) {
+    console.log("REQ.SESSION", req.session);
 
-  const values = [req.session.user.username];
+    const queryText = `SELECT * FROM cart
+                     JOIN users ON user_id = users.id
+                     WHERE user_id = $1;`;
 
-  db.query(queryText, values)
-    .then((results) => {
-      res.json(results.rows);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.json([]);
-    });
+    const values = [req.session.user];
+
+    db.query(queryText, values)
+      .then((results) => {
+        res.json(results.rows);
+        console.log("RESULTS.ROWS", results.rows);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json([]);
+      });
+  }
 });
 
 // ------------------------ Single product page routes -------------------------- //

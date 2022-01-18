@@ -12,17 +12,17 @@ const CartPage = () => {
   const [cartProducts, setCartProducts] = useState([]);
 
   // get products in user's cart, if any
-  // useEffect(() => {
-  //   axios
-  //     .get(baseURL + `/cart/${user.username}`)
-  //     .then((res) => {
-  //       console.log("MY CART: ", res.data);
-  //       setCartProducts(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(baseURL + `/cart/${user.username}`)
+      .then((res) => {
+        console.log("MY CART: ", res.data);
+        setCartProducts(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
   return user.auth ? (
     <section className="user-cart">

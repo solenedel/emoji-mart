@@ -78,6 +78,9 @@ VALUES (1, 1, 3, 1);
 INSERT INTO cart (id, user_id, product_id, quantity)
 VALUES (2, 1, 2, 2);
 
+INSERT INTO cart (id, user_id, product_id, quantity)
+VALUES (6, 1, 5, 1);
+
 
 -- id 3 = Demo user
 INSERT INTO cart (id, user_id, product_id, quantity)

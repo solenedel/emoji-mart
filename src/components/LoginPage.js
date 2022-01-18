@@ -9,8 +9,6 @@ const LoginPage = ({ className }) => {
   const { userContext } = useAppContext();
   const [user, setUser] = userContext;
 
-  const [cartProducts, setCartProducts] = useState([]);
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -33,19 +31,6 @@ const LoginPage = ({ className }) => {
       setPassword("");
     });
   };
-
-  // get products in user's cart, if any
-  // const testHandler = () => {
-  //   axios
-  //     .get(baseURL + `/cart/${user.username}`)
-  //     .then((res) => {
-  //       console.log("MY CART: ", res.data);
-  //       setCartProducts(res.data);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
 
   return (
     <section className={className}>
@@ -75,9 +60,6 @@ const LoginPage = ({ className }) => {
         <button type="submit" id="login-btn" onClick={handleLogin}>
           Log in
         </button>
-        {/* <button type="button" onClick={testHandler}>
-          TEST
-        </button> */}
       </form>
     </section>
   );
