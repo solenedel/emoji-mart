@@ -3,7 +3,7 @@
 const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
-const bcrypt = require("bcrypt");
+const { Pool } = require("pg");
 
 let dotenvPath = ""; // specify path to .env file
 
@@ -21,7 +21,6 @@ if (process.env.NODE_ENV === "production") {
 require("dotenv").config({ path: dotenvPath });
 
 // Postgres database connection set up
-const { Pool } = require("pg");
 const dbParams = require("./db/dbParams");
 
 const db = new Pool(dbParams);
@@ -56,44 +55,10 @@ app.use(cors(corsOptions));
 
 // ---------------------------- ROUTES -------------------------------- //
 
-// ------------------------ Login page routes -------------------------- //
+// login routes
+const loginRouter = require("./routes/loginRoutes");
 
-// get login page
-app.get("/login", (req, res) => {
-  console.log("logged in");
-});
-
-// login user authentication & set cookies
-app.post("/login", (req, res) => {
-  const { email, password } = req.body;
-  const queryText =
-    "SELECT password, id, username FROM users WHERE email = $1;";
-  const values = [email];
-
-  db.query(queryText, values)
-    .then((data) => {
-      if (data.rows.length > 0) {
-        // console.log("DATA.ROWS[0]", data.rows[0]);
-        if (bcrypt.compareSync(password, data.rows[0].password)) {
-          // set a cookie in server and send to client side
-          req.session.user = data.rows[0].id;
-          console.log("session", req.session);
-          res.json({ auth: true, username: data.rows[0].username });
-        } else {
-          console.log(`invalid password ${password}`);
-          throw new Error("invalid password");
-        }
-      } else {
-        console.log(`No user with email ${email} was found!`);
-        throw new Error(`no user with email ${email} was found`);
-      }
-    })
-    .catch((err) => {
-      req.session = null;
-      res.json({ auth: false });
-      console.log(err);
-    });
-});
+app.use("/login", loginRouter);
 
 // ------------------------ Home page routes -------------------------- //
 
