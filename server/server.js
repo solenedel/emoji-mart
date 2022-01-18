@@ -65,61 +65,10 @@ const homePageRouter = require("./routes/homePageRoutes");
 
 app.use("/", homePageRouter(db));
 
-// view the page for a specific product
-app.get(`/products/view/:name`, (req, res) => {
-  const queryText = `SELECT * FROM products
-                     WHERE name LIKE $1;`;
-  // NOTE: WORKS WITH LIKE OPERATOR BUT NOT = ?? (returns empty array)
+// products page routes
+const productsRouter = require("./routes/productsRoutes");
 
-  const values = [`%${req.params.name}%`];
-
-  db.query(queryText, values)
-    .then((results) => {
-      res.json(results.rows);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.json([]);
-    });
-});
-
-// ------------------------ Browse products page routes -------------------------- //
-
-// show products from a certain category
-app.get(`/products/category/:category`, (req, res) => {
-  const queryText = `SELECT * FROM products
-                     WHERE category = $1
-                     ORDER BY random();`;
-
-  const values = [req.params.category];
-
-  db.query(queryText, values)
-    .then((results) => {
-      res.json(results.rows);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.json([]);
-    });
-});
-
-// show products from a search query
-app.get(`/products/search/:searchQuery`, (req, res) => {
-  const queryText = `SELECT * FROM products
-                     WHERE name LIKE $1
-                     OR category LIKE $1;`;
-
-  const values = [`%${req.params.searchQuery}%`];
-
-  db.query(queryText, values)
-    .then((results) => {
-      res.json(results.rows);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.json([]);
-    });
-});
+app.use("/products", productsRouter(db));
 
 // ------------------------ Cart page routes -------------------------- //
 
