@@ -58,43 +58,12 @@ app.use(cors(corsOptions));
 // login routes
 const loginRouter = require("./routes/loginRoutes");
 
-app.use("/login", loginRouter);
+app.use("/login", loginRouter(db));
 
-// ------------------------ Home page routes -------------------------- //
+// home page routes
+const homePageRouter = require("./routes/homePageRoutes");
 
-// get all products on sale
-app.get("/", (req, res) => {
-  const queryText = `SELECT * FROM products 
-                     WHERE on_sale = TRUE
-                     ORDER BY random()
-                     LIMIT 6;`;
-  // const values = [TRUE];
-  db.query(queryText)
-    .then((results) => {
-      console.log("results.rows", results.rows);
-      res.json(results.rows);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.json([]);
-    });
-});
-
-// get a random product from products (featured)
-app.get("/featured", (req, res) => {
-  const queryText = `SELECT * FROM products 
-                     ORDER BY random()
-                     LIMIT 1;`;
-  db.query(queryText)
-    .then((results) => {
-      console.log("RANDOM ROW: ", results.rows);
-      res.json(results.rows);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.json([]);
-    });
-});
+app.use("/", homePageRouter(db));
 
 // view the page for a specific product
 app.get(`/products/view/:name`, (req, res) => {
