@@ -189,8 +189,9 @@ app.get(`/cart/:username`, (req, res) => {
   if (req.session || req.session.user) {
     console.log("REQ.SESSION", req.session);
 
-    const queryText = `SELECT * FROM cart
+    const queryText = `SELECT product_id, quantity, name, image_path FROM cart
                      JOIN users ON user_id = users.id
+                     JOIN products on product_id = products.id
                      WHERE user_id = $1;`;
 
     const values = [req.session.user];

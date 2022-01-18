@@ -13,11 +13,13 @@ const CartPage = () => {
 
   // get products in user's cart, if any
   useEffect(() => {
+    console.log("LOGGED IN USER: ", user.username);
+
     axios
       .get(baseURL + `/cart/${user.username}`)
       .then((res) => {
-        console.log("MY CART: ", res.data);
         setCartProducts(res.data);
+        console.log("MY CART: ", res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -28,9 +30,10 @@ const CartPage = () => {
     <section className="user-cart">
       <h2>{user.username}&apos;s cart</h2>
       <div className="cart-products">
-        {cartProducts.map((product) => {
+        {/* {cartProducts.map((product) => {
           return <div key={product.id}>{product.name}</div>;
-        })}
+        })} */}
+        {console.log("cart products: ", cartProducts)}
       </div>
     </section>
   ) : (
