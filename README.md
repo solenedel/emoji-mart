@@ -2,16 +2,14 @@
 
 A mock online shop. Browse items by category, price or name. Add/remove items to your favorites or your shopping cart. 
 
-Categories include:
-- fruits
-- plants
-- food
-- drink
-
 **tools / frameworks**
 - Front end: ReactJS
 - Back end: Node.js
 - Database: Postgres
+
+### Key
+⚠️ - bug / to fix / needs attention
+
 
 ## Running the app
 

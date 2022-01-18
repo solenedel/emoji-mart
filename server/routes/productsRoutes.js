@@ -26,8 +26,8 @@ module.exports = (db) => {
   // view the page for a specific product
   router.get(`/view/:name`, (req, res) => {
     const queryText = `SELECT * FROM products
-                     WHERE name LIKE $1;`;
-    // NOTE: WORKS WITH LIKE OPERATOR BUT NOT = ?? (returns empty array)
+                       WHERE name LIKE $1;`;
+    // ⚠️ QUERY WORKS WITH LIKE OPERATOR BUT NOT = ?? (returns empty array)
 
     const values = [`%${req.params.name}%`];
 
@@ -61,3 +61,22 @@ module.exports = (db) => {
 
   return router;
 };
+
+// add a product to the cart
+/*
+app.post(`/products/add-to-cart/:username`, (req, res) => {
+  const queryText = `INSERT INTO cart
+                     WHERE user_id = $1
+                     VALUES (user_id, product_id, quantity) ;`;
+
+  const values = [req.params.username, ];
+
+  db.query(queryText, values)
+    .then((results) => {
+      res.json(results.rows);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.json([]);
+    });
+}); */

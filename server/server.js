@@ -42,8 +42,7 @@ app.use(
   cookieSession({
     name: "session",
     keys: [key1, key2, key3],
-    // cookie expires after 24 hours
-    maxAge: 24 * 60 * 60 * 1000,
+    maxAge: 24 * 60 * 60 * 1000, // cookie expires after 24 hours
   })
 );
 
