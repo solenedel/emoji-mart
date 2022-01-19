@@ -8,7 +8,9 @@ A mock online shop. Browse items by category, price or name. Add/remove items to
 - Database: Postgres
 
 ### Key
-⚠️ - bug / to fix / needs attention / modularise
+- 📍 currently working on 
+- ⚠️ bug / to fix / needs attention / modularise
+- ✅ complete
 
 
 ## Running the app
@@ -28,6 +30,7 @@ Resetting the database: `npm run reset-db`
 
 ## TO DO - not styling
 
+- 📍 filter by price
 - modularise Category button into one component & pass category name as props
 - set up mocha and chai tests
 - react fragments
@@ -48,7 +51,8 @@ Resetting the database: `npm run reset-db`
 
 ## Main Features (MVP)
 
-- browse items: filter by category, price, search by name
+- browse products: filter by category, search by name
+- filter products by price
 - login / create an account
 - add, remove items from cart
 - add, femove items from favourites

@@ -13,9 +13,6 @@ import CartPage from "./components/CartPage";
 
 const LOCAL_STORAGE_KEY_THEME = "emojimart-theme";
 
-// URL to prepend for axios requests
-const baseURL = `http://localhost:8081`;
-
 function App() {
   const [theme, setTheme] = useState("light");
   const [toggleButtonIcon, setToggleButtonIcon] = useState("switch theme 🌙");
