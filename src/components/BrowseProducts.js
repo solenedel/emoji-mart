@@ -84,6 +84,20 @@ const Products = ({ className }) => {
         handleSearchInputChange={handleSearchInputChange}
         handleSearchSubmit={handleSearchSubmit}
       />
+      <form action="submit" id="price-filter-form">
+        <h4>Filter by price</h4>
+        <label htmlFor="max-price">
+          {" "}
+          Maximum price $
+          <input type="number" id="max-price" name="max-price" min={0} />
+        </label>
+
+        <label htmlFor="min-price">
+          {" "}
+          Minimum price $
+          <input type="number" id="min-price" name="min-price" min={0} />
+        </label>
+      </form>
       {isLoading && (
         <ThreeDots
           height="200"

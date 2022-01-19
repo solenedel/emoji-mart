@@ -94,4 +94,16 @@ export const StyledBrowseProducts = styled(Products)`
     margin-top: 60px;
     color: #fc94a4;
   }
+
+  form#price-filter-form {
+    margin-top: 50px;
+    border: solid #94e5fc 2px;
+    border-radius: 5px;
+    padding: 20px;
+
+    & input {
+      width: 100px;
+      margin-left: 10px;
+    }
+  }
 `;
