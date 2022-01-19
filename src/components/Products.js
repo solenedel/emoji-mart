@@ -22,25 +22,19 @@ const Products = ({ className }) => {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    setIsLoading(true);
     setQueryReturned(false);
+    setIsLoading(true);
 
     if (searchQuery !== "") {
       axios
         .get(baseURL + `/products/search/${searchQuery}`)
         .then((res) => {
-          // console.log(`SEARCHING FOR QUERY: ${searchQuery}: `, res.data);
           setSearchResults(res.data);
-          setQueryReturned(true);
 
-          if (res.data.length === 0) {
-            console.log("NO RESULTS FOUND");
-            setQueryReturned(true);
-          }
-
-          // display the loader for a minimum amount of time using setTimeout
+          // display the loader for a minimum amount of time (750 ms)
           setTimeout(() => {
             setIsLoading(false);
+            setQueryReturned(true);
           }, 750);
         })
         .catch((err) => {
@@ -69,13 +63,12 @@ const Products = ({ className }) => {
 
   // get products from categories
   useEffect(() => {
-    // NOTE: make this more modular later by creating a custom category button component
+    // ⚠️ make this more modular later by creating a custom category button component
     // the below if statement is a temporary workaround but should be removed later
     if (selectedCategory !== "") {
       axios
         .get(baseURL + `/products/category/${selectedCategory}`)
         .then((res) => {
-          // console.log(`AXIOS GET - CATEGORY ${selectedCategory}: `, res.data);
           setSearchResults(res.data);
         })
         .catch((err) => {

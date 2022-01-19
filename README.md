@@ -8,7 +8,7 @@ A mock online shop. Browse items by category, price or name. Add/remove items to
 - Database: Postgres
 
 ### Key
-⚠️ - bug / to fix / needs attention
+⚠️ - bug / to fix / needs attention / modularise
 
 
 ## Running the app
