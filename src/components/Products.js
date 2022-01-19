@@ -12,15 +12,18 @@ const Products = ({ className }) => {
   const [searchResults, setSearchResults] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [queryReturned, setQueryReturned] = useState(false);
 
   const handleSearchInputChange = (e) => {
     console.log("e.target.value", e.target.value);
     setSearchQuery(e.target.value.toLowerCase());
+    setQueryReturned(false);
   };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
+    setQueryReturned(false);
 
     if (searchQuery !== "") {
       axios
@@ -28,6 +31,12 @@ const Products = ({ className }) => {
         .then((res) => {
           // console.log(`SEARCHING FOR QUERY: ${searchQuery}: `, res.data);
           setSearchResults(res.data);
+          setQueryReturned(true);
+
+          if (res.data.length === 0) {
+            console.log("NO RESULTS FOUND");
+            setQueryReturned(true);
+          }
 
           // display the loader for a minimum amount of time using setTimeout
           setTimeout(() => {
@@ -37,6 +46,7 @@ const Products = ({ className }) => {
         .catch((err) => {
           console.log(err);
           setIsLoading(false);
+          setQueryReturned(false);
         });
     }
   };
@@ -89,6 +99,9 @@ const Products = ({ className }) => {
           arialLabel="loading"
         />
       )}
+      {searchResults.length === 0 && queryReturned === true && (
+        <div>No results found</div>
+      )}
       <section id="browse-category">
         <h3>Browse by category</h3>
         <div className="category-buttons">
@@ -136,6 +149,7 @@ const Products = ({ className }) => {
       </section>
       <div className="product-results">
         {!isLoading &&
+          searchResults.length > 0 &&
           searchResults.map((searchResult) => {
             return (
               <StyledProduct
