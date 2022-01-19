@@ -25,6 +25,7 @@ Resetting the database: `npm run reset-db`
 ## BUGS
 
 - (not really a bug) if dark theme is selected and page is refreshed, screen flashes white before loading dark mode again
+- **not critical** :3000/favicon.ico:1 Failed to load resource: the server responded with a status of 404 (Not Found)
 
 
 

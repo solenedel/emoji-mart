@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./components/styled/theme";
 import { StyledNavbar } from "./components/styled/Navbar.style";
-import { StyledProducts } from "./components/styled/Products.style";
+import { StyledBrowseProducts } from "./components/styled/BrowseProducts.style";
 import { StyledHomePage } from "./components/styled/HomePage.style";
 import { GlobalStyles } from "./components/styled/GlobalStyles.style";
 import { AppContext } from "./context/context";
@@ -80,7 +80,7 @@ function App() {
             <Switch>
               <Route exact path="/" component={StyledHomePage} />
               <Route exact path="/login" component={StyledLoginPage} />
-              <Route exact path="/products" component={StyledProducts} />
+              <Route exact path="/products" component={StyledBrowseProducts} />
               <Route exact path="/cart" component={CartPage} />
               <Route path="/products/view/" component={StyledProductPage} />
             </Switch>

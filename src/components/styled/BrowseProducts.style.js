@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import Products from "../Products";
+import Products from "../BrowseProducts";
 
-export const StyledProducts = styled(Products)`
+export const StyledBrowseProducts = styled(Products)`
   margin: 50px 0 0 0;
   height: 100vh;
   display: flex;
