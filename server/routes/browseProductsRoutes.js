@@ -60,7 +60,7 @@ module.exports = (db) => {
   });
 
   // show products using the price filter form
-  router.get(`/search/filter-by-price`, (req, res) => {
+  router.get(`/search/filter-by-price/:maxPrice/:minPrice`, (req, res) => {
     const queryText = `SELECT * FROM products
                      WHERE price >= $1
                      WHERE price >= $2;`;
