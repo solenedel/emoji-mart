@@ -64,10 +64,10 @@ const homePageRouter = require("./routes/homePageRoutes");
 
 app.use("/", homePageRouter(db));
 
-// products page routes
-const productsRouter = require("./routes/productsRoutes");
+// browse products page routes
+const browseProductsRouter = require("./routes/browseProductsRoutes");
 
-app.use("/products", productsRouter(db));
+app.use("/products", browseProductsRouter(db));
 
 // cart page routes
 const cartPageRouter = require("./routes/cartPageRoutes");

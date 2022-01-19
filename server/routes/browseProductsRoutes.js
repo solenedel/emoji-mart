@@ -59,6 +59,24 @@ module.exports = (db) => {
       });
   });
 
+  // show products using the price filter form
+  router.get(`/search/filter-by-price`, (req, res) => {
+    const queryText = `SELECT * FROM products
+                     WHERE price >= $1
+                     WHERE price >= $2;`;
+
+    const values = [req.params.minPrice, req.params.maxPrice];
+
+    db.query(queryText, values)
+      .then((results) => {
+        res.json(results.rows);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json([]);
+      });
+  });
+
   return router;
 };
 
