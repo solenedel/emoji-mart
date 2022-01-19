@@ -14,6 +14,11 @@ export const StyledBrowseProducts = styled(Products)`
     align-items: center;
   }
 
+  & h3 {
+    margin-bottom: 30px;
+    font-size: 38px;
+  }
+
   input {
     margin-top: 20px;
     width: 300px;
@@ -37,7 +42,9 @@ export const StyledBrowseProducts = styled(Products)`
   }
 
   section#browse-category {
-    margin-top: 100px;
+    border-top: solid white 2px;
+    padding-top: 30px;
+    margin-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,5 +88,10 @@ export const StyledBrowseProducts = styled(Products)`
     justify-content: space-around;
     align-self: flex-start;
     width: 75vw;
+  }
+
+  div#no-results-found {
+    margin-top: 60px;
+    color: #fc94a4;
   }
 `;

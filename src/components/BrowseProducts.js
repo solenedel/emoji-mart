@@ -93,7 +93,7 @@ const Products = ({ className }) => {
         />
       )}
       {searchResults.length === 0 && queryReturned === true && (
-        <div>No results found</div>
+        <div id="no-results-found">Sorry, no results found.</div>
       )}
       <section id="browse-category">
         <h3>Browse by category</h3>
