@@ -83,12 +83,24 @@ const Products = ({ className }) => {
 
   const handleMinInputChange = (e) => {
     setPriceRange({ ...priceRange, min: Number(e.target.value) }); // USE PREV
-    console.log("MIN PRICE:  ", Number(priceRange.min));
+    // console.log("MIN PRICE:  ", Number(priceRange.min));
   };
 
   const handleMaxInputChange = (e) => {
     setPriceRange({ ...priceRange, max: Number(e.target.value) }); // USE PREV
-    console.log("MAX PRICE:  ", Number(priceRange.max));
+    // console.log("MAX PRICE:  ", Number(priceRange.max));
+  };
+
+  const handlePriceFormSubmit = (e) => {
+    e.preventDefault();
+    console.log("SUBMITTED PRICE RANGE: ", priceRange);
+
+    // if (priceRange.max > priceRange.min) {
+    //   console.log("SUBMITTED PRICE RANGE: ", priceRange);
+    // } else {
+    //   console.log("INVALID PRICE RANGE");
+    //   setPriceRange({ min: 0, max: 0 });
+    // }
   };
 
   return (
@@ -98,7 +110,11 @@ const Products = ({ className }) => {
         handleSearchInputChange={handleSearchInputChange}
         handleSearchSubmit={handleSearchSubmit}
       />
-      <form action="submit" id="price-filter-form">
+      <form
+        action="submit"
+        id="price-filter-form"
+        onSubmit={handlePriceFormSubmit}
+      >
         <h4>Filter by price</h4>
         <label htmlFor="max-price">
           {" "}
