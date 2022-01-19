@@ -16,7 +16,6 @@ const LoginPage = ({ className }) => {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    //  axios.post(baseURL + "/login",
     axios.post("/login", { email, password }).then((res) => {
       console.log("RES.DATA", res.data);
       setUser((prev) => ({
@@ -24,8 +23,6 @@ const LoginPage = ({ className }) => {
         auth: res.data.auth,
         username: res.data.username,
       }));
-
-      // console.log("AXIOS LOGIN REQUEST user: ", user);
 
       // clear form fields
       setEmail("");

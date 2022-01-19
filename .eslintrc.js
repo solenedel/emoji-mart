@@ -24,5 +24,8 @@ module.exports = {
     "arrow-body-style": "off",
     "no-shadow": "warn",
     "jsx-a11y/label-has-for": "off",
+    "react/jsx-no-constructed-context-values": "off",
+    "jsx-a11y/no-static-element-interactions": "warn",
+    "jsx-a11y/click-events-have-key-events": "warn",
   },
 };

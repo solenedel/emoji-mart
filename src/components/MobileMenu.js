@@ -34,9 +34,7 @@ const MobileMenu = ({
   );
 
   const menuMask = (
-    // eslint-disable-next-line
-    <div id="menu-mask" onClick={() => setShowMenu(!showMenu)}>
-    </div>
+    <div id="menu-mask" onClick={() => setShowMenu(!showMenu)} />
   );
 
   return (

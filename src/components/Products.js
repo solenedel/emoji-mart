@@ -5,7 +5,7 @@ import Searchbar from "./Searchbar";
 import { StyledProduct } from "./styled/Product.style";
 
 // URL to prepend for axios requests
-const baseURL = `http://localhost:8081`; // change this for production build?
+const baseURL = `http://localhost:8081`;
 
 const Products = ({ className }) => {
   const [searchQuery, setSearchQuery] = useState("");

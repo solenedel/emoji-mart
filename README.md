@@ -26,16 +26,20 @@ Resetting the database: `npm run reset-db`
 
 
 
-## TO DO
-- set up express routing for different pages
+## TO DO - not styling
+
 - modularise Category button into one component & pass category name as props
 - set up mocha and chai tests
-- set up bootstrap
 - react fragments
-- use css grid for products display
 - add reviews table to schema
+
+## TO DO - styling
+
+- use css grid for products display
+- set up bootstrap
 - fade-in and fade-out when products appear and disappear
 - selected category button styled differently when selected/clicked
+- flip menu mask in mobile menu
 
 ## NOTES
 - product quantities in cart?

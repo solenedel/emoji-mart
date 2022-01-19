@@ -1,4 +1,5 @@
 // ------------- helper functions used in server-side code ------------ //
+
 const bcrypt = require("bcrypt");
 
 // PASSWORD HASH FUNCTION: store hashed version of the password in database
