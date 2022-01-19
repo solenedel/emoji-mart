@@ -13,6 +13,10 @@ const Products = ({ className }) => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [queryReturned, setQueryReturned] = useState(false);
+  const [priceRange, setPriceRange] = useState({
+    min: 0,
+    max: 0,
+  });
 
   const handleSearchInputChange = (e) => {
     console.log("e.target.value", e.target.value);
@@ -77,6 +81,16 @@ const Products = ({ className }) => {
     }
   }, [selectedCategory]);
 
+  const handleMinInputChange = (e) => {
+    setPriceRange({ ...priceRange, min: Number(e.target.value) }); // USE PREV
+    console.log("MIN PRICE:  ", Number(priceRange.min));
+  };
+
+  const handleMaxInputChange = (e) => {
+    setPriceRange({ ...priceRange, max: Number(e.target.value) }); // USE PREV
+    console.log("MAX PRICE:  ", Number(priceRange.max));
+  };
+
   return (
     <div className={className}>
       <h3>Browse products</h3>
@@ -89,14 +103,27 @@ const Products = ({ className }) => {
         <label htmlFor="max-price">
           {" "}
           Maximum price $
-          <input type="number" id="max-price" name="max-price" min={0} />
+          <input
+            type="number"
+            id="max-price"
+            name="max-price"
+            min={0}
+            onChange={handleMaxInputChange}
+          />
         </label>
 
         <label htmlFor="min-price">
           {" "}
           Minimum price $
-          <input type="number" id="min-price" name="min-price" min={0} />
+          <input
+            type="number"
+            id="min-price"
+            name="min-price"
+            min={0}
+            onChange={handleMinInputChange}
+          />
         </label>
+        <button type="submit">Confirm</button>
       </form>
       {isLoading && (
         <ThreeDots
