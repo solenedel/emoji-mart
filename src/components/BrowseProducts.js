@@ -105,11 +105,10 @@ const Products = ({ className }) => {
     if (priceRange.min > 0 && priceRange.max > 0) {
       axios
         .get(
-          baseURL +
-            `/products/search/filter-by-price/${priceRange.max}/${priceRange.min}`
+          baseURL + `/products/search/price/${priceRange.min}/${priceRange.max}`
         )
         .then((res) => {
-          console.log("RES . DATA", res.data);
+          console.log("RES.DATA PRICE FILTER", res.data);
           setSearchResults(res.data);
 
           // display the loader for a minimum amount of time (750 ms)
