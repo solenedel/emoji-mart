@@ -95,13 +95,6 @@ const Products = ({ className }) => {
     e.preventDefault();
     console.log("SUBMITTED PRICE RANGE: ", priceRange);
 
-    // if (priceRange.max > priceRange.min) {
-    //   console.log("SUBMITTED PRICE RANGE: ", priceRange);
-    // } else {
-    //   console.log("INVALID PRICE RANGE");
-    //   setPriceRange({ min: 0, max: 0 });
-    // }
-
     if (priceRange.min > 0 && priceRange.max > 0) {
       axios
         .get(
@@ -132,37 +125,85 @@ const Products = ({ className }) => {
         handleSearchInputChange={handleSearchInputChange}
         handleSearchSubmit={handleSearchSubmit}
       />
-      <form
-        action="submit"
-        id="price-filter-form"
-        onSubmit={handlePriceFormSubmit}
-      >
-        <h4>Filter by price</h4>
-        <label htmlFor="max-price">
-          {" "}
-          Maximum price $
-          <input
-            type="number"
-            id="max-price"
-            name="max-price"
-            min={0}
-            onChange={handleMaxInputChange}
-          />
-        </label>
+      <div className="filters">
+        <form
+          action="submit"
+          id="price-filter-form"
+          onSubmit={handlePriceFormSubmit}
+        >
+          <h4>Filter by price</h4>
+          <label htmlFor="max-price">
+            {" "}
+            Maximum price $
+            <input
+              type="number"
+              id="max-price"
+              name="max-price"
+              min={0}
+              onChange={handleMaxInputChange}
+            />
+          </label>
 
-        <label htmlFor="min-price">
-          {" "}
-          Minimum price $
-          <input
-            type="number"
-            id="min-price"
-            name="min-price"
-            min={0}
-            onChange={handleMinInputChange}
-          />
-        </label>
-        <button type="submit">Confirm</button>
-      </form>
+          <label htmlFor="min-price">
+            {" "}
+            Minimum price $
+            <input
+              type="number"
+              id="min-price"
+              name="min-price"
+              min={0}
+              onChange={handleMinInputChange}
+            />
+          </label>
+          <button type="submit">Confirm</button>
+        </form>
+        <section id="browse-category">
+          <h4>Select category</h4>
+          <div className="category-buttons">
+            <button
+              type="button"
+              className="plants"
+              onClick={() => {
+                setPlantsCategory();
+              }}
+            >
+              <i className="fas fa-seedling" />
+              &nbsp;Plants
+            </button>
+            <button
+              type="button"
+              className="fruits"
+              onClick={() => {
+                setFruitsCategory();
+              }}
+            >
+              <i className="fas fa-apple-alt" />
+              &nbsp;Fruits
+            </button>
+            <button
+              type="button"
+              className="food"
+              onClick={() => {
+                setFoodCategory();
+              }}
+            >
+              <i className="fas fa-utensils" />
+              &nbsp;Food
+            </button>
+            <button
+              type="button"
+              className="drinks"
+              onClick={() => {
+                setDrinksCategory();
+              }}
+            >
+              <i className="fas fa-glass-martini-alt" />
+              &nbsp;Drinks
+            </button>
+          </div>
+        </section>
+      </div>
+
       {isLoading && (
         <ThreeDots
           height="200"
@@ -174,51 +215,6 @@ const Products = ({ className }) => {
       {searchResults.length === 0 && queryReturned === true && (
         <div id="no-results-found">Sorry, no results found.</div>
       )}
-      <section id="browse-category">
-        <h3>Browse by category</h3>
-        <div className="category-buttons">
-          <button
-            type="button"
-            className="plants"
-            onClick={() => {
-              setPlantsCategory();
-            }}
-          >
-            <i className="fas fa-seedling" />
-            &nbsp;Plants
-          </button>
-          <button
-            type="button"
-            className="fruits"
-            onClick={() => {
-              setFruitsCategory();
-            }}
-          >
-            <i className="fas fa-apple-alt" />
-            &nbsp;Fruits
-          </button>
-          <button
-            type="button"
-            className="food"
-            onClick={() => {
-              setFoodCategory();
-            }}
-          >
-            <i className="fas fa-utensils" />
-            &nbsp;Food
-          </button>
-          <button
-            type="button"
-            className="drinks"
-            onClick={() => {
-              setDrinksCategory();
-            }}
-          >
-            <i className="fas fa-glass-martini-alt" />
-            &nbsp;Drinks
-          </button>
-        </div>
-      </section>
       <div className="product-results">
         {!isLoading &&
           searchResults.length > 0 &&
