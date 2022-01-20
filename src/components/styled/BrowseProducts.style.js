@@ -23,14 +23,14 @@ export const StyledBrowseProducts = styled(Products)`
     flex-direction: column;
     align-items: center;
 
-    & h4 {
+    /* & h4 {
       margin-bottom: 50px;
-    }
+    } */
 
     div.category-buttons {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-gap: 30px 20px;
 
       & button {
         padding: 5px;
