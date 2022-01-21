@@ -67,7 +67,8 @@ const FilterForm = ({
     if (priceRange.min > 0 && priceRange.max > 0) {
       axios
         .get(
-          baseURL + `/products/search/price/${priceRange.min}/${priceRange.max}`
+          baseURL +
+            `/products/search/price/${priceRange.min}/${priceRange.max}/${selectedCategory}`
         )
         .then((res) => {
           console.log("RES.DATA PRICE FILTER", res.data);
@@ -118,55 +119,55 @@ const FilterForm = ({
             onChange={handleMinInputChange}
           />
         </label>
+        <section id="browse-category">
+          <h4>Select category</h4>
+          <div className="category-buttons">
+            <button
+              type="button"
+              className="plants"
+              onClick={() => {
+                setPlantsCategory();
+              }}
+            >
+              <i className="fas fa-seedling" />
+              &nbsp;Plants
+            </button>
+            <button
+              type="button"
+              className="fruits"
+              onClick={() => {
+                setFruitsCategory();
+              }}
+            >
+              <i className="fas fa-apple-alt" />
+              &nbsp;Fruits
+            </button>
+            <button
+              type="button"
+              className="food"
+              onClick={() => {
+                setFoodCategory();
+              }}
+            >
+              <i className="fas fa-utensils" />
+              &nbsp;Food
+            </button>
+            <button
+              type="button"
+              className="drinks"
+              onClick={() => {
+                setDrinksCategory();
+              }}
+            >
+              <i className="fas fa-glass-martini-alt" />
+              &nbsp;Drinks
+            </button>
+          </div>
+        </section>
         <button type="submit" id="confirm-filters-btn">
           Confirm
         </button>
       </form>
-      <section id="browse-category">
-        <h4>Select category</h4>
-        <div className="category-buttons">
-          <button
-            type="button"
-            className="plants"
-            onClick={() => {
-              setPlantsCategory();
-            }}
-          >
-            <i className="fas fa-seedling" />
-            &nbsp;Plants
-          </button>
-          <button
-            type="button"
-            className="fruits"
-            onClick={() => {
-              setFruitsCategory();
-            }}
-          >
-            <i className="fas fa-apple-alt" />
-            &nbsp;Fruits
-          </button>
-          <button
-            type="button"
-            className="food"
-            onClick={() => {
-              setFoodCategory();
-            }}
-          >
-            <i className="fas fa-utensils" />
-            &nbsp;Food
-          </button>
-          <button
-            type="button"
-            className="drinks"
-            onClick={() => {
-              setDrinksCategory();
-            }}
-          >
-            <i className="fas fa-glass-martini-alt" />
-            &nbsp;Drinks
-          </button>
-        </div>
-      </section>
     </div>
   );
 };

@@ -66,7 +66,7 @@ module.exports = (db) => {
                      AND price <= $2
                      AND category = $3
                      ORDER BY price;`;
-
+    // ⚠️ REQUEST DOES NOT WORK IF AN EMPTY STRING IS USED AS THE CATEGORY
     const values = [
       req.params.minPrice,
       req.params.maxPrice,
