@@ -23,10 +23,6 @@ export const StyledBrowseProducts = styled(Products)`
     flex-direction: column;
     align-items: center;
 
-    /* & h4 {
-      margin-bottom: 50px;
-    } */
-
     div.category-buttons {
       display: grid;
       grid-template-columns: 50% 50%;
