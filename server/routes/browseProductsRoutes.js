@@ -60,13 +60,18 @@ module.exports = (db) => {
   });
 
   // show products using the price filter form
-  router.get(`/search/price/:minPrice/:maxPrice`, (req, res) => {
+  router.get(`/search/price/:minPrice/:maxPrice/:category`, (req, res) => {
     const queryText = `SELECT * FROM products
                      WHERE price >= $1
                      AND price <= $2
+                     AND category = $3
                      ORDER BY price;`;
 
-    const values = [req.params.minPrice, req.params.maxPrice];
+    const values = [
+      req.params.minPrice,
+      req.params.maxPrice,
+      req.params.category,
+    ];
 
     db.query(queryText, values)
       .then((results) => {

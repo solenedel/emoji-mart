@@ -52,6 +52,10 @@ export const StyledBrowseProducts = styled(Products)`
     }
   }
 
+  button#confirm-filters-btn {
+    margin-top: 30px;
+  }
+
   form {
     display: flex;
     flex-direction: column;

@@ -118,7 +118,9 @@ const FilterForm = ({
             onChange={handleMinInputChange}
           />
         </label>
-        <button type="submit">Confirm</button>
+        <button type="submit" id="confirm-filters-btn">
+          Confirm
+        </button>
       </form>
       <section id="browse-category">
         <h4>Select category</h4>
