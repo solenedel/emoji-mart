@@ -18,22 +18,6 @@ const FilterForm = ({
     max: 0,
   });
 
-  // get products from categories
-  // useEffect(() => {
-  //   // ⚠️ make this more modular later by creating a custom category button component
-  //   // the below if statement is a temporary workaround but should be removed later
-  //   if (selectedCategory !== "") {
-  //     axios
-  //       .get(baseURL + `/products/category/${selectedCategory}`)
-  //       .then((res) => {
-  //         setSearchResults(res.data);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   }
-  // }, [selectedCategory]);
-
   const setPlantsCategory = () => {
     setSelectedCategory("plants");
   };
@@ -90,11 +74,7 @@ const FilterForm = ({
 
   return (
     <div className="filters">
-      <form
-        action="submit"
-        id="price-filter-form"
-        onSubmit={handlePriceFormSubmit}
-      >
+      <form action="submit" id="filter-form" onSubmit={handlePriceFormSubmit}>
         <h4>Filter by price</h4>
         <label htmlFor="max-price">
           {" "}

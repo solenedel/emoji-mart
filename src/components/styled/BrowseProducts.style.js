@@ -23,6 +23,10 @@ export const StyledBrowseProducts = styled(Products)`
     flex-direction: column;
     align-items: center;
 
+    & h4 {
+      margin-top: 60px;
+    }
+
     div.category-buttons {
       display: grid;
       grid-template-columns: 50% 50%;
@@ -102,9 +106,10 @@ export const StyledBrowseProducts = styled(Products)`
     color: #fc94a4;
   }
 
-  form#price-filter-form {
+  form#filter-form {
     border-radius: 5px;
     padding: 20px;
+    display: flex;
 
     & input {
       width: 100px;

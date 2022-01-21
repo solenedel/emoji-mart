@@ -59,14 +59,26 @@ module.exports = (db) => {
       });
   });
 
-  // show products using the price filter form
+  // show products using the filter form (price and/or category)
   router.get(`/search/price/:minPrice/:maxPrice/:category`, (req, res) => {
-    const queryText = `SELECT * FROM products
-                     WHERE price >= $1
-                     AND price <= $2
-                     AND category = $3
-                     ORDER BY price;`;
-    // ⚠️ REQUEST DOES NOT WORK IF AN EMPTY STRING IS USED AS THE CATEGORY
+    let queryText = `SELECT * FROM products `;
+
+    if (req.params.minPrice) {
+      queryText += ` WHERE price >= $1 `;
+    }
+
+    if (req.params.maxPrice) {
+      queryText += ` AND price <= $2 `;
+    }
+
+    if (req.params.category) {
+      queryText += ` AND category = $3 `;
+    }
+
+    // add ending to query
+    queryText += ` ORDER BY price; `;
+    console.log("queryText", queryText);
+
     const values = [
       req.params.minPrice,
       req.params.maxPrice,
