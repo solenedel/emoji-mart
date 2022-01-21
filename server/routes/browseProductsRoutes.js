@@ -63,27 +63,40 @@ module.exports = (db) => {
   router.get(`/search/price/:minPrice/:maxPrice/:category`, (req, res) => {
     let queryText = `SELECT * FROM products `;
 
-    if (req.params.minPrice) {
-      queryText += ` WHERE price >= $1 `;
-    }
+    // NOT WORKING WITH LESS THAN ALL 3 FILTERS  - USE QUERY PARAMS
 
-    if (req.params.maxPrice) {
-      queryText += ` AND price <= $2 `;
-    }
-
-    if (req.params.category) {
-      queryText += ` AND category = $3 `;
-    }
-
-    // add ending to query
-    queryText += ` ORDER BY price; `;
-    console.log("queryText", queryText);
+    const filters = [];
 
     const values = [
       req.params.minPrice,
       req.params.maxPrice,
       req.params.category,
     ];
+
+    if (req.params.minPrice) {
+      filters.push(` price >= $1 `);
+    }
+
+    if (req.params.maxPrice) {
+      filters.push(` price <= $2 `);
+    }
+
+    if (req.params.category) {
+      filters.push(` category = $3 `);
+    }
+
+    if (filters.length !== 0) {
+      queryText += `WHERE ${filters[0]}`;
+
+      if (filters.length > 1) {
+        for (let i = 1; i < filters.length; i += 1) {
+          queryText += `AND ${filters[i]}`;
+        }
+      }
+    }
+
+    // add ending to query
+    queryText += ` ORDER BY price; `;
 
     db.query(queryText, values)
       .then((results) => {
