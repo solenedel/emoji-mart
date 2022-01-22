@@ -7,24 +7,41 @@ export const StyledBrowseProducts = styled(Products)`
   flex-direction: column;
   align-items: center;
 
+  & button {
+    font-size: 20px;
+  }
+
   div.filters {
     display: flex;
     align-items: baseline;
     justify-content: space-around;
-    border: solid #94e5fc 2px;
-    width: 80vw;
     margin-top: 80px;
-    padding: 20px;
+
+    & label {
+      font-size: 20px;
+    }
+
+    & h4 {
+      margin-top: 60px;
+      font-size: 24px;
+    }
+
+    & div.price-filter-section {
+      border: solid blue 2px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   section#browse-category {
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    & h4 {
-      margin-top: 60px;
-    }
+    border: solid yellow 2px;
+    padding: 20px;
+    align-self: center;
 
     div.category-buttons {
       display: grid;
@@ -63,6 +80,7 @@ export const StyledBrowseProducts = styled(Products)`
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
   }
 
   & h4 {
@@ -89,7 +107,6 @@ export const StyledBrowseProducts = styled(Products)`
     border: none;
     border-radius: 4px;
     height: 40px;
-    margin: 0 0 0 15px;
   }
 
   div.product-results {
@@ -112,16 +129,17 @@ export const StyledBrowseProducts = styled(Products)`
 
     & input {
       width: 100px;
+      height: 35px;
       margin-left: 10px;
+      background-color: #c8fffc;
     }
   }
 
   @media screen and (min-width: 900px) {
-    border: solid red 3px;
-
     div.filters {
       border: none;
       padding: 10px;
+      margin-top: 0;
     }
 
     form#filter-form {

@@ -79,7 +79,7 @@ const FilterForm = ({
           <h4>Filter by price</h4>
           <label htmlFor="max-price">
             {" "}
-            Maximum price $
+            Maximum $
             <input
               type="number"
               id="max-price"
@@ -91,7 +91,7 @@ const FilterForm = ({
 
           <label htmlFor="min-price">
             {" "}
-            Minimum price $
+            Minimum $
             <input
               type="number"
               id="min-price"
