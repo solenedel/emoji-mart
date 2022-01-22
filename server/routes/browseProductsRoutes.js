@@ -59,14 +59,44 @@ module.exports = (db) => {
       });
   });
 
-  // show products using the price filter form
-  router.get(`/search/price/:minPrice/:maxPrice`, (req, res) => {
-    const queryText = `SELECT * FROM products
-                     WHERE price >= $1
-                     AND price <= $2
-                     ORDER BY price;`;
+  // show products using the filter form (price and/or category)
+  router.get(`/search/price/:minPrice/:maxPrice/:category`, (req, res) => {
+    let queryText = `SELECT * FROM products `;
 
-    const values = [req.params.minPrice, req.params.maxPrice];
+    // NOT WORKING WITH LESS THAN ALL 3 FILTERS  - USE QUERY PARAMS
+
+    const filters = [];
+
+    const values = [
+      req.params.minPrice,
+      req.params.maxPrice,
+      req.params.category,
+    ];
+
+    if (req.params.minPrice) {
+      filters.push(` price >= $1 `);
+    }
+
+    if (req.params.maxPrice) {
+      filters.push(` price <= $2 `);
+    }
+
+    if (req.params.category) {
+      filters.push(` category = $3 `);
+    }
+
+    if (filters.length !== 0) {
+      queryText += `WHERE ${filters[0]}`;
+
+      if (filters.length > 1) {
+        for (let i = 1; i < filters.length; i += 1) {
+          queryText += `AND ${filters[i]}`;
+        }
+      }
+    }
+
+    // add ending to query
+    queryText += ` ORDER BY price; `;
 
     db.query(queryText, values)
       .then((results) => {

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
+import FilterForm from "./FilterForm";
 import Searchbar from "./Searchbar";
 import { StyledProduct } from "./styled/Product.style";
 
@@ -10,13 +11,8 @@ const baseURL = `http://localhost:8081`;
 const Products = ({ className }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [queryReturned, setQueryReturned] = useState(false);
-  const [priceRange, setPriceRange] = useState({
-    min: 0,
-    max: 0,
-  });
 
   const handleSearchInputChange = (e) => {
     console.log("e.target.value", e.target.value);
@@ -49,82 +45,6 @@ const Products = ({ className }) => {
     }
   };
 
-  const setPlantsCategory = () => {
-    setSelectedCategory("plants");
-  };
-
-  const setFruitsCategory = () => {
-    setSelectedCategory("fruits");
-  };
-
-  const setFoodCategory = () => {
-    setSelectedCategory("food");
-  };
-
-  const setDrinksCategory = () => {
-    setSelectedCategory("drinks");
-  };
-
-  // get products from categories
-  useEffect(() => {
-    // ⚠️ make this more modular later by creating a custom category button component
-    // the below if statement is a temporary workaround but should be removed later
-    if (selectedCategory !== "") {
-      axios
-        .get(baseURL + `/products/category/${selectedCategory}`)
-        .then((res) => {
-          setSearchResults(res.data);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    }
-  }, [selectedCategory]);
-
-  const handleMinInputChange = (e) => {
-    setPriceRange({ ...priceRange, min: Number(e.target.value) }); // USE PREV
-    // console.log("MIN PRICE:  ", Number(priceRange.min));
-  };
-
-  const handleMaxInputChange = (e) => {
-    setPriceRange({ ...priceRange, max: Number(e.target.value) }); // USE PREV
-    // console.log("MAX PRICE:  ", Number(priceRange.max));
-  };
-
-  const handlePriceFormSubmit = (e) => {
-    e.preventDefault();
-    console.log("SUBMITTED PRICE RANGE: ", priceRange);
-
-    // if (priceRange.max > priceRange.min) {
-    //   console.log("SUBMITTED PRICE RANGE: ", priceRange);
-    // } else {
-    //   console.log("INVALID PRICE RANGE");
-    //   setPriceRange({ min: 0, max: 0 });
-    // }
-
-    if (priceRange.min > 0 && priceRange.max > 0) {
-      axios
-        .get(
-          baseURL + `/products/search/price/${priceRange.min}/${priceRange.max}`
-        )
-        .then((res) => {
-          console.log("RES.DATA PRICE FILTER", res.data);
-          setSearchResults(res.data);
-
-          // display the loader for a minimum amount of time (750 ms)
-          setTimeout(() => {
-            setIsLoading(false);
-            setQueryReturned(true);
-          }, 750);
-        })
-        .catch((err) => {
-          console.log(err);
-          setIsLoading(false);
-          setQueryReturned(false);
-        });
-    }
-  };
-
   return (
     <div className={className}>
       <h3>Browse products</h3>
@@ -132,37 +52,6 @@ const Products = ({ className }) => {
         handleSearchInputChange={handleSearchInputChange}
         handleSearchSubmit={handleSearchSubmit}
       />
-      <form
-        action="submit"
-        id="price-filter-form"
-        onSubmit={handlePriceFormSubmit}
-      >
-        <h4>Filter by price</h4>
-        <label htmlFor="max-price">
-          {" "}
-          Maximum price $
-          <input
-            type="number"
-            id="max-price"
-            name="max-price"
-            min={0}
-            onChange={handleMaxInputChange}
-          />
-        </label>
-
-        <label htmlFor="min-price">
-          {" "}
-          Minimum price $
-          <input
-            type="number"
-            id="min-price"
-            name="min-price"
-            min={0}
-            onChange={handleMinInputChange}
-          />
-        </label>
-        <button type="submit">Confirm</button>
-      </form>
       {isLoading && (
         <ThreeDots
           height="200"
@@ -174,51 +63,6 @@ const Products = ({ className }) => {
       {searchResults.length === 0 && queryReturned === true && (
         <div id="no-results-found">Sorry, no results found.</div>
       )}
-      <section id="browse-category">
-        <h3>Browse by category</h3>
-        <div className="category-buttons">
-          <button
-            type="button"
-            className="plants"
-            onClick={() => {
-              setPlantsCategory();
-            }}
-          >
-            <i className="fas fa-seedling" />
-            &nbsp;Plants
-          </button>
-          <button
-            type="button"
-            className="fruits"
-            onClick={() => {
-              setFruitsCategory();
-            }}
-          >
-            <i className="fas fa-apple-alt" />
-            &nbsp;Fruits
-          </button>
-          <button
-            type="button"
-            className="food"
-            onClick={() => {
-              setFoodCategory();
-            }}
-          >
-            <i className="fas fa-utensils" />
-            &nbsp;Food
-          </button>
-          <button
-            type="button"
-            className="drinks"
-            onClick={() => {
-              setDrinksCategory();
-            }}
-          >
-            <i className="fas fa-glass-martini-alt" />
-            &nbsp;Drinks
-          </button>
-        </div>
-      </section>
       <div className="product-results">
         {!isLoading &&
           searchResults.length > 0 &&
@@ -232,6 +76,14 @@ const Products = ({ className }) => {
             );
           })}
       </div>
+      <FilterForm
+        searchResults={searchResults}
+        setSearchResults={setSearchResults}
+        isLoading={isLoading}
+        setIsLoading={setIsLoading}
+        queryReturned={queryReturned}
+        setQueryReturned={setQueryReturned}
+      />
     </div>
   );
 };
