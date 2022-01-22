@@ -31,6 +31,14 @@ export const StyledFooter = styled(Footer)`
     color: #c3ffce;
   }
 
+  & div.credits {
+    display: flex;
+
+    & a {
+      margin: 0 15px 0 10px;
+    }
+  }
+
   @media screen and (min-width: 800px) {
     padding-top: 30px;
     flex-direction: row;

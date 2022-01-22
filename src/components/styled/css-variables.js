@@ -6,4 +6,7 @@ const colors = {
   navbarBkgd: `#AB94FA`,
 };
 
-module.exports = { colors };
+const fonts = {
+  mainFont: `'Source Code Pro', monospace`,
+};
+module.exports = { colors, fonts };
