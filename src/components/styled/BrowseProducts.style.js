@@ -3,7 +3,6 @@ import Products from "../BrowseProducts";
 
 export const StyledBrowseProducts = styled(Products)`
   margin: 50px 0 0 0;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,5 +114,24 @@ export const StyledBrowseProducts = styled(Products)`
       width: 100px;
       margin-left: 10px;
     }
+  }
+
+  @media screen and (min-width: 900px) {
+    border: solid red 3px;
+
+    div.filters {
+      border: none;
+      padding: 10px;
+    }
+
+    form#filter-form {
+      padding-top: none;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    /* & h4 {
+      margin-top: 0;
+    } */
   }
 `;

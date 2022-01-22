@@ -75,30 +75,33 @@ const FilterForm = ({
   return (
     <div className="filters">
       <form action="submit" id="filter-form" onSubmit={handlePriceFormSubmit}>
-        <h4>Filter by price</h4>
-        <label htmlFor="max-price">
-          {" "}
-          Maximum price $
-          <input
-            type="number"
-            id="max-price"
-            name="max-price"
-            min={0}
-            onChange={handleMaxInputChange}
-          />
-        </label>
+        <div className="price-filter-section">
+          <h4>Filter by price</h4>
+          <label htmlFor="max-price">
+            {" "}
+            Maximum price $
+            <input
+              type="number"
+              id="max-price"
+              name="max-price"
+              min={0}
+              onChange={handleMaxInputChange}
+            />
+          </label>
 
-        <label htmlFor="min-price">
-          {" "}
-          Minimum price $
-          <input
-            type="number"
-            id="min-price"
-            name="min-price"
-            min={0}
-            onChange={handleMinInputChange}
-          />
-        </label>
+          <label htmlFor="min-price">
+            {" "}
+            Minimum price $
+            <input
+              type="number"
+              id="min-price"
+              name="min-price"
+              min={0}
+              onChange={handleMinInputChange}
+            />
+          </label>
+        </div>
+
         <section id="browse-category">
           <h4>Select category</h4>
           <div className="category-buttons">
