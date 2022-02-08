@@ -8,8 +8,11 @@ export const StyledSearchBar = styled(Searchbar)`
     margin-left: 20px;
     width: fit-content;
     height: fit-content;
-    font-size: 40px;
     background: none;
-    border: solid white 2px;
+
+    & i {
+      color: white;
+      font-size: 40px;
+    }
   }
 `;
