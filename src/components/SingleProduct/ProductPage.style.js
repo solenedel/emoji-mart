@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import ProductPage from "../ProductPage";
+import ProductPage from "./ProductPage";
 
 export const StyledProductPage = styled(ProductPage)`
   margin: 70px 0 0 0;

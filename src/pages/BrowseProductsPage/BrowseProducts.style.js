@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Products from "../BrowseProducts";
+import Products from "./BrowseProducts";
 
 export const StyledBrowseProducts = styled(Products)`
   margin: 50px 0 0 0;

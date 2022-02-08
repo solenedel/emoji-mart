@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useAppContext } from "../context/context";
+import { useAppContext } from "../../context/context";
 
 // URL to prepend for axios requests
 const baseURL = `http://localhost:8081`;

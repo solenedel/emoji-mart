@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
+import { StyledProduct } from "../../components/SingleProduct/Product.style";
 import FilterForm from "./FilterForm";
 import Searchbar from "./Searchbar";
-import { StyledProduct } from "./styled/Product.style";
 
 // URL to prepend for axios requests
 const baseURL = `http://localhost:8081`;

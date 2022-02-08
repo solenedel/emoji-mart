@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { StyledProduct } from "./styled/Product.style";
-import ViewButton from "../components/ViewButton";
+import { StyledProduct } from "../../components/SingleProduct/Product.style";
+import ViewButton from "../../components/ViewButton";
 
 // URL to prepend for axios requests
 const baseURL = `http://localhost:8081`;

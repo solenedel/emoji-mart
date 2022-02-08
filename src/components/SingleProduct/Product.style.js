@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Product from "../Product";
+import Product from "./Product";
 
 export const StyledProduct = styled(Product)`
   min-width: 100px;

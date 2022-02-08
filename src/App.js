@@ -3,14 +3,14 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./components/styled/theme";
 import { StyledNavbar } from "./components/styled/Navbar.style";
-import { StyledBrowseProducts } from "./pages/styled/BrowseProducts.style";
-import { StyledHomePage } from "./pages/styled/HomePage.style";
+import { StyledBrowseProducts } from "./pages/BrowseProductsPage/BrowseProducts.style";
+import { StyledHomePage } from "./pages/HomePage/HomePage.style";
 import { GlobalStyles } from "./components/styled/GlobalStyles.style";
 import { AppContext } from "./context/context";
-import { StyledProductPage } from "./pages/styled/ProductPage.style";
-import { StyledLoginPage } from "./pages/styled/LoginPage.style";
+import { StyledProductPage } from "./components/SingleProduct/ProductPage.style";
+import { StyledLoginPage } from "./pages/LoginPage/LoginPage.style";
 import { StyledFooter } from "./components/styled/Footer.style";
-import CartPage from "./pages/CartPage";
+import CartPage from "./pages/CartPage/CartPage";
 
 const LOCAL_STORAGE_KEY_THEME = "emojimart-theme";
 
