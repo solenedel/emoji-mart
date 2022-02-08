@@ -20,6 +20,13 @@ This starts the node server and the react app concurrently.
 
 Resetting the database: `npm run reset-db`
 
+
+
+## Directory structure
+- **server folder** contains all node server & database related code
+- **components folder** contains all reusable components (ex. header, footer, reusable buttons, etc). Also contains Global Styles and the Css variables file. 
+- **pages folder** contains all components related to specific pages, organised by page. 
+
 ---
 
 ## BUGS
@@ -63,6 +70,7 @@ Resetting the database: `npm run reset-db`
 
 ## Extra features (stretch)
 
+- use ORM instead of raw SQL
 - admin login & add/edit/delete items from database
 - testing (Mocha & chai on testing branch)
 - change language feature
