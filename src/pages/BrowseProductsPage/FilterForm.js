@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-
-// URL to prepend for axios requests
-const baseURL = `http://localhost:8081`;
+import { baseURL } from "../../variables";
 
 const FilterForm = ({
   searchResults,

@@ -4,9 +4,7 @@ import { ThreeDots } from "react-loader-spinner";
 import { StyledProduct } from "../../components/SingleProduct/Product.style";
 import FilterForm from "./FilterForm";
 import Searchbar from "./Searchbar";
-
-// URL to prepend for axios requests
-const baseURL = `http://localhost:8081`;
+import { baseURL } from "../../variables";
 
 const Products = ({ className }) => {
   const [searchQuery, setSearchQuery] = useState("");

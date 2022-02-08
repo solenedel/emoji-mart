@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useAppContext } from "../../context/context";
-
-// URL to prepend for axios requests
-const baseURL = `http://localhost:8081`;
+import { baseURL } from "../../variables";
 
 const LoginPage = ({ className }) => {
   const { userContext } = useAppContext();

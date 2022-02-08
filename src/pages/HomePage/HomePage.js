@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { StyledProduct } from "../../components/SingleProduct/Product.style";
 import ViewButton from "../../components/ViewButton";
-
-// URL to prepend for axios requests
-const baseURL = `http://localhost:8081`;
+import { baseURL } from "../../variables";
 
 const HomePage = ({ className }) => {
   const [saleProducts, setSaleProducts] = useState([]);
