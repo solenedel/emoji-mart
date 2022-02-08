@@ -32,6 +32,7 @@ Resetting the database: `npm run reset-db`
 ## TO DO - not styling
 
 - 📍 filter by price
+- change local storage method
 - modularise Category button into one component & pass category name as props
 - set up mocha and chai tests
 - react fragments

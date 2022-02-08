@@ -1,5 +1,5 @@
 import React from "react";
-import ViewButton from "./ViewButton";
+import ViewButton from "../components/ViewButton";
 
 const Product = ({ saleProduct, className }) => {
   return (
