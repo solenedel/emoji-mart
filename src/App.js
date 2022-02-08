@@ -2,17 +2,15 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./components/styled/theme";
+import { GlobalStyles } from "./GlobalStyles.style";
 import { StyledNavbar } from "./components/styled/Navbar.style";
 import { StyledBrowseProducts } from "./pages/BrowseProductsPage/BrowseProducts.style";
 import { StyledHomePage } from "./pages/HomePage/HomePage.style";
-import { GlobalStyles } from "./GlobalStyles.style";
 import { AppContext } from "./context/context";
 import { StyledProductPage } from "./components/SingleProduct/ProductPage.style";
 import { StyledLoginPage } from "./pages/LoginPage/LoginPage.style";
 import { StyledFooter } from "./components/styled/Footer.style";
 import CartPage from "./pages/CartPage/CartPage";
-
-const LOCAL_STORAGE_KEY_THEME = "emojimart-theme";
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -46,18 +44,16 @@ function App() {
 
   // persist dark/light theme on page reload
   useEffect(() => {
-    const storageTheme = JSON.parse(
-      localStorage.getItem(LOCAL_STORAGE_KEY_THEME)
-    );
+    const storedTheme = localStorage.getItem("theme");
 
-    if (storageTheme) {
-      setTheme(storageTheme);
+    if (storedTheme) {
+      setTheme(storedTheme);
     }
   }, []);
 
   // save theme to local storage
   useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY_THEME, JSON.stringify(theme));
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (

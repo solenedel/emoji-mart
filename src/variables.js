@@ -5,7 +5,7 @@ const baseURL = `http://localhost:8081`;
 const colors = {
   background: "black",
   PrimaryText: "white",
-  navbarBkgd: `#AB94FA`,
+  navbarBkgd: "#AB94FA",
 };
 
 const fonts = {
