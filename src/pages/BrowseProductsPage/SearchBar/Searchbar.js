@@ -1,8 +1,12 @@
 import React from "react";
 
-const Searchbar = ({ handleSearchSubmit, handleSearchInputChange }) => {
+const Searchbar = ({
+  handleSearchSubmit,
+  handleSearchInputChange,
+  className,
+}) => {
   return (
-    <section className="search-bar">
+    <section className={className} id="search-bar">
       <form action="submit" onSubmit={handleSearchSubmit}>
         <label htmlFor="search-product">
           <input
@@ -12,8 +16,8 @@ const Searchbar = ({ handleSearchSubmit, handleSearchInputChange }) => {
             placeholder="Search for a product..."
             onChange={handleSearchInputChange}
           />
-          <button type="button" onClick={handleSearchSubmit}>
-            search
+          <button type="button" onClick={handleSearchSubmit} id="search-btn">
+            🔍
           </button>
         </label>
       </form>

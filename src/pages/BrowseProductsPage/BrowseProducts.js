@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { StyledProduct } from "../../components/SingleProduct/Product.style";
 import FilterForm from "./FilterForm";
-import Searchbar from "./Searchbar";
 import { baseURL } from "../../variables";
+import { StyledSearchBar } from "./SearchBar/SearchBar.style";
 
 const Products = ({ className }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -46,7 +46,7 @@ const Products = ({ className }) => {
   return (
     <div className={className}>
       <h3>Browse products</h3>
-      <Searchbar
+      <StyledSearchBar
         handleSearchInputChange={handleSearchInputChange}
         handleSearchSubmit={handleSearchSubmit}
       />
