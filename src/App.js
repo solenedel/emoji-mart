@@ -5,7 +5,7 @@ import { lightTheme, darkTheme } from "./components/styled/theme";
 import { StyledNavbar } from "./components/styled/Navbar.style";
 import { StyledBrowseProducts } from "./pages/BrowseProductsPage/BrowseProducts.style";
 import { StyledHomePage } from "./pages/HomePage/HomePage.style";
-import { GlobalStyles } from "./components/styled/GlobalStyles.style";
+import { GlobalStyles } from "./GlobalStyles.style";
 import { AppContext } from "./context/context";
 import { StyledProductPage } from "./components/SingleProduct/ProductPage.style";
 import { StyledLoginPage } from "./pages/LoginPage/LoginPage.style";

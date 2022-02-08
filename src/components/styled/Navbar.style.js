@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Navbar from "../Navbar";
-import { colors } from "./css-variables";
+import { colors } from "../../variables";
 
 export const StyledNavbar = styled(Navbar)`
   background: ${colors.navbarBkgd};
