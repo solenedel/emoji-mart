@@ -40,6 +40,9 @@ const Products = ({ className }) => {
           setIsLoading(false);
           setQueryReturned(false);
         });
+    } else {
+      setIsLoading(false);
+      setQueryReturned(false);
     }
   };
 
