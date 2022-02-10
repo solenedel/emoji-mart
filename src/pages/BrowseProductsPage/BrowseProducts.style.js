@@ -6,9 +6,16 @@ export const StyledBrowseProducts = styled(Products)`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   & button {
     font-size: 20px;
   }
+
+  h3 {
+    text-align: left;
+    margin-left: 15px;
+  }
+
   div.filters {
     display: flex;
     align-items: baseline;
@@ -21,6 +28,7 @@ export const StyledBrowseProducts = styled(Products)`
       margin-top: 60px;
       font-size: 24px;
     }
+
     & div.price-filter-section {
       border: solid blue 2px;
       padding: 20px;
@@ -113,7 +121,11 @@ export const StyledBrowseProducts = styled(Products)`
       background-color: #c8fffc;
     }
   }
+
   @media screen and (min-width: 900px) {
+    h3 {
+      text-align: center;
+    }
     div.filters {
       border: none;
       padding: 10px;
@@ -124,8 +136,5 @@ export const StyledBrowseProducts = styled(Products)`
       flex-direction: row;
       align-items: center;
     }
-    /* & h4 {
-      margin-top: 0;
-    } */
   }
 `;

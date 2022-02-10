@@ -62,5 +62,4 @@ export const GlobalStyles = createGlobalStyle`
       transition: background 0.3s;
     }
   }
-
 `;
