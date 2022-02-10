@@ -7,12 +7,14 @@ export const StyledSearchBar = styled(Searchbar)`
   button#search-btn {
     margin-left: 20px;
     width: fit-content;
-    height: fit-content;
-    background: none;
+    height: 40px;
+    background: #9bffd7;
+    padding: 5px;
+    transition: background 0.4s;
 
-    & i {
-      color: white;
-      font-size: 40px;
+    &:hover {
+      background: #fffc99;
+      transition: background 0.4s;
     }
   }
 `;

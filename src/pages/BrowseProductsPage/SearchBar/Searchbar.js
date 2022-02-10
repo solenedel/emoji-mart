@@ -1,6 +1,5 @@
 import React from "react";
-// import { faHome } from "@fortawesome/free-solid-svg-icons";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaSearch } from "react-icons/fa";
 
 const Searchbar = ({
   handleSearchSubmit,
@@ -19,7 +18,7 @@ const Searchbar = ({
             onChange={handleSearchInputChange}
           />
           <button type="button" onClick={handleSearchSubmit} id="search-btn">
-            <i className="fa-solid fa-compass" />
+            <FaSearch className="icon" />
           </button>
         </label>
       </form>
