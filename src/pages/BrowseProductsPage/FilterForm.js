@@ -1,5 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {
+  FaSeedling,
+  FaAppleAlt,
+  FaUtensils,
+  FaGlassMartiniAlt,
+} from "react-icons/fa";
 import { baseURL } from "../../variables";
 
 const FilterForm = ({
@@ -110,7 +116,7 @@ const FilterForm = ({
                 setPlantsCategory();
               }}
             >
-              <i className="fas fa-seedling" />
+              <FaSeedling className="icon" />
               &nbsp;Plants
             </button>
             <button
@@ -120,7 +126,7 @@ const FilterForm = ({
                 setFruitsCategory();
               }}
             >
-              <i className="fas fa-apple-alt" />
+              <FaAppleAlt className="icon" />
               &nbsp;Fruits
             </button>
             <button
@@ -130,7 +136,7 @@ const FilterForm = ({
                 setFoodCategory();
               }}
             >
-              <i className="fas fa-utensils" />
+              <FaUtensils className="icon" />
               &nbsp;Food
             </button>
             <button
@@ -140,7 +146,7 @@ const FilterForm = ({
                 setDrinksCategory();
               }}
             >
-              <i className="fas fa-glass-martini-alt" />
+              <FaGlassMartiniAlt className="icon" />
               &nbsp;Drinks
             </button>
           </div>

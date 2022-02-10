@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaTimes } from "react-icons/fa";
 import ThemeToggleButton from "./ThemeToggleButton";
 
 const MobileMenu = ({
@@ -17,7 +18,7 @@ const MobileMenu = ({
           id="quit-menu"
           onClick={() => setShowMenu(!showMenu)}
         >
-          <i className="fas fa-times" />
+          <FaTimes className="icon" />
         </button>
 
         <Link to="/login">Login</Link>

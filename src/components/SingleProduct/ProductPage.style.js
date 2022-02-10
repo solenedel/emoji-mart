@@ -36,7 +36,7 @@ export const StyledProductPage = styled(ProductPage)`
       width: fit-content;
     }
 
-    & i {
+    & .icon {
       margin-right: 10px;
     }
 

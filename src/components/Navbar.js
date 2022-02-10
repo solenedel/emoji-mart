@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaBars } from "react-icons/fa";
 import useWindowSize from "../hooks/useWindowSize";
 import MobileMenu from "./MobileMenu";
 import { StyledDesktopMenu } from "./styled/DesktopMenu.style";
@@ -36,7 +37,7 @@ const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
             id="hamburger-btn"
             onClick={() => setShowMenu(!showMenu)}
           >
-            <i className="fas fa-bars" />
+            <FaBars className="icon" />
           </button>
           <MobileMenu
             showMenu={showMenu}

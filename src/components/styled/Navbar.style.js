@@ -17,7 +17,7 @@ export const StyledNavbar = styled(Navbar)`
     border: none;
     margin: 0 10% 0 70%;
 
-    & i.fa-bars {
+    & .icon {
       color: black;
       font-size: 40px;
     }
@@ -51,7 +51,7 @@ export const StyledNavbar = styled(Navbar)`
        background: none;
        border: none;
 
-       i {
+       .icon {
          font-size: 40px;
        }
      }

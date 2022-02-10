@@ -25,7 +25,7 @@ export const StyledFooter = styled(Footer)`
     margin-bottom: 10px;
   }
 
-  & i {
+  & .icon {
     font-size: 20px;
     margin-right: 8px;
     color: #c3ffce;

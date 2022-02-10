@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import { useAppContext } from "../../context/context";
 import { baseURL } from "../../variables";
 
@@ -59,11 +60,11 @@ const ProductPage = ({ className }) => {
       </div>
       <div className="buttons">
         <button type="button" id="add-to-fav-btn" onClick={addToCartHandler}>
-          <i className="fas fa-shopping-cart" />
+          <FaShoppingCart className="icon" />
           Add to cart
         </button>
         <button type="button" id="add-to-cart-btn" onClick={addToFavsHandler}>
-          <i className="fas fa-heart" />
+          <FaHeart className="icon" />
           Add to favorites
         </button>
       </div>

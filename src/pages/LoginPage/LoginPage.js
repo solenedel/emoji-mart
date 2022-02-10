@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { FaEnvelope, FaKey } from "react-icons/fa";
 import { useAppContext } from "../../context/context";
 import { baseURL } from "../../variables";
 
@@ -47,7 +48,7 @@ const LoginPage = ({ className }) => {
       </div>
       <form action="submit" id="login-form" onSubmit={handleLogin}>
         <span className="email">
-          <i className="far fa-envelope" />
+          <FaEnvelope className="icon" />
           <input
             type="email"
             placeholder="enter email"
@@ -56,7 +57,7 @@ const LoginPage = ({ className }) => {
           />
         </span>
         <span className="password">
-          <i className="fas fa-key" />
+          <FaKey className="icon" />
           <input
             type="password"
             placeholder="enter password"

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { FaExclamationCircle, FaStar } from "react-icons/fa";
 import { StyledProduct } from "../../components/SingleProduct/Product.style";
 import ViewButton from "../../components/ViewButton";
 import { baseURL } from "../../variables";
@@ -36,7 +37,7 @@ const HomePage = ({ className }) => {
     <div className={className}>
       <section className="sale">
         <h4>
-          <i className="fas fa-exclamation-circle" />
+          <FaExclamationCircle className="icon" />
           &nbsp;On sale
         </h4>
         <div className="mapped-products">
@@ -54,7 +55,7 @@ const HomePage = ({ className }) => {
 
       <section className="featured">
         <h4>
-          <i className="fas fa-star" />
+          <FaStar className="icon" />
           &nbsp;Featured
         </h4>
         <div className="mapped-products">

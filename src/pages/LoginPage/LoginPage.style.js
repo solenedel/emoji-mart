@@ -17,7 +17,7 @@ export const StyledLoginPage = styled(LoginPage)`
     display: flex;
     flex-direction: column;
 
-    & i {
+    & .icon {
       margin-right: 15px;
     }
 
