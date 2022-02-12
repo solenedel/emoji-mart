@@ -17,7 +17,7 @@ const ViewButton = ({ productName }) => {
       className="view-btn"
       onClick={viewClickHandler}
     >
-      <Link to={`/products/view/${productName}`}>View</Link>
+      <Link to={`/products/view/${productName}`}>view</Link>
     </button>
   );
 };

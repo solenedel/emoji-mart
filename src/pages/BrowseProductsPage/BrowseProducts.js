@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { StyledProduct } from "../../components/SingleProduct/Product.style";
-import FilterForm from "./FilterForm";
+import FilterForm from "./FilterForm/FilterForm";
 import { baseURL } from "../../variables";
 import { StyledSearchBar } from "./SearchBar/SearchBar.style";
 
