@@ -9,7 +9,6 @@ export const StyledLoginPage = styled(LoginPage)`
 
   div#current-user-status {
     margin-top: 30px;
-    font-family: "Lato", sans-serif;
   }
 
   form#login-form {

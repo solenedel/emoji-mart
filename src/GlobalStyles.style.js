@@ -20,11 +20,13 @@ export const GlobalStyles = createGlobalStyle`
     color: ${({ theme }) => theme.text};
     transition: all 0.25s linear;
     height: 100vh;
+    overflow-x: hidden;
+    font-family: ${fonts.mainFont};
   }
 
 
   h1 {
-    font-family: 'Jua', sans-serif;
+    font-family: ${fonts.logoFont};
     font-size: 50px;
   }
 
@@ -62,4 +64,6 @@ export const GlobalStyles = createGlobalStyle`
       transition: background 0.3s;
     }
   }
+
+
 `;

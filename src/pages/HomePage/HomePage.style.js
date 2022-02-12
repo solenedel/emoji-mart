@@ -10,7 +10,6 @@ export const StyledHomePage = styled(HomePage)`
     margin-bottom: 50px;
     font-weight: 300;
     color: white;
-    font-family: "Lato", sans-serif;
   }
 
   h4 {

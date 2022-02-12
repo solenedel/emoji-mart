@@ -9,7 +9,8 @@ const colors = {
 };
 
 const fonts = {
-  mainFont: `'Source Code Pro', monospace`,
+  mainFont: `'Rubik', sans-serif`,
+  logoFont: `'Share Tech Mono', monospace`,
 };
 
 // ---------------------------------------------- //

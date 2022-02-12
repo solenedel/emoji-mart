@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Footer from "../Footer";
+import { fonts } from "../../variables";
 
 export const StyledFooter = styled(Footer)`
   border-top: solid #ab94fa 3.5px;
@@ -23,6 +24,7 @@ export const StyledFooter = styled(Footer)`
   a {
     font-size: 20px;
     margin-bottom: 10px;
+    font-family: ${fonts.logoFont};
   }
 
   & .icon {

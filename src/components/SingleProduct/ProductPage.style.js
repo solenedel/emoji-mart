@@ -7,7 +7,6 @@ export const StyledProductPage = styled(ProductPage)`
   justify-content: center;
 
   & div {
-    font-family: "Lato", sans-serif;
   }
 
   div#product-image {
@@ -18,7 +17,6 @@ export const StyledProductPage = styled(ProductPage)`
   h1#product-name {
     font-size: 45px;
     margin: 20px;
-    font-family: "Share Tech Mono", monospace;
   }
 
   div#sale-status {

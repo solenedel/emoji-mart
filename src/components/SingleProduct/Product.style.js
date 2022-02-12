@@ -13,12 +13,10 @@ export const StyledProduct = styled(Product)`
     & h5 {
       font-size: 22px;
       font-weight: 300;
-      font-family: "Lato", sans-serif;
     }
 
     & div.price {
       font-size: 23px;
-      font-family: "Lato", sans-serif;
       font-weight: 300;
     }
 

@@ -97,7 +97,6 @@ export const StyledBrowseProducts = styled(Products)`
     border: none;
     border-radius: 4px;
     padding-left: 10px;
-    font-family: "Lato", sans-serif;
     &::placeholder {
       color: #ab94fa;
       font-size: 23px;
