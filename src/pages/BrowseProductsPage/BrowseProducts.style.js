@@ -6,57 +6,66 @@ export const StyledBrowseProducts = styled(Products)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: solid red 3px;
 
   & button {
     font-size: 20px;
   }
 
   h3 {
-    text-align: left;
+  */
     margin-left: 15px;
   }
 
-  form {
+  form#filter-form {
+    width: 100vw;
     display: flex;
-    align-items: baseline;
-    justify-content: space-around;
-    margin-top: 80px;
+    align-items: center;
+    border: solid yellow 3px;
+
     & label {
       font-size: 20px;
     }
+
     & h4 {
-      margin-top: 60px;
       font-size: 24px;
     }
 
     & div#price-filter-section {
-      border: solid blue 2px;
-      padding: 20px;
+      margin-bottom: 40px;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
   }
+
   div#browse-category {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid yellow 2px;
-    padding: 20px;
-    align-self: center;
+
     div.category-buttons {
+      padding: 5px;
+      border: solid red 3px;
       display: grid;
       grid-template-columns: 50% 50%;
-      grid-gap: 30px 20px;
+      grid-gap: 10px;
+
       & button {
-        padding: 5px;
         transition: all 0.4s;
+        font-size: 18px;
+        width: 50px;
+        height: 50px;
+
         &:hover {
-          transform: scale(1.2, 1.2);
+          transform: scale(1.1, 1.1);
           transition: all 0.4s;
         }
       }
+
+      .icon {
+        font-size: 25px;
+      }
+
       button.plants {
         background-color: #d5feb7;
       }

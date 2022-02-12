@@ -116,7 +116,6 @@ const FilterForm = ({
             }}
           >
             <FaSeedling className="icon" />
-            &nbsp;Plants
           </button>
           <button
             type="button"
@@ -126,7 +125,6 @@ const FilterForm = ({
             }}
           >
             <FaAppleAlt className="icon" />
-            &nbsp;Fruits
           </button>
           <button
             type="button"
@@ -136,7 +134,6 @@ const FilterForm = ({
             }}
           >
             <FaUtensils className="icon" />
-            &nbsp;Food
           </button>
           <button
             type="button"
@@ -146,7 +143,6 @@ const FilterForm = ({
             }}
           >
             <FaGlassMartiniAlt className="icon" />
-            &nbsp;Drinks
           </button>
         </div>
       </div>
