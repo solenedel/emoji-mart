@@ -6,6 +6,7 @@ export const StyledBrowseProducts = styled(Products)`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border: solid red 3px;
 
   & button {
     font-size: 20px;
@@ -16,7 +17,7 @@ export const StyledBrowseProducts = styled(Products)`
     margin-left: 15px;
   }
 
-  div.filters {
+  form {
     display: flex;
     align-items: baseline;
     justify-content: space-around;
@@ -29,7 +30,7 @@ export const StyledBrowseProducts = styled(Products)`
       font-size: 24px;
     }
 
-    & div.price-filter-section {
+    & div#price-filter-section {
       border: solid blue 2px;
       padding: 20px;
       display: flex;
@@ -37,7 +38,7 @@ export const StyledBrowseProducts = styled(Products)`
       align-items: center;
     }
   }
-  section#browse-category {
+  div#browse-category {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -15,7 +15,7 @@ export const StyledSearchBar = styled(Searchbar)`
     height: 45px;
     max-width: 60%;
 
-    &::placeholder {
+    & ::placeholder {
       font-size: 20px;
       color: black;
     }

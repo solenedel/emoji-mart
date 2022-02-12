@@ -77,85 +77,83 @@ const FilterForm = ({
   };
 
   return (
-    <div className="filters">
-      <form action="submit" id="filter-form" onSubmit={handlePriceFormSubmit}>
-        <div className="price-filter-section">
-          <h4>Filter by price</h4>
-          <label htmlFor="max-price">
-            {" "}
-            Maximum $
-            <input
-              type="number"
-              id="max-price"
-              name="max-price"
-              min={0}
-              onChange={handleMaxInputChange}
-            />
-          </label>
+    <form action="submit" id="filter-form" onSubmit={handlePriceFormSubmit}>
+      <div id="price-filter-section">
+        <h4>Filter by price</h4>
+        <label htmlFor="max-price">
+          {" "}
+          Maximum $
+          <input
+            type="number"
+            id="max-price"
+            name="max-price"
+            min={0}
+            onChange={handleMaxInputChange}
+          />
+        </label>
 
-          <label htmlFor="min-price">
-            {" "}
-            Minimum $
-            <input
-              type="number"
-              id="min-price"
-              name="min-price"
-              min={0}
-              onChange={handleMinInputChange}
-            />
-          </label>
+        <label htmlFor="min-price">
+          {" "}
+          Minimum $
+          <input
+            type="number"
+            id="min-price"
+            name="min-price"
+            min={0}
+            onChange={handleMinInputChange}
+          />
+        </label>
+      </div>
+
+      <div id="browse-category">
+        <h4>Select category</h4>
+        <div className="category-buttons">
+          <button
+            type="button"
+            className="plants"
+            onClick={() => {
+              setPlantsCategory();
+            }}
+          >
+            <FaSeedling className="icon" />
+            &nbsp;Plants
+          </button>
+          <button
+            type="button"
+            className="fruits"
+            onClick={() => {
+              setFruitsCategory();
+            }}
+          >
+            <FaAppleAlt className="icon" />
+            &nbsp;Fruits
+          </button>
+          <button
+            type="button"
+            className="food"
+            onClick={() => {
+              setFoodCategory();
+            }}
+          >
+            <FaUtensils className="icon" />
+            &nbsp;Food
+          </button>
+          <button
+            type="button"
+            className="drinks"
+            onClick={() => {
+              setDrinksCategory();
+            }}
+          >
+            <FaGlassMartiniAlt className="icon" />
+            &nbsp;Drinks
+          </button>
         </div>
-
-        <section id="browse-category">
-          <h4>Select category</h4>
-          <div className="category-buttons">
-            <button
-              type="button"
-              className="plants"
-              onClick={() => {
-                setPlantsCategory();
-              }}
-            >
-              <FaSeedling className="icon" />
-              &nbsp;Plants
-            </button>
-            <button
-              type="button"
-              className="fruits"
-              onClick={() => {
-                setFruitsCategory();
-              }}
-            >
-              <FaAppleAlt className="icon" />
-              &nbsp;Fruits
-            </button>
-            <button
-              type="button"
-              className="food"
-              onClick={() => {
-                setFoodCategory();
-              }}
-            >
-              <FaUtensils className="icon" />
-              &nbsp;Food
-            </button>
-            <button
-              type="button"
-              className="drinks"
-              onClick={() => {
-                setDrinksCategory();
-              }}
-            >
-              <FaGlassMartiniAlt className="icon" />
-              &nbsp;Drinks
-            </button>
-          </div>
-        </section>
-        <button type="submit" id="confirm-filters-btn">
-          Confirm
-        </button>
-      </form>
-    </div>
+      </div>
+      <button type="submit" id="confirm-filters-btn">
+        Confirm
+      </button>
+    </form>
   );
 };
 
