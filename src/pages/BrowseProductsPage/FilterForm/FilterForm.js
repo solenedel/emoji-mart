@@ -9,10 +9,37 @@ import {
 import { baseURL } from "../../../variables";
 import { useFilterForm } from "./useFilterForm";
 
-const FilterForm = () => {
+const FilterForm = ({}) => {
   // use custom filter form hook
-  const { handleMaxInputChange, handleMinInputChange, handlePriceFormSubmit } =
-    useFilterForm();
+  const { handleMaxInputChange, handleMinInputChange } = useFilterForm();
+
+  const handlePriceFormSubmit = (e) => {
+    e.preventDefault();
+    console.log("SUBMITTED PRICE RANGE: ", priceRange);
+
+    if (priceRange.min > 0 && priceRange.max > 0) {
+      axios
+        .get(
+          baseURL +
+            `/products/search/price/${priceRange.min}/${priceRange.max}/${selectedCategory}`
+        )
+        .then((res) => {
+          console.log("RES.DATA PRICE FILTER", res.data);
+          setSearchResults(res.data);
+
+          // display the loader for a minimum amount of time (750 ms)
+          setTimeout(() => {
+            setIsLoading(false);
+            setQueryReturned(true);
+          }, 750);
+        })
+        .catch((err) => {
+          console.log(err);
+          setIsLoading(false);
+          setQueryReturned(false);
+        });
+    }
+  };
 
   return (
     <form action="submit" id="filter-form" onSubmit={handlePriceFormSubmit}>

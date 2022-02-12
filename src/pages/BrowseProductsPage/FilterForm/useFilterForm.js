@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { baseURL } from "../../../variables";
 
@@ -10,6 +10,7 @@ export const useFilterForm = () => {
     min: 0,
     max: 0,
   });
+  // const [filterFormResults, setFilterFormResults] = useState([]);
 
   const handleMinInputChange = (e) => {
     setPriceRange({ ...priceRange, min: Number(e.target.value) }); // USE PREV
@@ -21,32 +22,5 @@ export const useFilterForm = () => {
     // console.log("MAX PRICE:  ", Number(priceRange.max));
   };
 
-  const handlePriceFormSubmit = (e) => {
-    e.preventDefault();
-    console.log("SUBMITTED PRICE RANGE: ", priceRange);
-
-    if (priceRange.min > 0 && priceRange.max > 0) {
-      axios
-        .get(
-          baseURL +
-            `/products/search/price/${priceRange.min}/${priceRange.max}/${selectedCategory}`
-        )
-        .then((res) => {
-          console.log("RES.DATA PRICE FILTER", res.data);
-          // setSearchResults(res.data);
-
-          // display the loader for a minimum amount of time (750 ms)
-          setTimeout(() => {
-            // setIsLoading(false);
-            // setQueryReturned(true);
-          }, 750);
-        })
-        .catch((err) => {
-          console.log(err);
-          // setIsLoading(false);
-          // setQueryReturned(false);
-        });
-    }
-  };
-  return { handleMaxInputChange, handleMinInputChange, handlePriceFormSubmit };
+  return { handleMaxInputChange, handleMinInputChange };
 };
