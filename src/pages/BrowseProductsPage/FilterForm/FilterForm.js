@@ -9,9 +9,10 @@ import {
 import { baseURL } from "../../../variables";
 import { useFilterForm } from "./useFilterForm";
 
-const FilterForm = ({}) => {
+const FilterForm = ({ setIsLoading, setSearchResults, setQueryReturned }) => {
   // use custom filter form hook
-  const { handleMaxInputChange, handleMinInputChange } = useFilterForm();
+  const { handleMaxInputChange, handleMinInputChange, priceRange } =
+    useFilterForm();
 
   const handlePriceFormSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +22,7 @@ const FilterForm = ({}) => {
       axios
         .get(
           baseURL +
-            `/products/search/price/${priceRange.min}/${priceRange.max}/${selectedCategory}`
+            `/products/search/price/${priceRange.min}/${priceRange.max}/`
         )
         .then((res) => {
           console.log("RES.DATA PRICE FILTER", res.data);

@@ -22,5 +22,5 @@ export const useFilterForm = () => {
     // console.log("MAX PRICE:  ", Number(priceRange.max));
   };
 
-  return { handleMaxInputChange, handleMinInputChange };
+  return { handleMaxInputChange, handleMinInputChange, priceRange };
 };
