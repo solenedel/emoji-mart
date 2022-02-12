@@ -14,7 +14,7 @@ import CartPage from "./pages/CartPage/CartPage";
 
 function App() {
   const [theme, setTheme] = useState("light");
-  const [toggleButtonIcon, setToggleButtonIcon] = useState("switch theme 🌙");
+  const [toggleButtonIcon, setToggleButtonIcon] = useState("theme 🌙");
 
   // states used in app context
   const [viewedProduct, setViewedProduct] = useState("");
@@ -24,10 +24,10 @@ function App() {
   const toggleTheme = () => {
     if (theme === "light") {
       setTheme("dark");
-      setToggleButtonIcon("switch theme ☀️");
+      setToggleButtonIcon("theme ☀️");
     } else {
       setTheme("light");
-      setToggleButtonIcon("switch theme 🌙");
+      setToggleButtonIcon("theme 🌙");
     }
   };
 

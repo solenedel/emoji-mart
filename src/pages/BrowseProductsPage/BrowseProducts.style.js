@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Products from "./BrowseProducts";
+import { colors } from "../../variables";
 
 export const StyledBrowseProducts = styled(Products)`
   margin: 50px 0 0 0;
@@ -98,7 +99,7 @@ export const StyledBrowseProducts = styled(Products)`
     border-radius: 4px;
     padding-left: 10px;
     &::placeholder {
-      color: #ab94fa;
+      color: ${colors.navbarBkgd};
       font-size: 23px;
     }
   }

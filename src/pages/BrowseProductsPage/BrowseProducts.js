@@ -57,7 +57,7 @@ const Products = ({ className }) => {
         <ThreeDots
           height="200"
           width="100"
-          color="#AB94FA"
+          color="#9494FF"
           arialLabel="loading"
         />
       )}

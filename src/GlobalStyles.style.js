@@ -13,6 +13,7 @@ export const GlobalStyles = createGlobalStyle`
 
   a, a:hover, a:visited {
     text-decoration: none;
+    font-weight: 300;
   }
 
   body {

@@ -21,7 +21,7 @@ export const StyledDesktopMenu = styled(DesktopMenu)`
         font-size: 22px;
 
         &:hover {
-          color: #c3ffda;
+          color: #fefe8a;
         }
       }
     }

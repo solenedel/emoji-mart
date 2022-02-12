@@ -26,9 +26,10 @@ export const StyledNavbar = styled(Navbar)`
   #theme-toggle-btn {
     font-size: 24px;
     border: none;
-    padding: 5px;
+    padding: 5px 10px 5px 10px;
     border-radius: 5px;
     background: none;
+    font-weight: 300;
   }
 
   h1#logo {
@@ -61,9 +62,10 @@ export const StyledNavbar = styled(Navbar)`
       color: white;
       margin-top: 20px;
       font-size: 24px;
+      font-weight: 200;
 
       &:hover {
-        color: #c3ffda;
+        color: #A9A9FF;
       }
     }
 
@@ -92,5 +94,5 @@ export const StyledNavbar = styled(Navbar)`
     z-index: 20;
     } 
   }
-
+ 
 `;

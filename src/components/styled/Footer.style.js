@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import Footer from "../Footer";
-import { fonts } from "../../variables";
+import { fonts, colors } from "../../variables";
 
 export const StyledFooter = styled(Footer)`
-  border-top: solid #ab94fa 3.5px;
+  border-top: solid ${colors.navbarBkgd} 3.5px;
   height: 100px;
   position: static;
   margin-top: 10vh;

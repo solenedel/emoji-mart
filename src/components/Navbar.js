@@ -17,7 +17,7 @@ const Navbar = ({ className, theme, toggleTheme, toggleButtonIcon }) => {
       };
     }
     return {
-      background: "#AB94FA",
+      background: "#9494FF",
       color: "black",
       border: "solid black 2px",
       borderRadius: "5px",
