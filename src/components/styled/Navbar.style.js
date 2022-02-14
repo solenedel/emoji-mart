@@ -15,7 +15,8 @@ export const StyledNavbar = styled(Navbar)`
   button#hamburger-btn {
     background: none;
     border: none;
-    margin: 0 10% 0 70%;
+    margin: 0 10% 0 35%;
+    align-self: flex-end;
 
     & .icon {
       color: black;
@@ -93,6 +94,13 @@ export const StyledNavbar = styled(Navbar)`
     width: 20vw;
     z-index: 20;
     } 
+  }
+
+  @media screen and (min-width: 460px) {
+
+    button#hamburger-btn {
+    margin-left: 70%;
+     }
   }
  
 `;
