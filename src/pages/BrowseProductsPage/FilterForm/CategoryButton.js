@@ -1,7 +1,7 @@
 import React from "react";
 
 // reusable button for category selection
-const CategoryButton = ({ categoryName, categoryIcon }) => {
+const CategoryButton = ({ categoryName }) => {
   return <button type="button">{categoryName}</button>;
 };
 

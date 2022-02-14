@@ -1,11 +1,5 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import {
-  FaSeedling,
-  FaAppleAlt,
-  FaUtensils,
-  FaGlassMartiniAlt,
-} from "react-icons/fa";
 import { baseURL } from "../../../variables";
 import { useFilterForm } from "./useFilterForm";
 import CategoryButton from "./CategoryButton";
@@ -53,21 +47,23 @@ const FilterForm = ({ setIsLoading, setSearchResults, setQueryReturned }) => {
         <h4>Filter by price</h4>
         <label htmlFor="max-price">
           {" "}
-          Maximum $
+          $
           <input
             type="number"
             id="max-price"
             name="max-price"
             min={0}
+            placeholder="maximum"
             onChange={handleMaxInputChange}
           />
         </label>
 
         <label htmlFor="min-price">
           {" "}
-          Minimum $
+          $
           <input
             type="number"
+            placeholder="minimum"
             id="min-price"
             name="min-price"
             min={0}
@@ -78,12 +74,17 @@ const FilterForm = ({ setIsLoading, setSearchResults, setQueryReturned }) => {
 
       <div id="browse-category">
         <h4>Select category</h4>
-        {allCategories.length &&
-          allCategories.map((category) => {
-            return (
-              <CategoryButton key={category.id} categoryName={category.name} />
-            );
-          })}
+        <div className="category-buttons">
+          {allCategories.length &&
+            allCategories.map((category) => {
+              return (
+                <CategoryButton
+                  key={category.id}
+                  categoryName={category.name}
+                />
+              );
+            })}
+        </div>
       </div>
       <button type="submit" id="confirm-filters-btn">
         Confirm

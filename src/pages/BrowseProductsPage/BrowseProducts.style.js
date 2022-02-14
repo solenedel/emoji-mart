@@ -13,7 +13,6 @@ export const StyledBrowseProducts = styled(Products)`
   }
 
   h3 {
-  */
     margin-left: 15px;
   }
 
@@ -21,10 +20,14 @@ export const StyledBrowseProducts = styled(Products)`
     width: 100vw;
     display: flex;
     align-items: center;
-    border: solid yellow 3px;
 
     & label {
       font-size: 20px;
+    }
+
+    & ::placeholder {
+      font-size: 18px;
+      text-align: center;
     }
 
     & h4 {
@@ -46,51 +49,44 @@ export const StyledBrowseProducts = styled(Products)`
 
     div.category-buttons {
       padding: 5px;
-      border: solid red 3px;
       display: grid;
       grid-template-columns: 50% 50%;
-      grid-gap: 10px;
+      grid-gap: 15px;
+    }
 
-      & button {
+    & button {
+      transition: all 0.4s;
+      background: #fffbaf;
+      font-size: 21px;
+      width: 70px;
+      height: 40px;
+
+      &:hover {
+        transform: scale(1.1, 1.1);
         transition: all 0.4s;
-        font-size: 18px;
-        width: 50px;
-        height: 50px;
-
-        &:hover {
-          transform: scale(1.1, 1.1);
-          transition: all 0.4s;
-        }
-      }
-
-      .icon {
-        font-size: 25px;
-      }
-
-      button.plants {
-        background-color: #d5feb7;
-      }
-      button.food {
-        background-color: #fee6b7;
-      }
-      button.drinks {
-        background-color: #b7e9fe;
       }
     }
   }
+
   button#confirm-filters-btn {
     margin-top: 30px;
+    font-size: 25px;
+    font-weight: 600;
+    width: 120px;
   }
+
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
   }
+
   & h4 {
     margin-bottom: 30px;
     font-size: 38px;
   }
+
   input {
     margin-top: 20px;
     width: 300px;
@@ -98,6 +94,7 @@ export const StyledBrowseProducts = styled(Products)`
     border: none;
     border-radius: 4px;
     padding-left: 10px;
+
     &::placeholder {
       color: ${colors.navbarBkgd};
       font-size: 23px;
@@ -120,6 +117,7 @@ export const StyledBrowseProducts = styled(Products)`
     margin-top: 60px;
     color: #fc94a4;
   }
+
   form#filter-form {
     border-radius: 5px;
     padding: 20px;
