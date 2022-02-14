@@ -5,6 +5,7 @@ import { baseURL } from "../../../variables";
 // custom hook with filter form logic
 
 export const useFilterForm = () => {
+  const [allCategories, setAllCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [priceRange, setPriceRange] = useState({
     min: 0,

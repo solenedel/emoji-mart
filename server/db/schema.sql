@@ -35,6 +35,14 @@ CREATE TABLE products (
   on_sale BOOLEAN NOT NULL DEFAULT false
 );
 
+
+-- Categories table
+CREATE TABLE categories (
+  id SERIAL PRIMARY KEY NOT NULL, 
+  name VARCHAR(255) NOT NULL, 
+  fa_icon VARCHAR(255) NOT NULL
+);
+
 -- Favorites table
 CREATE TABLE favorites (
   id SERIAL PRIMARY KEY NOT NULL, 
@@ -49,4 +57,5 @@ CREATE TABLE cart (
   product_id INTEGER REFERENCES products(id) ON DELETE CASCADE, 
   quantity INTEGER NOT NULL default 1
 );
+
 

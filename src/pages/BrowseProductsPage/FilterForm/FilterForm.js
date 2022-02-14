@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import { baseURL } from "../../../variables";
 import { useFilterForm } from "./useFilterForm";
+import CategoryButton from "./CategoryButton";
 
 const FilterForm = ({ setIsLoading, setSearchResults, setQueryReturned }) => {
   // use custom filter form hook
@@ -74,18 +75,7 @@ const FilterForm = ({ setIsLoading, setSearchResults, setQueryReturned }) => {
       <div id="browse-category">
         <h4>Select category</h4>
         <div className="category-buttons">
-          <button type="button" className="plants">
-            <FaSeedling className="icon" />
-          </button>
-          <button type="button" className="fruits">
-            <FaAppleAlt className="icon" />
-          </button>
-          <button type="button" className="food">
-            <FaUtensils className="icon" />
-          </button>
-          <button type="button" className="drinks">
-            <FaGlassMartiniAlt className="icon" />
-          </button>
+          <CategoryButton categoryIcon="test" />
         </div>
       </div>
       <button type="submit" id="confirm-filters-btn">

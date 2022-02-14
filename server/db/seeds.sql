@@ -21,6 +21,23 @@ INSERT INTO users (username, email, password)
 VALUES ('💎Demo', 'demo@mail.com', '$2b$10$snkNZnKWED/p.TNbf8ryE.fGVEKn12LoIIBT0ppZ6aCwsQ7YNf616');
 
 
+
+-- seeds for categories table
+
+INSERT INTO categories (name, fa_icon)
+VALUES ('Plants', 'FaSeedling');
+
+INSERT INTO categories (name, fa_icon)
+VALUES ('Fruits', 'FaAppleAlt');
+
+INSERT INTO categories (name, fa_icon)
+VALUES ('Food', 'FaUtensils');
+
+INSERT INTO categories (name, fa_icon)
+VALUES ('Drinks', 'FaGlassMartiniAlt');
+
+
+
 -- seeds for Products table
 
 INSERT INTO products (name, description, price, sold_out, image_path, category, on_sale)
