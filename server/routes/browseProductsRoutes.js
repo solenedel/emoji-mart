@@ -5,6 +5,21 @@ const express = require("express");
 const router = express.Router();
 
 module.exports = (db) => {
+  // get product categories
+  router.get(`/categories`, (req, res) => {
+    const queryText = `SELECT * FROM categories;`;
+
+    db.query(queryText)
+      .then((results) => {
+        res.json(results.rows);
+        console.log("CATEGORIES: ", results.rows);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.json([]);
+      });
+  });
+
   // show products from a certain category
   router.get(`/category/:category`, (req, res) => {
     const queryText = `SELECT * FROM products

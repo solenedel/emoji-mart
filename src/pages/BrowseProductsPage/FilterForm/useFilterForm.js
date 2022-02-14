@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import { baseURL } from "../../../variables";
 
@@ -12,6 +12,10 @@ export const useFilterForm = () => {
     max: 0,
   });
   // const [filterFormResults, setFilterFormResults] = useState([]);
+
+  useEffect(() => {
+    axios.get(baseURL + `/categories`);
+  }, []);
 
   const handleMinInputChange = (e) => {
     setPriceRange({ ...priceRange, min: Number(e.target.value) }); // USE PREV
