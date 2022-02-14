@@ -6,7 +6,7 @@ const router = express.Router();
 
 module.exports = (db) => {
   // get product categories
-  router.get(`/categories`, (req, res) => {
+  router.get(`/`, (req, res) => {
     const queryText = `SELECT * FROM categories;`;
 
     db.query(queryText)

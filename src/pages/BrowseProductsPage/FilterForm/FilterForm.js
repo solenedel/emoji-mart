@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 import axios from "axios";
 import {
   FaSeedling,
@@ -12,8 +12,12 @@ import CategoryButton from "./CategoryButton";
 
 const FilterForm = ({ setIsLoading, setSearchResults, setQueryReturned }) => {
   // use custom filter form hook
-  const { handleMaxInputChange, handleMinInputChange, priceRange } =
-    useFilterForm();
+  const {
+    handleMaxInputChange,
+    handleMinInputChange,
+    priceRange,
+    allCategories,
+  } = useFilterForm();
 
   const handlePriceFormSubmit = (e) => {
     e.preventDefault();
@@ -74,9 +78,12 @@ const FilterForm = ({ setIsLoading, setSearchResults, setQueryReturned }) => {
 
       <div id="browse-category">
         <h4>Select category</h4>
-        <div className="category-buttons">
-          <CategoryButton categoryIcon="test" />
-        </div>
+        {allCategories.length &&
+          allCategories.map((category) => {
+            return (
+              <CategoryButton key={category.id} categoryName={category.name} />
+            );
+          })}
       </div>
       <button type="submit" id="confirm-filters-btn">
         Confirm
