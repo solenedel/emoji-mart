@@ -4,16 +4,15 @@ import ViewButton from "../ViewButton";
 
 export const StyledViewButton = styled(ViewButton)`
   background: ${colors.primaryBlue};
-  border: solid red 3px;
-  margin: 15px 0 15px 0;
-  padding: 5px;
-  font-size: 22px;
-  border: none;
-  border-radius: 5px;
   transition: background 0.3s;
+  height: fit-content;
+  margin-top: 10px;
+  padding: 0 5px 3px 5px;
 
   & a {
     color: black;
+    font-size: 20px;
+    font-weight: 400;
   }
 
   :hover {

@@ -20,6 +20,11 @@ export const GlobalStyles = createGlobalStyle`
     cursor: pointer;
   }
 
+  button {
+    border: none;
+    border-radius: 5px;
+  }
+
   body {
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
@@ -33,12 +38,7 @@ export const GlobalStyles = createGlobalStyle`
     font-family: ${fonts.logoFont};
     font-size: 50px;
   }
-
-  button {
-    border: none;
-    border-radius: 5px;
-  }
-     
+  
   div.mapped-products {
       display: flex;
       flex-wrap: wrap;

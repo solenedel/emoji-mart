@@ -5,7 +5,8 @@ const baseURL = `http://localhost:8081`;
 const colors = {
   background: "black",
   primaryText: "white",
-  navbarBkgd: "#9494FF", // purple
+  navbarBkgd: "#9494FF", // dark purple
+  lightPurple: "#C1C1FF",
   primaryGreen: "#9bffd7",
   primaryPink: "#ffc3f4",
   primaryYellow: "#fffbaf",

@@ -1,8 +1,14 @@
 import styled from "styled-components";
 import HomePage from "./HomePage";
+import { colors } from "../../variables";
 
 export const StyledHomePage = styled(HomePage)`
   margin: 50px 5% 0 5%;
+
+
+  .icon {
+    margin-right: 10px;
+  }
 
   p {
     text-align: center;
@@ -21,26 +27,26 @@ export const StyledHomePage = styled(HomePage)`
   }
 
   .sale {
-    border: solid 3px #ffc3e8;
+    border: solid 3px ${colors.lightPurple};
     border-radius: 4px;
     margin-bottom: 80px;
     height: fit-content;
 
     & h4 {
       color: black;
-      background: #ffc3e8;
+      background: ${colors.lightPurple};
       margin-bottom: 40px;
     }
   }
 
   .featured {
-    border: solid 3px #b7fffd;
+    border: solid 3px ${colors.lightPurple};
     border-radius: 4px;
     height: fit-content;
 
     & h4 {
       color: black;
-      background: #b7fffd;
+      background: ${colors.lightPurple};
     }
 
     & div.featured-product {
@@ -50,7 +56,6 @@ export const StyledHomePage = styled(HomePage)`
       justify-content: space-around;
       padding: 20px;
       width: 100%;
-      /* border: solid red 3px; */
 
       & .featured-img {
         font-size: 80px;
