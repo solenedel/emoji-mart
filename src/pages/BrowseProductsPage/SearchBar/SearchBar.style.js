@@ -14,8 +14,14 @@ export const StyledSearchBar = styled(Searchbar)`
   input {
     height: 45px;
     max-width: 60%;
+    margin-top: 20px;
+    width: 300px;
+    height: 38px;
+    border: none;
+    border-radius: 4px;
+    padding-left: 10px;
 
-    & ::placeholder {
+    &::placeholder {
       font-size: 20px;
       color: black;
     }

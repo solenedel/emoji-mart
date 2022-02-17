@@ -53,7 +53,7 @@ const FilterForm = ({ setIsLoading, setSearchResults, setQueryReturned }) => {
             id="max-price"
             name="max-price"
             min={0}
-            placeholder="maximum"
+            placeholder="max"
             onChange={handleMaxInputChange}
           />
         </label>
@@ -63,7 +63,7 @@ const FilterForm = ({ setIsLoading, setSearchResults, setQueryReturned }) => {
           $
           <input
             type="number"
-            placeholder="minimum"
+            placeholder="min"
             id="min-price"
             name="min-price"
             min={0}

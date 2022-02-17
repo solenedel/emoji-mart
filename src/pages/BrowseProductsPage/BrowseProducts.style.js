@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import Products from "./BrowseProducts";
-import { colors } from "../../variables";
 
 export const StyledBrowseProducts = styled(Products)`
   margin: 50px 0 0 0;
@@ -21,15 +20,6 @@ export const StyledBrowseProducts = styled(Products)`
     display: flex;
     align-items: center;
 
-    & label {
-      font-size: 20px;
-    }
-
-    & ::placeholder {
-      font-size: 18px;
-      text-align: center;
-    }
-
     & h4 {
       font-size: 24px;
     }
@@ -39,6 +29,15 @@ export const StyledBrowseProducts = styled(Products)`
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      & label {
+        font-size: 27px;
+      }
+
+      & ::placeholder {
+        font-size: 22px;
+        padding-left: 10%;
+      }
     }
   }
 
@@ -87,19 +86,6 @@ export const StyledBrowseProducts = styled(Products)`
     font-size: 38px;
   }
 
-  input {
-    margin-top: 20px;
-    width: 300px;
-    height: 38px;
-    border: none;
-    border-radius: 4px;
-    padding-left: 10px;
-
-    &::placeholder {
-      color: ${colors.navbarBkgd};
-      font-size: 23px;
-    }
-  }
   button {
     background: pink;
     border: none;
@@ -122,10 +108,14 @@ export const StyledBrowseProducts = styled(Products)`
     border-radius: 5px;
     padding: 20px;
     display: flex;
+
     & input {
       width: 100px;
       height: 35px;
       margin-left: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
       background-color: #c8fffc;
     }
   }
