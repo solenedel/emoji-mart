@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Searchbar from "./Searchbar";
+import { colors } from "../../../variables";
 
 export const StyledSearchBar = styled(Searchbar)`
   width: 100vw;
@@ -33,18 +34,18 @@ export const StyledSearchBar = styled(Searchbar)`
     height: 42px;
     background: none;
     transition: all 0.4s;
-    border: solid 2px #9bffd7;
+    border: solid 2px ${colors.primaryGreen};
     height: fit-content;
     width: fit-content;
 
     .icon {
       font-size: 30px;
-      color: #9bffd7;
+      color: ${colors.primaryGreen};
       margin: 5px 5px 0 5px;
     }
 
     &:hover {
-      background: #9bffd7;
+      background: ${colors.primaryGreen};
       transition: all 0.4s;
 
       & .icon {

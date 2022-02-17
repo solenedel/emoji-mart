@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { colors } from "../../variables";
 import Products from "./BrowseProducts";
 
 export const StyledBrowseProducts = styled(Products)`
@@ -7,15 +8,12 @@ export const StyledBrowseProducts = styled(Products)`
   flex-direction: column;
   align-items: center;
 
-  & button {
-    font-size: 20px;
-  }
-
   h3 {
     margin-left: 15px;
   }
 
   form#filter-form {
+    border: solid 2.5px white;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -37,6 +35,8 @@ export const StyledBrowseProducts = styled(Products)`
       & ::placeholder {
         font-size: 22px;
         padding-left: 10%;
+        color: rgba(0, 0, 0, 0.8);
+        letter-spacing: 1.5px;
       }
     }
   }
@@ -68,10 +68,21 @@ export const StyledBrowseProducts = styled(Products)`
   }
 
   button#confirm-filters-btn {
-    margin-top: 30px;
+    margin-top: 50px;
     font-size: 25px;
     font-weight: 600;
     width: 120px;
+    height: 45px;
+    border: solid 2px ${colors.primaryGreen};
+    background: none;
+    color: ${colors.primaryGreen};
+    transition: all 0.4s;
+
+    &:hover {
+      background: ${colors.primaryGreen};
+      color: black;
+      transition: all 0.4s;
+    }
   }
 
   form {
@@ -86,12 +97,6 @@ export const StyledBrowseProducts = styled(Products)`
     font-size: 38px;
   }
 
-  button {
-    background: pink;
-    border: none;
-    border-radius: 4px;
-    height: 40px;
-  }
   div.product-results {
     margin: 80px 0 0 12%;
     display: flex;
@@ -116,7 +121,14 @@ export const StyledBrowseProducts = styled(Products)`
       margin-bottom: 20px;
       border: none;
       border-radius: 5px;
-      background-color: #c8fffc;
+      background-color: #ffd7d9;
+    }
+  }
+
+  @media screen and (min-width: 400px) {
+    form#filter-form {
+      width: 80vw;
+      padding-top: 50px;
     }
   }
 
@@ -130,9 +142,20 @@ export const StyledBrowseProducts = styled(Products)`
       margin-top: 0;
     }
     form#filter-form {
-      padding-top: none;
       flex-direction: row;
-      align-items: center;
+      justify-content: space-evenly;
+      align-items: baseline;
+
+      & button#confirm-filters-btn {
+        align-self: center;
+        position: relative;
+        letter-spacing: 1px;
+        font-size: 30px;
+        bottom: 15px;
+        height: 60px;
+        width: fit-content;
+        padding: 10px;
+      }
     }
   }
 `;

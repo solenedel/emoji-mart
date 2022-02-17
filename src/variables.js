@@ -4,8 +4,9 @@ const baseURL = `http://localhost:8081`;
 // ------------- CSS variables below ----------- //
 const colors = {
   background: "black",
-  PrimaryText: "white",
-  navbarBkgd: "#9494FF",
+  primaryText: "white",
+  navbarBkgd: "#9494FF", // purple
+  primaryGreen: "#9bffd7",
 };
 
 const fonts = {

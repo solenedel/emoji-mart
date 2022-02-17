@@ -87,7 +87,7 @@ const FilterForm = ({ setIsLoading, setSearchResults, setQueryReturned }) => {
         </div>
       </div>
       <button type="submit" id="confirm-filters-btn">
-        Confirm
+        confirm
       </button>
     </form>
   );
