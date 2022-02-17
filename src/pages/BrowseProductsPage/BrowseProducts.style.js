@@ -55,7 +55,7 @@ export const StyledBrowseProducts = styled(Products)`
 
     & button {
       transition: all 0.4s;
-      background: #fffbaf;
+      background: ${colors.primaryYellow};
       font-size: 21px;
       width: 70px;
       height: 40px;

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useAppContext } from "../context/context";
 
-const ViewButton = ({ productName }) => {
+const ViewButton = ({ productName, className }) => {
   const { viewedProductContext } = useAppContext();
   const [viewedProduct, setViewedProduct] = viewedProductContext;
 
@@ -11,12 +11,7 @@ const ViewButton = ({ productName }) => {
   };
 
   return (
-    <button
-      type="button"
-      id="view"
-      className="view-btn"
-      onClick={viewClickHandler}
-    >
+    <button type="button" className={className} onClick={viewClickHandler}>
       <Link to={`/products/view/${productName}`}>view</Link>
     </button>
   );

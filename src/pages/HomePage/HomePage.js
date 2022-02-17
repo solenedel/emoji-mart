@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FaExclamationCircle, FaStar } from "react-icons/fa";
 import { StyledProduct } from "../../components/SingleProduct/Product.style";
-import ViewButton from "../../components/ViewButton";
 import { baseURL } from "../../variables";
+import { StyledViewButton } from "../../components/styled/ViewButton.style";
 
 const HomePage = ({ className }) => {
   const [saleProducts, setSaleProducts] = useState([]);
@@ -68,7 +68,7 @@ const HomePage = ({ className }) => {
                   <div>${featuredProduct.price}</div>
                   <div>{featuredProduct.description}</div>
                 </div>
-                <ViewButton productName={featuredProduct.name} />
+                <StyledViewButton productName={featuredProduct.name} />
               </div>
             );
           })}

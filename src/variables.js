@@ -8,6 +8,9 @@ const colors = {
   navbarBkgd: "#9494FF", // purple
   primaryGreen: "#9bffd7",
   primaryPink: "#ffc3f4",
+  primaryYellow: "#fffbaf",
+  primaryBlue: "#C3F6FF",
+  hoverBlue: " #63e6ff",
 };
 
 const fonts = {
