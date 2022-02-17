@@ -12,17 +12,6 @@ const Footer = ({ className }) => {
           solenedel
         </a>
       </div>
-      <div className="credits">
-        Credits:
-        <a href="https://emojipedia.org/" target="_blank" rel="noreferrer">
-          {" "}
-          emojis
-        </a>
-        <a href="https://fontawesome.com/" target="_blank" rel="noreferrer">
-          {" "}
-          icons
-        </a>
-      </div>
     </footer>
   );
 };

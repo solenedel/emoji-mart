@@ -7,6 +7,7 @@ const colors = {
   primaryText: "white",
   navbarBkgd: "#9494FF", // purple
   primaryGreen: "#9bffd7",
+  primaryPink: "#ffc3f4",
 };
 
 const fonts = {
